@@ -515,7 +515,7 @@ function algo(ctx) {
         inity = Number(input.value) */
     if (cycle > 10)
         cycler *= (cycle / 20);
-    animator = new Animator(vertical, time, refresh, initx, inity, ctx, width * PIXEL_RATIO, height * PIXEL_RATIO, tail, cycle, noder, nodedist, nodepx, nodeborder, cycler, creaturesr);
+    animator = new Animator(vertical, time / PIXEL_RATIO, refresh, initx, inity, ctx, width * PIXEL_RATIO, height * PIXEL_RATIO, tail, cycle, noder, nodedist, nodepx, nodeborder, cycler, creaturesr);
 }
 function init() {
     var cb = function () {
