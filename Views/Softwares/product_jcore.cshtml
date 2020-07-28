@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "JCore Library";
+}
+
+@section keywords  {
+    <meta name="keywords" content="Java class library" />
+}
+
+@section topheading {
+    JCore library
+}
+
+@section subheading {
+    A library of Java utilities
+}
+
+@section description {
+    This library contains the most common functions I use while programming Java.
+    It contains a downloader class. It can send GET requests in one single static function
+    in which you can specify the most important aspects of the connection. It has a complex
+    callback system communicating with JSON objects.<br>
+    It contains an IO library. It contsains read/write functions to make certain tasks easy.
+    There is for example a function that will walk through a directory system while
+    reporting every node (files and directories).<br>
+    It contains StringMath, a very basic math library for string variables.<br>
+    It has a base converter that converts a fraction from a base into another (up to base 16).<br>
+    There is a byte array to integer/double and integer/double to byte array converter class that you can
+    configure with endianness. It can read variable encoded unsigned integers as well.<br>
+    And finally there is a bit handling utility which you can use to quickly access certain bits
+    in a byte. A function will return a sequence of bits from a byte array given a byte position,
+    bit position (little endian-like), requested number of bits, and whether you are reading towards
+    the most or the least singificant bit. There is a write function with similar parameters to insert a sequence
+    of bits into a byte array.
+}
+
+@section source {
+    href="https://mega.nz/#!mNgXUCAR!3iVlW3K2ClPfQE1UPnZTeWXmfAHWmEZ-5dyoTrg14us" target="_blank"
+}
+
+@section release {
+    href="https://mega.nz/#!vdxTHAZS!l8cyXvZuK17-DreitIg7rS6q41YNfAYIHfwYBizQqqk" target="_blank"
+}
+
+@section projectspecs {
+    Java library compiled with JDK 10.0.2. Version 1.1.
+}

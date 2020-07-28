@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'Shree Devanagari 714';
+    src: url('../fonts/ShreeDev0714.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Shree Devanagari 714';
+    src: url('../fonts/ShreeDev0714-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Shree Devanagari 714';
+    src: url('../fonts/ShreeDev0714-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'Shree Devanagari 714';
+    src: url('../fonts/ShreeDev0714-Bold-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}

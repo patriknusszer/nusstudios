@@ -1,0 +1,10 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+p {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 18px;
+	color: white;
+}

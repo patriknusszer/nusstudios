@@ -1,0 +1,207 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+h1 {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebHairline';
+	font-style: normal;
+	font-size: 50px;
+	color: white;
+}
+
+p {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 18px;
+	color: white;
+}
+
+.vr_input_url {
+	vertical-align: top;
+	display: inline-block;
+	border-left: 1px solid #9E5EA2;
+	height: 40px;
+}
+
+.input_url {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 25px;
+	color: white;
+	display: inline-block;
+	vertical-align: top;
+	background-color: #28283c;
+	border: 0;
+	height: 40px;
+	width: 500px;
+}
+
+.input_url:focus{
+    outline: 0;
+}
+
+.btn_stream_request {
+	display: block;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 100px;
+	line-height: 45px;
+	width: 140px;
+	height: 45px;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 15px;
+	border: 1px solid #9E5EA2;
+	transition: all .2s ease-in-out;
+	background-color: #28283c;
+	color: #9E5EA2;
+}
+
+.btn_stream_request:hover {
+	background-color: #9E5EA2;
+	line-height: 45px;
+	color: white;
+	font-size: 50px;
+}
+
+.info {
+	margin-top: 50px;
+}
+
+.dl_title {
+    -webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+    color: white;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.combobox {
+    -webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.cbmain {
+	color: white;
+	background-color: #28283c;
+	font-size: 20px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	transition: color 0.2s ease-in-out;
+}
+
+.m_toggledoff {
+	border: 1px solid #9E5EA2;
+	border-radius: 10px;
+}
+
+.m_toggledon {
+	border-right: 1px solid #9E5EA2;
+	border-left: 1px solid #9E5EA2;
+}
+
+.cbmain:hover {
+	color: #9E5EA2;
+}
+
+.cbtogglegroup {
+	color: white;
+	background-color: #28283c;
+}
+
+.cbtogglegroup > div {
+	padding-left: 10px;
+	height: 25px;
+	line-height: 25px;
+	transition: color 0.2s ease-in-out;
+	border-right: 1px solid #9E5EA2;
+	border-left: 1px solid #9E5EA2;
+}
+
+.cbtogglegroup > div:hover { 
+	color: #9E5EA2;
+}
+
+.tg_toggledon {
+	display: block;
+}
+
+.tg_toggledoff {
+	display: none;
+}
+
+.dl_btn {
+	display: block;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 20px;
+	line-height: 45px;
+	width: 140px;
+	height: 45px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 15px;
+	border: 1px solid #9E5EA2;
+	transition: all .2s ease-in-out;
+	background-color: #28283c;
+	color: #9E5EA2;
+}
+
+.dl_btn:hover {
+	background-color: #9E5EA2;
+	color: white;
+}
+
+@media only screen and (max-width: 630px) {
+	h1 {
+		font-size: 30px;
+	}
+
+    .combobox {
+		width: 300px;
+	}
+
+	.input_url {
+		width: 300px;
+	}
+}
+
+@media only screen and (max-width: 430px) {
+	h1 {
+		font-size: 20px;
+	}
+
+	.input_url {
+		width: 200px;
+		font-size: 20px;
+	}
+
+	.combobox {
+		width: 250px;
+	}
+
+    .dl_title {
+        font-size: 19px;
+    }
+
+	.cbmain {
+		font-size: 16px;
+	}
+
+	.cbtogglegroup {
+		font-size: 14px;
+	}
+}

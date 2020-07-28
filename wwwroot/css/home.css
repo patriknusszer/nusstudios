@@ -1,0 +1,97 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+html {
+	background-color: white;
+}
+
+#nusstudios_logo {
+    height: 150px;
+	margin-top: 30px;
+}
+
+p, .list {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWeb';
+	font-style: normal;
+	font-size: 24px;
+	/* color: #9E5EA2; */
+	color : white;
+}
+
+.list {
+	text-align: left;
+	display: inline-block;
+	/* border-left: 2px solid #9E5EA2; */
+	border-left: 2px solid white;
+	padding-left: 10px;
+}
+
+#panel {
+	height: 400px;
+	width: 600px;
+}
+
+@media screen and (max-width: 1100px) {
+	#nusstudios_logo {
+		height: 130px;
+		margin-top: 40px;
+	}
+
+    #panel {
+		height: 400px;
+		width: 550px;
+	}
+	
+	p, .list {
+		font-size: 22px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	#nusstudios_logo {
+		height: 100px;
+		margin-top: 30px;
+	}
+
+    #panel {
+		height: 300px;
+		width: 500px;
+	}
+	
+	p, .list {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#nusstudios_logo {
+		margin-top: 30px;
+	}
+
+    #panel {
+		height: 270px;
+		width: 350px;
+	}
+	
+	p, .list {
+		font-size: 14px;
+	}
+}
+
+
+@media screen and (max-width: 450px) {
+	#nusstudios_logo {
+		margin-top: 20px;
+		height: 85px;
+	}
+
+    #panel {
+		height: 220px;
+		width: 280px;
+	}
+	
+	p, .list {
+		font-size: 11px;
+	}
+}

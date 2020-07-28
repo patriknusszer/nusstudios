@@ -1,0 +1,48 @@
+﻿/* CSS Document */
+
+h1 {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'LatoWebHairline';
+    font-style: normal;
+    font-size: 50px;
+    color: white;
+}
+
+p {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'LatoWebLight';
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+}
+
+.btn_plus_zsb {
+    display: none;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'LatoWebLight';
+    font-style: normal;
+    font-size: 100px;
+    line-height: 45px;
+    width: 140px;
+    height: 45px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: 1px solid #9E5EA2;
+    transition: all .2s ease-in-out;
+    background-color: #444444;
+    color: #9E5EA2;
+}
+
+.btn_plus_zsb:hover {
+    background-color: #9E5EA2;
+    line-height: 45px;
+    color: white;
+    font-size: 50px;
+}
+
+.info {
+    margin-top: 50px;
+    font-size: 35px;
+}

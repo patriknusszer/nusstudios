@@ -1,0 +1,252 @@
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/appsettings.Development.json
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/appsettings.json
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Properties/launchSettings.json
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.deps.json
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.runtimeconfig.json
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.runtimeconfig.dev.json
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.dll
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.pdb
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.Views.dll
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.Views.pdb
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Newtonsoft.Json.dll
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Newtonsoft.Json.Bson.dll
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/staticwebassets/Nusstudios.StaticWebAssets.Manifest.cache
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/staticwebassets/Nusstudios.StaticWebAssets.xml
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.MvcApplicationPartsAssemblyInfo.cache
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorAssemblyInfo.cache
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorAssemblyInfo.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.AssemblyInfoInputs.cache
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.AssemblyInfo.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.TagHelpers.input.cache
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.TagHelpers.output.cache
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorCoreGenerate.cache
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/graph_api_and_x_instagram_gis.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/transformers_game_configurations_low_level.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/youtube_ciphered_signatures.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/About.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Blog.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Contact.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Index.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Log.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Mods.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/NussAPI.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/PT4ZSB.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Softwares.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_royswap_javafx.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfoccorruptor.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfocdecorruptor.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfocultimate.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_trotdsdlc.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_twfcultimate.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_ItemLayout.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_Layout.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_ProductLayout.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_CPPO.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_cupmixer.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_equslvr.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_gia.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_hashcompare.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_imagetopdfui.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_imgtopdf.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_instarchiver.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_jcore.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_keylogger.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_lilcrypto.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nuss.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussattribute.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussdesktop.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussdesktop_javafx.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nusstumblr.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_pixie.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_pixie_macos.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_sharpcore.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_spltoemf.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_stringmath.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_stringmath_python.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_swifflib.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_tfutil.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_torrentchk.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_xorcrypt.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/_ViewImports.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/_ViewStart.cshtml.g.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorTargetAssemblyInfo.cache
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorTargetAssemblyInfo.cs
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.Views.pdb
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.csproj.CopyComplete
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.dll
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.pdb
+/Users/patrik.nusszer/Projects/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.csprojAssemblyReference.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/appsettings.Development.json
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/appsettings.json
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Properties/launchSettings.json
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.deps.json
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.runtimeconfig.json
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.runtimeconfig.dev.json
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.dll
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.pdb
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.Views.dll
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.Views.pdb
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Newtonsoft.Json.dll
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/bin/Release/netcoreapp3.0/Newtonsoft.Json.Bson.dll
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/staticwebassets/Nusstudios.StaticWebAssets.Manifest.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/staticwebassets/Nusstudios.StaticWebAssets.xml
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.MvcApplicationPartsAssemblyInfo.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorAssemblyInfo.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorAssemblyInfo.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.AssemblyInfoInputs.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.AssemblyInfo.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.TagHelpers.input.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.TagHelpers.output.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorCoreGenerate.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/graph_api_and_x_instagram_gis.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/high_level_languages_behind_the_scenes.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/paradigms_brief_history.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/transformers_game_configurations_low_level.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/youtube_ciphered_signatures.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Blog.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Contact.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Edu.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Index.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Log.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Mods.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/NussAPI.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/PT4ZSB.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Softwares.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_royswap_javafx.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfoccorruptor.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfocdecorruptor.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfocultimate.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_trotdsdlc.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_twfcultimate.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_ItemLayout.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_Layout.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_ProductLayout.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_CPPO.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_cupmixer.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_equslvr.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_gia.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_hashcompare.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_imagetopdfui.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_imgtopdf.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_instarchiver.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_jcore.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_keylogger.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_lilcrypto.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nuss.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussattribute.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussdesktop.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussdesktop_javafx.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nusstudioscorecsharp.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nusstumblr.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_pixie.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_pixie_macos.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_spltoemf.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_stringmath.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_stringmath_python.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_swifflib.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_tfutilpp.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_torrentchk.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_xorcrypt.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/_ViewImports.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/_ViewStart.cshtml.g.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorTargetAssemblyInfo.cache
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorTargetAssemblyInfo.cs
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.Views.pdb
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.csproj.CopyComplete
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.dll
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.pdb
+/Users/patrik.nusszer/Documents/Projects/C#/Visual Studio 2019/dotNET Core 3.0/Nusstudios/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.csprojAssemblyReference.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/appsettings.Development.json
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/appsettings.json
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Properties/launchSettings.json
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.deps.json
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.runtimeconfig.json
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.runtimeconfig.dev.json
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.dll
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.pdb
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.Views.dll
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Nusstudios.Views.pdb
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Newtonsoft.Json.dll
+/Users/patrik.nusszer/Desktop/Nusstudios/bin/Release/netcoreapp3.0/Newtonsoft.Json.Bson.dll
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/staticwebassets/Nusstudios.StaticWebAssets.Manifest.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/staticwebassets/Nusstudios.StaticWebAssets.xml
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.MvcApplicationPartsAssemblyInfo.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorAssemblyInfo.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorAssemblyInfo.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.AssemblyInfoInputs.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.AssemblyInfo.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.TagHelpers.input.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.TagHelpers.output.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorCoreGenerate.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/graph_api_and_x_instagram_gis.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/high_level_languages_behind_the_scenes.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/knuthmorrispratt.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/paradigms_brief_history.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/transformers_game_configurations_low_level.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/youtube_ciphered_signatures.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Blog.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Contact.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Edu.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Index.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Log.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Mods.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/NussAPI.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/PT4ZSB.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Home/Softwares.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_royswap_javafx.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfoccorruptor.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfocdecorruptor.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_tfocultimate.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_trotdsdlc.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Mods/mod_twfcultimate.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_ItemLayout.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_Layout.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Shared/_ProductLayout.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_CPPO.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_cupmixer.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_equslvr.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_gia.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_hashcompare.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_imagetopdfui.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_imgtopdf.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_instarchiver.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_jcore.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_keylogger.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_lilcrypto.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nuss.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussattribute.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussdesktop.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nussdesktop_javafx.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nusstudioscorecsharp.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_nusstumblr.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_pixie.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_pixie_macos.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_spltoemf.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_stringmath.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_stringmath_python.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_swifflib.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_tfutilpp.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_torrentchk.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Softwares/product_xorcrypt.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/_ViewImports.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/_ViewStart.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorTargetAssemblyInfo.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.RazorTargetAssemblyInfo.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.Views.pdb
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.csproj.CopyComplete
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.dll
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.pdb
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.csprojAssemblyReference.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.csproj.CoreCompileInputs.cache
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/dijkstra.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/floydstortoiseandhare.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Razor/Views/Articles/mergesort.cshtml.g.cs
+/Users/patrik.nusszer/Desktop/Nusstudios/obj/Release/netcoreapp3.0/Nusstudios.genruntimeconfig.cache

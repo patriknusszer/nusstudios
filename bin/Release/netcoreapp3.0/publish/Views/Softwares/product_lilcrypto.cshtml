@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "lilcrypto";
+}
+
+@section keywords {
+    <meta name="keywords" content="crypto, xor, xnor, sized key generation" />
+}
+
+@section topheading {
+    lilcrypto
+}
+
+@section subheading {
+    A little bitwise cryptographic tool
+}
+
+@section description {
+    It is a cross-platform .NET Core application that crypts your files
+    with XOR or XNOR. It either accepts a typed key, or a file as key.
+    It can also generate keys of a given size, which is useful n case of XOR.
+    If you generate a key that is the size of the file you want to encrypt,
+    the chance of the key being "cracked" is little, since the key is never
+    repeated/recursed. If the key is smaller than the input, then it is usually applied
+    in a recursive manner, resetting the key byte index to 0 at the ned of it.
+    If the plain text/input has many 0 bits, then the resulting cipher text will
+    reflect the bit of the key due to XOR. The key can be guessed if the cipher text is
+    analyzed for constantly repeating bit sequences. This can be avoided by generating
+    a a random key of the size of the plain text. In case of XNOR, the opposite is the case.
+    The reflection can be seen when applying it to many 1 bits.
+}
+
+@section source {
+    href="https://mega.nz/#!ic4T3YZJ!p2BTSJzPaWsfQ0BftXVH-A7E4Lg2ApqNEgeDbhJUIRQ" target="_blank"
+}
+
+@section release {
+    href="https://mega.nz/#!fEhhWQhb!-9TOiBWNCyOwr9Njy8Yd49r5xgduFwoQw9g96-ky8L8" target="_blank"
+}
+
+@section projectspecs {
+    Windows console application. C#, .NET Core 2.1. Version 1.0.
+}

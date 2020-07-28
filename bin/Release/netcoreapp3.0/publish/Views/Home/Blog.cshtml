@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewBag.ModsSelected = false;
+    ViewBag.BlogSelected = true;
+}
+
+@section styles {
+    <link rel="stylesheet" type="text/css" href="~/css/latofonts.css">
+    <link rel="stylesheet" type="text/css" href="~/css/master_2.css">
+    <link rel="stylesheet" type="text/css" href="~/css/itemslisting.css">
+}
+
+@section scripts {
+    <script src="~/js/master.js"></script>
+}
+
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Algorithms</p>
+        <a asp-controller="Articles" asp-action="knuthmorrispratt"><p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">Knuth Morris Pratt algorithm</p></a>
+    </div>
+</div>
+
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Abstract</p>
+        <a asp-controller="Articles" asp-action="paradigms_brief_history"><p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">History of programming paradigms</p></a>
+        <a asp-controller="Articles" asp-action="high_level_languages_behind_the_scenes"><p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">High level languages: behind the scenes</p></a>
+    </div>
+</div>
+
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Documentations</p>
+        <a asp-controller="Articles" asp-action="transformers_game_configurations_low_level"><p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">Transformers games INI/INT configurations low-level</p></a>
+        <a asp-controller="Articles" asp-action="youtube_ciphered_signatures"><p onMouseOver="showInfo('Describes how Youtube downloaders work', this)" onmouseout="hideInfo(this)">Youtube ciphered signatures today</p></a>
+        <a asp-controller="Articles" asp-action="graph_api_and_x_instagram_gis"><p onMouseOver="showInfo('Complete description of how Graph API works and how it is secured', this)" onmouseout="hideInfo(this)">Graph API and X-Instagram-GIS</p></a>
+    </div>
+</div>

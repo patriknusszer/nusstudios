@@ -1,0 +1,153 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+#panel * {
+	margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#panel {
+	height: auto;
+	width: 700px;
+	/* Keep scalable
+	margin-left: 200px;
+	margin-right: 200px; */
+	border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	padding-bottom: 40px;
+}
+
+#toppanel {
+	/* To keep scalable
+	left: 200px;
+	right: 200px;
+	position: relative; */
+	width: 700px;
+	height: 125px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+    padding-top: 10px;
+}
+
+#topheading {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 26px;
+	color: #9E5EA2;
+	text-align: center;
+    margin-top: 30px;
+}
+
+.heading {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	color: white;
+	text-align: center;
+}
+
+#subheading {
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 22px;
+	color: white;
+	text-align:center;
+}
+
+#description > *, #description, p {
+	color: #c2c2d6;
+	text-align: left;
+	margin-top: 50px;
+	margin-left: 30px;
+	margin-right: 30px;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+hr {
+	margin-left: 30px;
+	margin-right: 30px;
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #9E5EA2;
+}
+
+.downloadbtn {
+	background-color: #28283c00;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 18px;
+	color: white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9E5EA2;
+	border-radius: 5px;
+	height: 40px;
+	text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+	line-height: 40px;
+	display: inline-block;
+	margin-left: 10px;
+	transition: background-color .3s ease-in-out;
+}
+
+.downloadbtn:hover {
+	background-color: #9E5EA2;
+}
+
+#about {
+	text-align: center;
+}
+
+@media only screen and (max-width: 740px) {
+	#menu_text_block > a {
+		display: block;
+	}
+	
+	#toppanel {
+		width: auto;
+		left: 20px;
+		right: 20px;
+	}
+	
+	#panel {
+		width: auto;
+		margin-left: 35px;
+		margin-right: 35px;
+		border-top-right-radius: 25px;
+		border-top-left-radius: 25px;
+	}
+	
+	.heading {
+		font-size: 20px;
+	}
+	
+	#subheading {
+		font-size: 18px;
+	}
+	
+	#description > *, #description, p {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#topheading {
+		font-size: 19px;
+	}
+
+    #panel {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+	#description > *, #description, p, hr {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}

@@ -1,0 +1,89 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+.panel {
+	left: 0;
+	right: 0;
+}
+
+.column {
+	display: inline-block;
+	text-align: left;
+	padding-left: 10px;
+    border-left: 1px solid #9E5EA2;
+}
+
+.heading {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 22px;
+	color: #9E5EA2;
+	margin: 0px;
+	margin-bottom: 20px;
+}
+
+.integrator {
+    position: relative;
+	display: inline-block;
+	vertical-align: top;
+    margin-left: 30px;
+}
+
+.integrator > div > a > p {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 18px;
+	color: white;
+	margin: 0px;
+	transition: color .3s ease-in-out;
+    display: table;
+}
+
+.integrator > div > a > p:hover {
+	color: #9E5EA2;
+}
+
+@media only screen and (max-width: 735px) {
+	.heading {
+		font-size: 18px;	
+	}
+	
+	.integrator > a > p {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 630px) {
+	.integrator {
+        margin-right: 0px;	
+		display: block;
+		margin-top: 30px;
+		padding: 0;
+        padding-left: 10px;
+	}
+	
+	.heading {
+		font-size: 22px;	
+	}
+	
+	.integrator > a > p {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 282px) {
+	.integrator {
+		display: block;
+		margin-top: 30px;
+	}
+	
+	.heading {
+		font-size: 18px;	
+	}
+	
+	.integrator > a > p {
+		font-size: 14px;
+	}
+}

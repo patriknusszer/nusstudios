@@ -1,0 +1,49 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+#background {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: radial-gradient(#555555, #222222);
+}
+
+#panel {
+	height: initial;
+	left: 0;
+	right: 0;
+	background-color: #00000000;
+}
+
+.vcentered {
+	margin: 0;
+	position: relative;
+	top: 45%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.reference {
+	padding-right: 5px;
+	padding-left: 5px;
+	vertical-align: top;
+	width: 350px;
+	height: 250px;
+	font-family: 'LatoWebLight';
+	display: inline-block;
+	margin: 20px;
+	background: linear-gradient(#cd6887dd, #b156bfdd, #717edfdd);
+	border-radius: 15px;
+	color: white;
+}
+
+.contacturl, .education {
+	color: white;
+}
+
+.hasurl {
+	padding-bottom: 5px;
+	border-bottom: 2px solid white;
+}

@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "imgtopdf";
+}
+
+@section topheading {
+    IMGtoPDF
+}
+
+@section subheading {
+    Converts images to PDF
+}
+
+@section description {
+    This is a console application with both param and UI mode. You can use regular expressions to select the files to enumerate
+    and you must create exactly 1 group including the digits in the filename. There is an 'original' nuilt in regex for processing
+    images of names somename_0.jpg, dsjgftra_1.jpg, dgregre_3.jpg. It is ".*?_(\\d*?).jpg". Yes, there may be missing numbers in the order, you can define min and max...
+    For other patterns, you need to know regular expressions. Also, as it is passed as a string, always double escape characters.
+}
+
+@section source {
+    href="https://mega.nz/#!3cQDlYAI!LKSRApNJWV5ibVDtrPQN3V8dTYls4b8-0Px6g8uafho" target="_blank"
+}
+
+@section release {
+    href="https://mega.nz/#!KERzHCoZ!iVvNHTE2JEgTrwPsoFSnbC9UELEJlImcLVrNwNRITYQ" target="_blank"
+}
+
+@section projectspecs {
+    Windows console application. C#, .NET Framework 4.7. Version 1.1.
+}

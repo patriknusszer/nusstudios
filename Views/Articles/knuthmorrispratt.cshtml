@@ -1,0 +1,269 @@
+﻿@section keywords {
+    <meta name="keywords" content="Knuth Morris Pratt, KMP, string matching, pattern matching, pattern seacrh, linear time" />
+    <meta name="keywords" content="prefix function, prefix table, prefix value, prefix, suffix, proper suffix, proper prefix" />
+}
+
+@section topheading
+{
+    Knuth Morris Pratt algorithm
+}
+
+@section subheading
+{
+    O(n+m) pattern matching algorithm
+}
+
+@section description
+{
+    <p>
+        KMP stands for Knuth, Morris and Pratt, the first ones to come up with the algorithm.<br>
+        <br>
+        The naive approach has a time complexity of O(n*m), while KMP has O(n+m).<br>
+        KMP preprocesses the pattern in O(m) and performs the search in O(n), hence O(m+n).<br>
+        ('m' is length of pattern, 'n' is length of input string against which we are matching the pattern).<br>
+        <br>
+        The naive approach tests every substring of length m against the pattern.<br>
+        That is, precisely speaking, n * (n - m) operations, because it will check m characters from first index, then second, then third, and from all other up until position (n - m).<br>
+        <br>
+        KMP will touch each string character once.<br>
+        <br>
+        KMP is easiest if explained prospectively.<br>
+        <br>
+        If we encounter a full match or a mismatch, what should we be concerned with?<br>
+        <br>
+        We should be concerned with the fact that the matching string portion or pattern prefix might contain 1 or more prefixes of the pattern in one or more of its suffixes.<br>
+        <br>
+        IND: 0123456789...<br>
+        TXT: AAAAAAAAAAAAA<br>
+        PAT: AAAAAB<br>
+        <br>
+        We have a mismatch at position 5 of pattern.<br>
+        The matched portion from 0 to 4 contains exactly 4 possible prefixes, from pattern indices 1, 2, 3 and 4.<br>
+        <br>
+        IND: 0123456789.............<br>
+        TXT: AADAABCAADAADAABCAADAAA<br>
+        PAT: AADAABCAADAAB<br>
+        <br>
+        We are checking the results for position 13.<br>
+        The length of the longest prefix for the matching portion (up until index 12) is 5, which is AADAA.<br>
+        So we chack PAT[5] against TXT[13], C and D, respectively.<br>
+        That is a mismatch.<br>
+        <br>
+        So we look for the next longest prefix.<br>
+        <br>
+        Its length is 2, which is AA.<br>
+        So we check PAT[2] against TXT[13], D and D.<br>
+        We have a match.<br>
+        <br>
+        So next time PAT[3] will be matched against TXT[14].<br>
+        <br>
+        Algorithm-wise, the important takeaway is that the next longest prefix checked must be both a prefix and suffix of the previous longest prefix.<br>
+        <br>
+        1. AADAABCAADAAB -> AADAA is a proper prefix and proper suffix of length 5 of PAT[0] ... PAT[LEN - 2].<br>
+        2. AADAA -> AA is a proper prefix and proper suffix of length 2 of PAT[0] ... PAT[PREV_PREFIX_LEN - 1].<br>
+        3. AA -> A is a proper prefix and proper suffix of length 1 of PAT[0] ... PAT[PREV_PREFIX_LEN - 1].<br>
+        4. A -> PAT[0] ... PAT[PREV_PREFIX_LEN - 1] has no proper suffix and prefix, it is zero in length.<br>
+        <br>
+        Which, to the intuitive human eye, translates to:<br>
+        <br>
+        S: AADAABCAADAA(D)<br>
+        <br>
+        0. AADAABCAADAA(B) -> no match<br>
+        1. AADAA(B).AADAA -> no match<br>
+        2. AA(D).......AA -> match !<br>
+        3. A(A).........A -> not considered already<br>
+        4. (A)........... -> not considered already<br>
+        <br>
+        The next shortest is 2 in length, so text character D is matched against pattern character D.<br>
+        So the second prefix which was tried out proved to be good.<br>
+        <br>
+        If it was not successful, it would have tried out the shortest prefix, which is zero, meaning it would have matched text character D against the first pattern character A.<br>
+        <br>
+        That means these prefixes which are also suffixes of our matched pattern prefix are already matched, so there is no need for setting back our string position.<br>v
+        <br>
+        All these matched prefixes are possible candidates for a full match.<br>
+        <br>
+        You can continue matching a prefix by simply matching the next string characters with the pattern characters after the prefix, whose position is length of the prefix. (Because indexing is 0 based).<br>
+        <br>
+        But of course we can not choose just any of the possible candidates.<br>
+        If we chose a prefix, and others exist that are longer than that, would mean that all of them would be lost, because in case of a full match (or mismatch), only shorter ones will be evaluated/considered as candidates, so it is essential that we choose the longest prefix so that each of the occurring prefixes will get evaluated.<br>
+        <br>
+        So we end up writing a function that creates a sort of prefix table as large as the pattern, which stores, at a given index, the longest prefix of the pattern which is also a suffix of the pattern up until the given pattern index.<br>
+        <br>
+        Or simply said, we find the longest prefix which is also suffix for every prefix of the pattern.<br>
+        <br>
+        A very rightous question arises.<br>
+        On full match or mismatch, we will start probing from longest to shortest known prefixes until one is found adequate either for the string character right after the full match, or the string character for which we had a mismatch.<br>
+        If none was found adequate, then we are going to increase string position until it matches first pattern character.<br>
+        <br>
+        While building the prefix table, almost the same thing happens.<br>
+        If the next pattern character can not grow the longest so far, it will start probing down to the shortest until one is found adequate for current pattern character which is being considered in the for loop.<br>
+        If none is adequate, then the "prefix value" at the current character is abovo 0.<br>
+        <br>
+        This means that whether we are bulding the prefix table, or doing the string matching itself, it is evident that each string and pattern character will be accessed at most once, rendering it O(n).<br>
+        <br>
+        But we also need to consider the probing part, which raises the question whether our algorithm is truly linear time.<br>
+        <br>
+        If you read carefully, you know you have already seen an intuitive proof.<br>v
+        <br>
+        The functions can only be considered linear time if the number of probe iterations is not more than a constant multiple of "n" which is the length of the string or pattern, in the matcher or prefix function, respectively.<br>
+        <br>
+        When we advance to the next character, our prefix length grows by at most 1.<br>
+        1 such advance, not growth, allows for another (constant multiple of) probe iteration, so that the function is still linear time.<br>
+        So there might be more allowable probe iterations due to an advance than what the prefix length is, because this extra allowance is not available for decrement, and (see below) spending allowance depends on prefix decrement.<br>
+        <br>
+        1 such iteration in a round of probe allows for 1 (constant multiple) less of probe iterations.<br>
+        1 single round of probing can not take more iterations than length of prefix because it can not go beyond zero, and because each subsequent iteration decreases it by at least 1.<br>
+        So there might also be more allowable probing iterations due to decrements larger than 1, than what the prefix length is, because it means the prefix function can decrease in greater pace than the allowance can decrease, or than the number of iterations can increase.<br>
+        <br>
+        So in worst case, each advance increases prefix length by 1, each iteration decreases it by 1, and prefix length is decreased down to zero before function finishes.<br>
+        <br>
+        In this worst case we are doing 2*n operations, or 4*n operations for both the prefix function and the matcher function, which means it is indeed O(n) asymptotically.<br>
+        <br>
+        QED<br>
+        <br>
+        I prefer both the KMP matcher and the prefix table functions written in my style, but I will post here the more widely known (or original) implementation too.<br>
+        <br>
+        My impls.:<br>
+        <br>
+    </p>
+    <pre><code class="language-cpp">
+    size_t * pfx_tbl(char *p, size_t len) {
+        size_t i = 0;
+        size_t lps = 0;
+        size_t *tbl = (size_t *)malloc(sizeof(size_t) * len);
+        // prefix value at PAT[0] is zero by definition
+        // bc we are finding PROPER prefix that is suffix too
+        tbl[i++] = lps;
+
+        while (i &lt; len) {
+            /*
+            Checking next longest prefix.
+            Success increments it and
+            assigns it to current char.
+            DRAWING NEXT CHAR
+            */
+            if (p[i] == p[lps])
+                tbl[i++] = ++lps;
+            /* There was no success with
+            the the given prefix value for PAT[i] */
+            else {
+                /*
+                Prefix value can not decrease beyond zero.
+                Current prefix value is then zero.
+                DRAWING NEXT CHAR
+                */
+                if (lps == 0)
+                    tbl[i++] = 0;
+                /*
+                NOT DRAWING NEXT CHAR.
+                Preparing next longest prefix value
+                to bechecked out in next iteration for
+                SAME PAT CHAR.
+                */
+                else
+                    lps = tbl[lps - 1];
+            }
+        }
+
+        return tbl;
+    }
+
+    size_t * kmp(char *s, size_t slen, char *p, size_t plen) {
+        size_t fromi, si, pi, ri;
+        fromi = si = pi = ri = 0;
+        size_t cap = 3;
+        size_t *res = (size_t *)malloc(sizeof(size_t) * cap);
+        size_t *tbl = pfx_tbl(p, plen);
+
+        while (si &lt; slen) {
+            // PAT[PAT_INDEX] == TXT[TXT_INDEX]
+            if (s[si] == p[pi]) {
+                // There was a full match
+                if (pi + 1 == plen) {
+                    /*
+                    fromi keeps track of TXT position
+                    where PAT prefix was found.
+                    It is now being added to result array.
+                    */
+                    res[ri++] = fromi;
+                    // We double the size of the
+                    result array if full
+                    if (ri == cap)
+                        res = (size_t *)realloc(res,
+                        sizeof(size_t) * (cap *= 2));
+                    /*
+                    On full match, the matching portion
+                    ends at PAT[PAT_LEN - 1].
+                    Next  time, the next TXT char
+                    is compared with PAT[TBL[PAT_LEN - 1]].
+                    If PAT[TBL[PAT_LEN - 1]] is 0,
+                    next fromi starts from si + 1.
+                    If PAT[TBL[PAT_LEN - 1]] is 0 + N,
+                    fromi starts from (si + 1) - N.
+                    */
+                    fromi = ++si - (pi = tbl[pi]);
+                }
+                /* There is match, but not full match,
+                increasing PAT and TXT indices
+                */
+                else {
+                    si++;
+                    pi++;
+                }
+            }
+            // mismatch occurred
+            else {
+                if (pi == 0)
+                    fromi = ++si;
+                /*
+                NOT INCREASING TXT pos.
+                We are preparing next
+                longest prefix value to be
+                checked out in next iteration
+                for SAME TXT CHAR
+                */
+                else
+                    fromi = si - (pi = tbl[pi - 1]);
+            }
+
+        }
+
+        // (size_t)-1 signals end of array
+        res[ri++] = std::numeric_limit&lt;size_t&gt;::max();
+        res = (size_t *)realloc(res, sizeof(size_t) * ri);
+        return res;
+    }
+</code></pre>
+<br>
+<p>&quot;Mainstream&quot; implementation for prefix function:</p>
+<br>
+<pre><code class="language-cpp">
+    size_t * prefix_function(char *p, size_t len) {
+        size_t *tbl = (size_t *)malloc(sizeof(size_t) * len);
+        tbl[0] = 0;
+
+        for (size_t i = 1; i &lt; len; i++) {
+            size_t lps = tbl[i - 1];
+
+            while (lps &gt; 0 && p[i] != p[lps])
+            lps = tbl[lps - 1];
+
+            if (p[i] == p[lps])
+                lps++;
+
+            tbl[i] = lps;
+        }
+    }
+</code></pre>
+}
+
+@section btnname
+{
+
+}
+
+@section url
+{
+
+}

@@ -1,0 +1,80 @@
+﻿@section keywords {
+    <meta name="keywords" content="Dijkstra, graph, shortest path, nodes, proof, cycles, tree" />
+}
+
+@section topheading
+{
+    Dijkstra's
+}
+
+@section subheading
+{
+    Shortest path finder algorithm
+}
+
+@section description
+{
+    <p>
+        Dijkstra's shortest path algorithm finds the shortest paths from a node to all the other nodes in a graph.<br>
+        <br>
+        A graph is an arrangement of nodes, where each node can have adjacent nodes or neighbours.<br>
+        If 2 nodes are adjacent, they are connected with a weighted edge, a path with a length.<br>
+        But with the term path we can describe a line connecting any number of nodes.<br>
+        Such a line consists of any number of edges.<br>
+        <br>
+        We want to find the shortest path to each of the nodes from one node.<br>
+        If there are more than 1 paths leading to at least 1 node, it means you have at least 1 cycle in the graph.<br>
+        You may not be able to traverse all the paths till they end from a given node inside a graph, because you might run into endless paths if there are indeed cycles.<br>
+        <br>
+        So if there were no cycles, there would be no Dijkstra.<br>
+        <br>
+        The aim of Dijkstra is to remove these cycles, to leave that only 1 path of all the ones leading to every node, by selecting the shortest of them.<br>
+        <br>
+        After the removal of cycles, we will have a tree/hierarchy, which has no cycles in it.<br>
+        If you start walking away from a given node inside a graph, we can talk about order of edges.<br>
+        If you visit a neighbour 'y' of your initial node 'x', you have visited one of its children/ascendants/neighbours which are said to be on the 1 lower/deeper level. If you visit a neghbour of 'y' you have again moved on to the 1 deeper level, given of course that neghbour is not 'x' itself, because that would mean 'x' and 'y' form a cycle, and then you are again on the 1 less deeper level.<br>
+        <br>
+        The thing about a tree/hierarchy is that you can not have a child/neighbour from the 1 larger level.<br>
+        In a hierarchy/tree every node except the top node has exactly 1 parent from the 1 higher level and any number of chiuldren from 1 lower level.<br>
+        Since every node has exactly 1 edge upwards, there is only 1 path from any node back to the top.<br>
+        In our case thise 1 path is the shortest.<br>
+        So the input of Dijkstra is a graph, and its output is a tree.<br>
+        <br>
+        The algorithm in fact is very easy to understand and to prove it indeed works.<br>
+        I will use personal terminology.<br>
+        <br>
+        We are working with non-negative edge lengths.<br>
+        <br>
+        You have 2 sets to consider.<br>
+        The "closed" set of nodes: the nodes for which the shortest path from the initial node has been determined.<br>
+        The "discovered/neighbouring open" set of nodes or edges: for these nodes the shortest path from the initial node has NOT been determined yet, and these edges are the neighbours of "closed" nodes and the path length through the "closed" ascendant node has been discovered/temporarily saved/provisioned.<br>
+        <br>
+        We have to prove 2 things:
+        1) the set of "closed" nodes is correct
+        2) the change to the set of "closed" nodes is correct
+        <br>
+        Let's prove 2)
+        <br>
+        We need to determine how long the path would be to any of the neighbouring "open" nodes of the "closed" nodes through themselves. (That means shortest path to closed node + edge length to neighbouring open node).<br>
+        <br>
+        If we close down the node with the shortest provisioned path, we can be sure it is the shortest path leading to the open discovered node, since assuming that any other "discovered" edge might lead to the same node, choosing the shortest equals shortest path.<br>
+        <br>
+        So we have proven that the changes made to a correct "closed" set of nodes is correct because we were looking at every possible candidate for shortest path continuation by looking at all open neighbours.<br>
+        <br>
+        We need to prove now that we can start out with a correct "closed" set of nodes.<br>
+        <br>
+        Let's prove 1)
+        <br>
+        The set of "closed" nodes at start includes the initial node with length zero, because it is the shortest path to itself, so our "closed" set is correct.<br>
+    </p>
+}
+
+@section btnname
+{
+
+}
+
+@section url
+{
+
+}

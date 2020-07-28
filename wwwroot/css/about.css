@@ -1,0 +1,91 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+#panel {
+    height: auto;
+    overflow: auto;
+    width: 550px;
+}
+
+#profile {
+    opacity: 0.87;
+    margin-top: 40px;
+    margin-left: auto ;
+    margin-right: auto;
+    display: block;
+}
+
+#aboutme ul {
+    list-style: none;
+}
+
+#aboutme ul li::before {
+    font-size: 25px;
+    content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #9E5EA2; /* Change the color */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+#aboutme {
+    padding-left: 15px;
+    text-align: left;
+    width: 500px;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: 80px;
+    margin-bottom: 80px;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 18px;
+	color: white;
+}
+
+@media only screen and (max-width: 680px) {
+    #panel {
+        width: 450px;
+    }
+
+    #profile {
+        height: 300px;
+    }
+
+    #aboutme {
+        width: 400px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #panel {
+        width: 350px;
+    }
+
+    #profile {
+        height: 300px;
+    }
+
+    #aboutme {
+        padding: 0px;
+        width: 300px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #panel {
+        width: 310px;
+    }
+
+    #profile {
+        height: 300px;
+    }
+
+    #aboutme {
+        padding: 0px;
+        width: 285px;
+        font-size: 15px;
+    }
+}

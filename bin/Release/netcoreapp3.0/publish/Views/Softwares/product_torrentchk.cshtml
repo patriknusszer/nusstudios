@@ -1,0 +1,40 @@
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "torrentchk";
+}
+
+@section keywords {
+    <meta name="keywords" content="torrent, integrity, checker, pieces hash, shasum, metafile, bencoding" />
+}
+
+@section topheading {
+    torrentchk
+}
+
+@section subheading {
+    Torrent download integrity checker
+}
+
+@section description {
+    This tool was created to hash all the pieces of your torrent download and match against
+    the piece hash found inside the provided torrent metafile. The result is either that
+    all the pieces passed the hash checking, or that the last piece failed the checking,
+    in which case the application does not go on checking the other pieces.
+    The application will only work with a torrent metafile, it will not automatically
+    retrieve it from a magnet URI, sorry for that. The application was built with .NET Core so it
+    is cross platform.
+}
+
+@section source {
+    href="https://mega.nz/#!bEZBnAgT!RyzF0K6jCAVWFyp7lmlFzYmXLO0FnH2hDkDCHTDXyYw" target="_blank"
+}
+
+@section release {
+    href="https://mega.nz/#!TNAlCIzL!ghfOIx2zS5ulpCoO3OcSlT3bwTt4wm3iBEc3V3mpq7g" target="_blank"
+}
+
+@section projectspecs {
+    Windows console application. C#, .NET Core 2.1.
+}

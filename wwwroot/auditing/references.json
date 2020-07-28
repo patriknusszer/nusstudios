@@ -1,0 +1,32 @@
+[
+	{
+		"opinion" : "Patrik szémélyében egy megbízható, nagyon rendes és felkészult tanárt ismertem meg. Szabadidejében, hétvégén is lehet rá számítani. Bátran ajánlom Mindenkinek!",
+		"name" : "Pálvölgyi Zsombor",
+		"education" : "Greenfox academy, anyag ismétlése/gyakorlása",
+		"contacturl" : "https://www.facebook.com/zsombor.palvolgyi"
+	},
+	{
+		"opinion" : "Patrikkal jó hangulatban teltek az órák, nagyon sokat segített, mindig felkészült volt. Szabadidejében is mindig készül az órára. Jó volt tőle tanulni. Csak ajánlani tudom.",
+		"name" : "Lehota Barna",
+		"education" : "BME, anyag gyakorlata",
+		"contacturl" : "https://www.facebook.com/barna.lehota"
+	},
+	{
+		"opinion" : "Igazán hasznosak voltak az órák, nagyon jó tempóban haladtunk és minőségi oktatásban vehettem részt. Rövid idő állt rendelkezésünkre, de nagyon sokat tudtam fejlődni és az ár is korrekt volt.  Ezek után magabiztosan tudtam elmenni emelt informatika érettségire!",
+		"name" : "Lukovics Bálint",
+		"education" : "Emelt informatika érettségi",
+		"contacturl" : null
+	},
+	{
+		"opinion" : "Megbízható, felkészült, nagyon rendes. Bármivel lehet hozzá fordulni, még a szabadidejében éjszaka és hétvégén is ott van, hogy segítsen, ha szükség van rá. Mindenkinek ajánlom!",
+		"name" : "Földi Bianka Johanna",
+		"education" : "Óbudai Egyetem, anyag ismétlése/gyakorlása",
+		"contacturl" : null
+	},
+	{
+		"opinion" : "Felkészült tanár, következetes, jól összeállított tudásanyaggal. Én az adatszerkezeteket szerettem volna jobban megérteni, ezért kerestem fel Patrikot. Ha valaki szeretné a meglévő alapismereteit elmélyíteni és haladó szintre fejlődni, akkor ez egy remek választás.",
+		"name" : "Szántó Ádám",
+		"education" : "Adatszerkezeteket akarta belülről megismerni",
+		"contacturl" : null
+	}
+]

@@ -1,0 +1,68 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+#profile {
+    margin-top: 40px;
+    margin-left: auto ;
+    margin-right: auto;
+    display: block;
+}
+
+#sayhello {
+    color: #9E5EA2;
+    -webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+    font-size: 35px;
+    margin-left: auto ;
+    margin-right: auto; 
+    width: 500px;
+    text-align: center;
+}
+
+#aboutme {
+    padding-left: 15px;
+    border-left: 1px solid #9E5EA2;
+    text-align: left;
+    width: 500px;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: 80px;
+    margin-bottom: 80px;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 18px;
+	color: white;
+}
+
+@media only screen and (max-width: 680px) {
+    #sayhello {
+        width: 380px;
+        font-size: 30px;
+    }
+
+    #profile {
+        height: 300px;
+    }
+
+    #aboutme {
+        width: 400px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    #sayhello {
+        width: 300px;
+        font-size: 24px;
+    }
+
+    #profile {
+        height: 300px;
+    }
+
+    #aboutme {
+        width: 300px;
+        font-size: 15px;
+    }
+}

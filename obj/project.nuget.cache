@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "nUzk7w8F9cbTL3qaDBYmcxEdAAzBxNSfueArKZnoVBV1y/hiHGHccgD4zmZj3zEHUEFMje9pCrn9HaDVmZ8paQ==",
+  "success": true,
+  "projectFilePath": "/Users/patrik.nusszer/nusstudios/Nusstudios.csproj",
+  "expectedPackageFiles": [
+    "/Users/patrik.nusszer/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.0.0/microsoft.aspnetcore.jsonpatch.3.0.0.nupkg.sha512",
+    "/Users/patrik.nusszer/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.0.0/microsoft.aspnetcore.mvc.newtonsoftjson.3.0.0.nupkg.sha512",
+    "/Users/patrik.nusszer/.nuget/packages/microsoft.csharp/4.6.0/microsoft.csharp.4.6.0.nupkg.sha512",
+    "/Users/patrik.nusszer/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/Users/patrik.nusszer/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

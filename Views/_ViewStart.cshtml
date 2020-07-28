@@ -1,0 +1,19 @@
+﻿@{
+    string CurrentName = Convert.ToString(ViewContext.RouteData.Values["Controller"]);
+
+    switch (CurrentName)
+    {
+        case "Softwares":
+            Layout = "~/Views/Shared/_ProductLayout.cshtml";
+            break;
+        case "Mods":
+            Layout = "~/Views/Shared/_ItemLayout.cshtml";
+            break;
+        case "Articles":
+            Layout = "~/Views/Shared/_ItemLayout.cshtml";
+            break;
+        default:
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+    }
+}   

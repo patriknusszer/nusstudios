@@ -1,0 +1,122 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+.panel {
+	left: 0;
+	right: 0;
+	/* This overrides master_2.css's text-align: center; */
+	text-align: center;
+}
+
+.column {
+	display: inline-block;
+	padding-left: 10px;
+    border-left: 1px solid #9E5EA2;
+}
+
+.heading {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 22px;
+	color: #9E5EA2;
+	margin: 0px;
+	margin-bottom: 20px;
+}
+
+.integrator {
+	display: inline-block;
+	vertical-align: top;
+    margin-left: 30px;
+}
+
+.column {
+	width: 250px;
+	padding-left: 10px;
+	border-left: 1px solid #9E5EA2;
+	text-align: left;
+}
+
+.column > a {
+	margin-top: 7px;
+	display: block;
+}
+
+.column > a > p {
+	text-align: left;
+	display: inline-block;
+	width: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'LatoWebLight';
+	font-style: normal;
+	font-size: 18px;
+	color: white;
+	margin: 0px;
+	transition: color .3s ease-in-out;
+}
+
+.column > a > p:hover {
+	color: #9E5EA2;
+}
+
+@media only screen and (max-width: 1050px) {
+	.integrator {
+		display: block;
+		text-align: center;
+		margin-top: 60px;
+	}
+
+	.heading {
+		font-size: 22px;	
+	}
+
+	.column {
+		display: inline-block;
+	}
+
+	.column > a > p {
+		margin: 0px;
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.integrator {
+		display: block;
+		text-align: center;
+		margin-top: 60px;
+	}
+	
+	.heading {
+		font-size: 22px;	
+	}
+	
+	.column {
+		display: inline-block;
+	}
+
+	.column > a > p {
+		margin: 0px;
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 359px) {
+	.integrator {
+		display: block;
+		margin-top: 60px;
+	}
+	
+	.heading {
+		font-size: 18px;	
+	}
+
+	.column {
+		display: inline-block;
+	}
+	
+	.column > a > p {
+		margin: 0px;
+		font-size: 14px;
+	}
+}

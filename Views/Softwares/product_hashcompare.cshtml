@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "hashcompare";
+}
+
+@section keywords {
+    <meta name="keywords" content="has tree comparison, directory hash comparison, hash comparer" />
+}
+
+@section topheading {
+    hashcompare
+}
+
+@section subheading {
+    hashtree creation and comparison tool
+}
+
+@section description {
+    Hashcompare is hash tree creator and comparison utility, which
+    can compare the hash trees of 2 directories. You can also create a hash tree JSON
+    based on a directory to save to your disk, and later you can check the directory
+    with that hash tree JSON. And of course, you can also choose to compare 2 hash tree JSONs.
+    The hashing algorithms available are: SHA-1, SHA-2 256 bit, SHA-2 384 bit, SHA-2 512 bit, MD5,
+    Keccak 224 bit, Keccak 256 bit, Keccak 384 bit, Keccak 512 bit, SHA-3 224 bit, SHA-3 256 bit,
+    SHA-3 384 bit, SHA-3 512 bit. SHA-1, SHA-2 series, and MD5 are barely rewritten .NET reference implementations,
+    Keccak series and SHA-3 series are from an archived CodePlex project knowing Keccak,
+    and rewritten to support SHA-3 (you choose to use the standard SHA-3 padding, or the original Keccak padding).
+    The comparison does a pretty good job. There are 3 main entries: the files with common relative path ("common_path"),
+    files only present in one and files present in the other directory ("only_in_1", "only_in_2"). In the "common_path" section you can see the files listed in 4 subcategories: "accessible", "inaccessible_in_1", "inaccessible_in_2", and "inaccessible_in_both".
+    Of course the hashes are only compared if the files with common relative path are accessible in both directories.
+    Therefore "accessible" section inside common path has 2 subcategories: the files at that relative path (relative to the
+    first and second directory) have different hashes or identical hashes ("same_hash", "different_hash").
+    Both "only_in_1" and "only_in_2" have "accessible" and "inaccessible" subcategories.
+    The project is built with .NET Core so it is cross platform.
+}
+
+@section source {
+    href="https://mega.nz/#!SA5wHArD!ng-C4Zw1KpxwywdcTXD6-ADR1sk0-3N7pEWvUntN9YM" target="_blank"
+}
+
+@section release {
+    href="https://mega.nz/#!eF5GWSaD!oqNd7tWrqzSJ9RQIH7eJf81nSNyDtTSen8_eKoW3NCs" target="_blank"
+}
+
+@section projectspecs {
+    Windows console application. C#, .NET Core 2.1.
+}

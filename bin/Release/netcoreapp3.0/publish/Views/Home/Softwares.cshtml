@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Products";
+}
+
+@section meta {
+    <meta name="keywords" content="Nusstudios,softwares,open source,projects,developer" />
+    <meta name="description" content="All open source projects and applications of Nusstudios" />
+    <meta name="author" content="Patrik Nusszer" />
+}
+
+@section styles {
+    <link rel="stylesheet" type="text/css" href="~/css/latofonts.css">
+    <link rel="stylesheet" type="text/css" href="~/css/master_2.css">
+    <link rel="stylesheet" type="text/css" href="~/css/itemslisting.css">
+}
+
+@section scripts {
+    <script src="~/js/master.js"></script>
+}
+
+
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Apps</p>
+        <a asp-controller="Softwares" asp-action="product_nuss"><p onMouseOver="showInfo('An advanced Youtube video downloader for chrome', this)" onmouseout="hideInfo(this)">Nuss Youtube downloader</p></a>		<a asp-controller="Softwares" asp-action="product_nussdesktop_javafx"><p onMouseOver="showInfo('An advanced Youtube video downloader for desktops', this)" onmouseout="hideInfo(this)">Nuss Youtube downloader JavaFx</p></a>
+        <a asp-controller="Softwares" asp-action="product_nusstumblr"><p onMouseOver="showInfo('A Tumblr blog downloader', this)" onmouseout="hideInfo(this)">Tumblr Downloader</p></a>
+		<a asp-controller="Softwares" asp-action="product_instarchiver"><p onMouseOver="showInfo('Instagram account archiver', this)" onmouseout="hideInfo(this)">Instagram archiver</p></a>
+        <a asp-controller="Softwares" asp-action="product_imagetopdfui"><p onMouseOver="showInfo('Converts your images into a PDF doc', this)" onmouseout="hideInfo(this)">Image to PDF UI</p></a>
+        <a asp-controller="Softwares" asp-action="product_gia"><p onMouseOver="showInfo('Google reverse image search results backup chrome extension', this)" onmouseout="hideInfo(this)">Google Image Archiver</p></a>
+    </div>
+</div>
+
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Games</p>
+        <a asp-controller="Softwares" asp-action="product_cupmixer"><p onMouseOver="showInfo('Classic ball hunter', this)" onmouseout="hideInfo(this)">Cup Mixer</p></a></div>
+</div>
+
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Developer & Educational</p>
+        <a asp-controller="Softwares" asp-action="product_torrentchk"><p onMouseOver="showInfo('Torrent integrity checker', this)" onmouseout="hideInfo(this)">Torrentchk</p></a>
+        <a asp-controller="Softwares" asp-action="product_CPPO"><p onMouseOver="showInfo('Lightweigth object hierarchy management in C++', this)" onmouseout="hideInfo(this)">C++ Object library</p></a>
+        <a asp-controller="Softwares" asp-action="product_pixie"><p onMouseOver="showInfo('A coordinate and color grabber utility', this)" onmouseout="hideInfo(this)">Pixie</p></a>
+        <a asp-controller="Softwares" asp-action="product_pixie_macos"><p onMouseOver="showInfo('A coordinate and color grabber utility', this)" onmouseout="hideInfo(this)">Pixie for macOS</p></a>
+        <a asp-controller="Softwares" asp-action="product_tfutilpp"><p onMouseOver="showInfo('A configuration cryptor for Transformers games', this)" onmouseout="hideInfo(this)">TF_Games_Util++</p></a>
+        <a asp-controller="Softwares" asp-action="product_spltoemf"><p onMouseOver="showInfo('An .SPL to .EMF converter', this)" onmouseout="hideInfo(this)">SPL to EMF</p></a>
+        <a asp-controller="Softwares" asp-action="product_imgtopdf"><p onMouseOver="showInfo('Converts your images into a PDF doc', this)" onmouseout="hideInfo(this)">Image to PDF Console</p></a>
+        <a asp-controller="Softwares" asp-action="product_stringmath"><p onMouseOver="showInfo('A string based math library', this)" onmouseout="hideInfo(this)">StringMath Library</p></a>
+        <a asp-controller="Softwares" asp-action="product_jcore"><p onMouseOver="showInfo('A library of my general Java utilities', this)" onmouseout="hideInfo(this)">JCore library</p></a>
+        <a asp-controller="Softwares" asp-action="product_nusstudioscorecsharp"><p onMouseOver="showInfo('A library of my general C# utilities', this)" onmouseout="hideInfo(this)">Nusstudios.Core Library C#</p></a>
+        <a asp-controller="Softwares" asp-action="product_keylogger"><p onMouseOver="showInfo('Usage of SetWindowsHookEx()', this)" onmouseout="hideInfo(this)">KeyLogger</p></a>
+        <a asp-controller="Softwares" asp-action="product_xorcrypt"><p onMouseOver="showInfo('Xor cryptor and key generator script', this)" onmouseout="hideInfo(this)">Xor Crypt</p></a>
+        <a asp-controller="Softwares" asp-action="product_lilcrypto"><p onMouseOver="showInfo('XOR and XNOR crypter, key generator', this)" onmouseout="hideInfo(this)">lilcrypto</p></a>
+        <a asp-controller="Softwares" asp-action="product_stringmath_python"><p onMouseOver="showInfo('Stringmath Python port', this)" onmouseout="hideInfo(this)">Stringmath Python</p></a>
+        <a asp-controller="Softwares" asp-action="product_nussattribute"><p onMouseOver="showInfo('Cross platform file attributes modifier', this)" onmouseout="hideInfo(this)">NussAttribute</p></a>
+        <a asp-controller="Softwares" asp-action="product_swifflib"><p onMouseOver="showInfo('An incomplete Swiff-file (.swf) parser project', this)" onmouseout="hideInfo(this)">SwiffLib</p></a>
+        <a asp-controller="Softwares" asp-action="product_equslvr"><p onMouseOver="showInfo('An basic and limited equation parser', this)" onmouseout="hideInfo(this)">equslvr</p></a>
+        <a asp-controller="Softwares" asp-action="product_hashcompare"><p onMouseOver="showInfo('Hash tree generator and comparer', this)" onmouseout="hideInfo(this)">hashcompare</p></a>
+    </div>
+</div>

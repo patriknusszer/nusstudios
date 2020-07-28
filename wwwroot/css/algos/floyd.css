@@ -1,0 +1,35 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+label {
+    font-size: 12px;
+    width: 100px;
+    margin-left: 15px;
+}
+
+input[type="text"] {
+    color: white;
+    width: 30px;
+    background-color: #242434;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #9E5EA2;
+    outline: none;
+}
+
+#configuration {
+    margin-top: 30px;
+    background-color: #242434;
+    color: white;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+#configuration > div {
+    display: inline-block;
+}
+
+#floyd {
+    margin-top: 0;
+	background-color: #242434;
+}

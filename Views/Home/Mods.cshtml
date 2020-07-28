@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Mods";
+    ViewBag.ModsSelected = true;
+    ViewBag.BlogSelected = false;
+}
+
+@section meta {
+    <meta name="keywords" content="Nusstudios,mods,Transformers,War for Cybertron,Fall of Cybertron,Rise of the Dark Spark,TFOC,TWFC,TROTDS" />
+    <meta name="description" content="Nusstudios hosts the founder's, Patrik Nusszer's ultimate and DLC mods for Transformers games such as Transformers: War for Cybertron, Transformers: Fall of cybertron, and Transformers: Rise of the Dark Spark" />
+    <meta name="author" content="Patrik Nusszer" />
+}
+
+@*@section advertisement {
+    <a href="http://join.playboyplus.com/track/PatrikNusszer.RC_CF.PB_CyberClub.TGP4.0.0.0.0.0">
+        <img src="~/images/300x250_just-$1_paige.gif" alt="Playboy Plus" border=0 style="position:absolute;left:0px;">
+        <img src="~/images/111452_c0605e32ca37681cedcf19a6d47d2c3a.jpg" alt="Playboy Plus" border=0 style="width:300px;height:224px;position:absolute;left:0px;top:300px;">
+        <img src="~/images/240x300_alyssa_marie.gif" alt="Playboy Plus" border=0 style="position:absolute;left:0px;top:524px;left:50px;">
+        <img src="~/images/Banner_160x600.gif" alt="Playboy Plus" border=0 style="position:absolute;right:0px;top:100px;">
+    </a>
+}*@
+
+@section styles {
+    <link rel="stylesheet" type="text/css" href="~/css/latofonts.css">
+    <link rel="stylesheet" type="text/css" href="~/css/master_2.css">
+    <link rel="stylesheet" type="text/css" href="~/css/itemslisting.css">
+}
+
+@section scripts {
+    <script src="~/js/master.js"></script>
+}
+
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Transformers: WFC</p>
+        <a asp-controller="Mods" asp-action="mod_twfcultimate"><p>Ultimate</p></a>
+    </div>
+</div>
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Transformers: FOC and ROTDS</p>
+        <a asp-controller="Mods" asp-action="mod_tfocultimate"><p class="product">Ultimate for FOC</p></a>
+        <a asp-controller="Mods" asp-action="mod_tfoccorruptor"><p class="product">Corruptor for FOC</p></a>
+        <a asp-controller="Mods" asp-action="mod_tfocdecorruptor"><p class="product">Decorruptor for FOC</p></a>
+		<a asp-controller="Mods" asp-action="mod_trotdsdlc"><p>Preorder characters for ROTDS</p></a>
+    </div>
+</div>
+<div class="integrator">
+    <div class="column">
+        <p class="heading">Transistor for macOS</p>
+        <a asp-controller="Mods" asp-action="mod_royswap_javafx"><p>Royswap</p></a>
+    </div>
+</div>
