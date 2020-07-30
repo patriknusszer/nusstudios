@@ -18,7 +18,7 @@
         Heapsort was invented by John William Joseph Williams<br/>
         <br/>
         Heapsort has a deterministic O(nlogn) running time, with this being one of the 3 fastest sorting algorithms, and among those the slowest due to the cache misses caused by the arbitrary array jumps.<br/>
-        Unlike the other 2 O(nlogn) sorting algorithms, heapsort does not implement the divide and conquer approach.<br/>
+        Unlike the other 2 O(nlogn) sorting algorithms, heapsort does not implement the divide and conquer approach.
         It is an in-place (and instable) sort, which operates on the same input array making it use O(1) extra memory, but handles it like it was a complete binary tree, a maximum or minimum heap.<br/>
         This is the thing which makes it so fast, so much faster than a selection sort, for example.<br/>
         <br/>
@@ -33,7 +33,7 @@
         <br/>
         Note: both the nodes and levels are indexed based on zero, meaning that n = 0 means level 1<br/>
         <br/>
-        So for example, if n = 1 (level 2), then index = 2^0 = 1, because we add up the level 1 only.<br/>
+        So for example, if n = 1 (level 2), then index = 2^0 = 1, because we add up the level 1 only.<br/><br/>
         Or for example, if n = 3 (level 4), then index = 2^0 + 2^1 + 2^2 = 7, because we add up level 1, level 2, and level 3 to get index of first node at level 4.<br/>
         <br/>
         This means that, if we are looking at the indices of the leftmost nodes on each level, we see powers of 2 minus one: 0, 1, 3, 7, 15, etc...<br/>
@@ -80,85 +80,57 @@
         <br/>
         And knowing that (2 * index + 1) equals the left immediate child of the node at a given index, plus 1 will equal the right immediate child.<br/>
         <br/>
-        So where does heapsort use that formula?<br/>
+        So where does heapsort use that formula?<br/>       
         <br/>
         It has a recursive max_heapify() or min_heapify() function.<br/>
         A max_heapify() based heapsort produces a maximum heap, where both children of a node are smaller (or equal), and a min_heapify() based one produces a minimum heap, where the children of a node are both larger (or equal).<br/>
         <br/>
-        So in case of a max/min heap, wherever you look, the root node of any subtree of a tree will be the largest/smallest element in that whole subtree.<br/>
+        So in case of a maximum/minimum heap, wherever you look, the root node of any subtree of a tree will be the largest/smallest element in that whole subtree.<br/>
         <br/>
-        The heapify functions are able to heapify such a (sub)tree in which only one node is at wrong position in relation to other nodes of that (sub)tree.<br/>
-        To achieve our goal, the heapification is done in bottom up manner, meaning that this only incorrect node in heapsort is always the root/top node of the considered (sub)tree, so that both branches are valid heaps already.<br/>
-        This allows us to advance from one lower level to the higher, because if every subtree rooted at nodes of a given level are correct heaps, then the nodes on the one higher level will have both branches heapified so that you can heapify each of them.<br/>
+        The heapify functions are able to heapify such a (sub)tree in which there is a bad node, where by bad node I mean that all other nodes are at correct position relative to the rest of the nodes, and only the descendant nodes below the bad node may be at wrong position, and if so only relative to this one bad node.<br/>
         <br/>
-        In worst case, such a heapification takes at worst O(logn) time, where n is number of nodes that heapified subtree, and logn is the height of the subtree.<br/>
+        One important property of this is that the subtrees rooted at the children of the bad node are valid binary heaps.
+        That is the information we use to sort with heapify functions methodically.<br/>
         <br/>
-        And so such a heapification takes O(logn) because what it does is just swapping nodes vertically, and never steps backwards, hence O(logn).<br/>
+        1) We have an initial state: the single element trees rooted at the nodes of the lowest level which are by definition already valid binary heaps.<br/>
+        Our state always have valid binary trees rooted at the nodes of some level which is true initally as well.<br/>
         <br/>
-        On first occasion, you will need to perform heapification on every array element, starting from the nodes of the lowest level (minus 1 of course, because lowest level only consists of leaf nodes), so that you can heapify larger and larger subtrees based on the already heapified smaller subtrees on the lower level.<br/>
+        2) Our change involves heapifying the nodes on the level which is just above the level of the nodes at which the valid binary heaps of our current state are rooted. Heapification will succeed since the heapified nodes have valid binary trees to their left and right. Now our state is considered to consist of the newly produced valid binary heaps rooted at the nodes of this one upper level.<br/>
         <br/>
-        This initial heapification will take you of course O(nlogn), since you are performing O(logn) operations for almost every node.<br/>
+        So in simple terms we can heapify the subtrees rooted at the nodes of some level 'n' given the subtrees rooted at the nodes of level 'n - 1' are valid binary heaps if they indeed have children on teh previous lower level.
+        So we are basically "heapifying" the levels of our tree in bottom up manner recurcively.<br/>
         <br/>
-        Let's say you have the following tree with the following nodes:<br/>
-        <br/>
-        <br/>
-        A                   (1)<br/>
-        BC                  (2)<br/>
-        DEFG                (4)<br/>
-        HIJKLMNO            (8)<br/>
-        PQRSTUVWXYZ01234    (16)<br/>
+        A (1)<br/>
+        BC (2)<br/>
+        DEFG (4)<br/>
+        HIJKLMNO (8)<br/>
+        PQRSTUVWXYZ01234 (16)<br/>
         <br/>
         First, you would heapify the subtrees HIJKLMNO, and you can do so, since by definition, their children are already heapified, since they are not real subtrees, they are all leaf nodes.<br/>
         Now you could then heapify subtrees DEFG because subtrees HIJKLMNO are already heapified.<br/>
         Then, you could heapify subtrees BC, because subtrees DEFG are already heapified.<br/>
         And finally, you could then heapify tree A, because subtrees BC are already heapified.<br/>
         <br/>
-        So let's prove heapify functions actually work like that!<br/>
-        1) We have an initial state:<br/>
-        We have a subtree, and its 2 branches, and in both, the nodes inside are in correct relative position, meaning they are both independent, but are correct binary heaps on their own.<br/>
+        I only need to exaplin now how exactly heapification works.<br/>
+        So presume we have some tree rooted at a node 'a', then its children (if it has) are valid binary heaps, and so 'a' must be the bad boy here who requires some correction...<br/>
+        That basically means 'a' is not maximum/minimum node of the subtree rooted at 'a'. That's problem.<br/>
+        What we do is select the largest/smallest element out of 'a' and its children and swap it with with the apex (=root).
+        That will produce as a nice little triangle which is a correct binary heap on its own.<br/>
+        This swapping is a very safe operation:<br/>
         <br/>
-        2) Prove that, the change to this state produces another correct state, which is 1 correct binary heap with all elements being in correct position relative to each other!<br/>
+        1) bubbling up the maximum/minimum element will keep its original direct descendants which are now indirect descendants smaller/larger, and its new direct descendants will also be smaller/larger as required.<br/>
+        2) bubbling up the maximum/minimum element will keep its original indirect ascendants larger/smaller as required
+        3) bubbling down the "bad" node below the apex resolves the wrong relationship between them.<br/>
+        4) the last question is: is the bad node still bad at its new place relative to the nodes below it?<br/>
+        If not, we are finished with heapification.<br/>
+        If yes, we will call another heapify again on the same bad node, and please note:<br/>
+        5) bubblong down the bad node maintains the healthy relationship with its former direct ascendants if it existed, as required, and it is an important thing to remember on each recursive call starting from the 2nd, because on the first call we do not care about the ascendants of the bad node, but we do after the second.<br/>
+        6) So in summary, in worst case, you will be calling heapify again and again till it still has children relative to which it can be "bad" / can be at wrong position.<br/>
         <br/>
-        A single heapify call will restore a node and its 2 immediate children into correct relative position, meaning it will generate a correct local binary heap at that aggregate of nodes.<br/>
-        If we have a maximum heap, it is determined which of the 3 elements is the largest.<br/>
-        Given the largest element is one of the children nodes, it takes the top position and the other 2 are made to be the its children:<br/>
+        Now you can see that the algorithm is constantly moving downwards vertically meaning that a heapify will take you at worst O(log(n)) where n is the number of nodes in the subtree currently being considered/heapified.<br/>
+        As you are moving down your bad node you are always restoring a wrong position relationship between the bad number and a node below it.<br/>
         <br/>
-        Before:<br/>
-        5<br/>
-        47<br/>
-        <br/>
-        After:<br/>
-        7<br/>
-        45<br/>
-        <br/>
-        So yes, 1 heapify call indeed succeeds in creating a mini triangle which is a correct binary tree.<br/>
-        It is said that, that largest element is bubbled up, while the smaller top element is bubbled down to take its place.
-        <br/>
-        <br/>
-        A heapify can be safely performed on any binary tree, in which there is only 1 node which is in some incorrect position to some other nodes subordinate to it in the heap.<br/>
-        First off, of course, this incorrect node is the apex of the subtree which we are looking at, but whenever it is bubbled down to a lower level, we get another binary heap in which all nodes except that node are in correct position relative to each other, and the bubbled down node may only be in incorrect position relative to its subordinates - so it is always in correct position relative to its superordinates inside that subtree - until that we will continue bubbling it down, until it either hits the end of the tree at which point it simply can not be any longer at incorrect position relative to subordinates, or until, the 1 subordinate is found to be in correct position relative to it, at which point all indirect subordinates must also be in correct position relative to it.
-        <br/>
-        <br/>
-        1) Here, safe means on 1 hand, that bubbling up a node does not put that node into an incorrect position relative to any other (sub)tree nodes, if it was in correct position to all of them before, since its former immediate children are still subordinate to it, but now indirectly, and all its former indirectly superordinate nodes are still superordinate, the closest now being immediate parent to it.<br/>
-        2) Safe means, on the other hand, bubbling down a node does not put that node into an incorrect position relative to its former superordinate nodes, which are still superordinate to it, though all of them indirectly.<br/>
-        3) Safe also means all other nodes stayed at their place, therefore they are at correct positions relative to each other
-        4) However, the bubbled down node can still be at incorrect position relative to its subordinate nodes
-        <br/>
-        <br/>
-        That means, whenever we call heapification for the same node, it turns a subordinate which is in incorrect position relative to it into its immediate parent whcih must be at correct position now relative to it, and it is recursively applied up until:<br/>
-        <br/>
-        1) none of the new immediate children of the bubbled down node are in incorrect position relative to it, which of course also means none of its indirect children are at incorrect position relative to it<br/>
-        2) it has no children, because we have arrived at the end of the tree, so it must be at correct position<br/>
-        <br/>
-        That means, this constantly bubbled down node eventually gets into correct position relative to all other elements in that subtree which we were looking that, so the change made to our initial state indeed produces another correct state.
-        <br/>
-        <br/>
-        Since we are constantly bubbling down a node vertically, it is also proven that in worst case we are doing as many operations as tall the subtree was, which is O(logn) in worst case.<br/>
-        <br/>
-        So we can build a binary heap out of our input array in O(nlogn).<br/>
-        <br/>
-        Building a minimum heap is exactly the same story, but instread you are looking for smallest element out of the 3 and bubble that up, while bubbling the apex down to its place.
-        <br/>
+        And you know that we call heapify in the first part of our algorithm for almost all nodes of the complete tree you get O(nlog(n)) for the first part. That is what it takes to turn your array into a binary heap.<br/>
         <br/>
         But that is only half of the story.<br/>
         <br/>
@@ -172,9 +144,7 @@
         And again, you swap the apex with the node at the end of the last array index minus one, which is anyway the end of the 1 smaller heap we are considering in this second step.<br/>
         And you continue doing it, until you have an array with a length of at least 3 nodes.<br/>
         <br/>
-        <br/>
-        So this second part of heapsort will take you another O(nlogn) operations, and since you have O(nlogn) for first part, and O(nlogn) for second, you also have eventually O(nlogn).
-        <br/>
+        So this second part of heapsort will take you another O(nlogn) operations, and since you have O(nlogn) for first part, and O(nlogn) for second, you also have eventually O(nlogn). 
     </article>
 }
 
