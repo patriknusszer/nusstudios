@@ -18,12 +18,12 @@
         Heapsort was invented by John William Joseph Williams<br/>
         <br/>
         Heapsort has a deterministic O(nlogn) running time, with this being one of the 3 fastest sorting algorithms, and among those the slowest due to the cache misses caused by the arbitrary array jumps.<br/>
-        Unlike the other 2 O(nlogn) sorting algorithms, heapsort does not implement the divide and conquer approach.
+        Unlike the other 2 O(nlogn) sorting algorithms, heapsort does not implement the divide and conquer approach.<br/>
         It is an in-place (and instable) sort, which operates on the same input array making it use O(1) extra memory, but handles it like it was a complete binary tree, a maximum or minimum heap.<br/>
         This is the thing which makes it so fast, so much faster than a selection sort, for example.<br/>
         <br/>
         A complete binary tree is a binary tree in which every level is complete, and only the lowest level can be an exception from this, which must fill the leftmost part of that level given its indeed incomplete.<br/>
-        The nodes in this complete binary tree are in the same order as the characters of the text of a page in a book as you are reading it.<br/>
+        The nodes in this complete binary tree are in the same order as the characters of the text of a page in a book as you are reading it.
         But here, instead of lines of text, you have levels.<br/>
         The top node or root is at position 0 = (2^0 - 1), then its leftmost child is at position 1 = (2^1 - 1), and then its rightmost child is at position 2.<br/>
         Following that analogy, the leftmost child of the leftmost child of the root node is at position 3 (= 2^2 - 1), and the leftmost child of that node must be then at position 7 (= 8 - 1).<br/>
@@ -33,7 +33,7 @@
         <br/>
         Note: both the nodes and levels are indexed based on zero, meaning that n = 0 means level 1<br/>
         <br/>
-        So for example, if n = 1 (level 2), then index = 2^0 = 1, because we add up the level 1 only.<br/><br/>
+        So for example, if n = 1 (level 2), then index = 2^0 = 1, because we add up the level 1 only.<br/>
         Or for example, if n = 3 (level 4), then index = 2^0 + 2^1 + 2^2 = 7, because we add up level 1, level 2, and level 3 to get index of first node at level 4.<br/>
         <br/>
         This means that, if we are looking at the indices of the leftmost nodes on each level, we see powers of 2 minus one: 0, 1, 3, 7, 15, etc...<br/>
@@ -80,16 +80,19 @@
         <br/>
         And knowing that (2 * index + 1) equals the left immediate child of the node at a given index, plus 1 will equal the right immediate child.<br/>
         <br/>
-        So where does heapsort use that formula?<br/>       
+        So where does heapsort use that formula?<br/>
         <br/>
         It has a recursive max_heapify() or min_heapify() function.<br/>
         A max_heapify() based heapsort produces a maximum heap, where both children of a node are smaller (or equal), and a min_heapify() based one produces a minimum heap, where the children of a node are both larger (or equal).<br/>
         <br/>
         So in case of a maximum/minimum heap, wherever you look, the root node of any subtree of a tree will be the largest/smallest element in that whole subtree.<br/>
         <br/>
-        The heapify functions are able to heapify such a (sub)tree in which there is a bad node, where by bad node I mean that all other nodes are at correct position relative to the rest of the nodes, and only the descendant nodes below the bad node may be at wrong position, and if so only relative to this one bad node.<br/>
+        The heapify functions are able to heapify such a (sub)tree in which there is a bad node, where by bad node I mean that all other nodes are at correct position relative to the rest of the nodes, and only either the descendant or ascendant nodes below or above the bad node may be at wrong position, and if so only relative to this one bad node.<br/>
+        A node is considered to be at wrong position given not all nodes above it are all larger/smaller, and or not all nodes below it are all smaller/larger.<br/>
         <br/>
-        One important property of this is that the subtrees rooted at the children of the bad node are valid binary heaps.
+        For the sake of simplicity and tradition let's now only consider that case when the nodes which are in wrong position with the bad node are below it.<br/>
+        <br/>
+        One important property of this case is that the subtrees rooted at the children of the bad node are valid binary heaps.
         That is the information we use to sort with heapify functions methodically.<br/>
         <br/>
         1) We have an initial state: the single element trees rooted at the nodes of the lowest level which are by definition already valid binary heaps.<br/>
@@ -97,7 +100,7 @@
         <br/>
         2) Our change involves heapifying the nodes on the level which is just above the level of the nodes at which the valid binary heaps of our current state are rooted. Heapification will succeed since the heapified nodes have valid binary trees to their left and right. Now our state is considered to consist of the newly produced valid binary heaps rooted at the nodes of this one upper level.<br/>
         <br/>
-        So in simple terms we can heapify the subtrees rooted at the nodes of some level 'n' given the subtrees rooted at the nodes of level 'n - 1' are valid binary heaps if they indeed have children on teh previous lower level.
+        So in simple terms we can heapify the subtrees rooted at the nodes of some level 'n' given the subtrees rooted at the nodes of level 'n - 1' are valid binary heaps if they indeed have children on teh previous lower level.<br/>
         So we are basically "heapifying" the levels of our tree in bottom up manner recurcively.<br/>
         <br/>
         A (1)<br/>
@@ -114,7 +117,7 @@
         I only need to exaplin now how exactly heapification works.<br/>
         So presume we have some tree rooted at a node 'a', then its children (if it has) are valid binary heaps, and so 'a' must be the bad boy here who requires some correction...<br/>
         That basically means 'a' is not maximum/minimum node of the subtree rooted at 'a'. That's problem.<br/>
-        What we do is select the largest/smallest element out of 'a' and its children and swap it with with the apex (=root).
+        What we do is select the largest/smallest element out of 'a' and its children and swap it with with the apex (=root).<br/>
         That will produce as a nice little triangle which is a correct binary heap on its own.<br/>
         This swapping is a very safe operation:<br/>
         <br/>
@@ -144,7 +147,7 @@
         And again, you swap the apex with the node at the end of the last array index minus one, which is anyway the end of the 1 smaller heap we are considering in this second step.<br/>
         And you continue doing it, until you have an array with a length of at least 3 nodes.<br/>
         <br/>
-        So this second part of heapsort will take you another O(nlogn) operations, and since you have O(nlogn) for first part, and O(nlogn) for second, you also have eventually O(nlogn). 
+        So this second part of heapsort will take you another O(nlogn) operations, and since you have O(nlogn) for first part, and O(nlogn) for second, you also have eventually O(nlogn).
     </article>
 }
 

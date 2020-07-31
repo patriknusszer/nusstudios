@@ -40,6 +40,13 @@ var node = /** @class */ (function () {
         this.drawCircle(x, y, r);
         this.drawText(x - (7 * (this.r / 22)), y + (7 * (this.r / 22)), px, str);
     };
+    node.drawLoop = function (ctx, epix, epiy, epir, px) {
+        ctx.beginPath();
+        ctx.arc(epix, epiy, epir, 0 * Math.PI, 2 * Math.PI);
+        ctx.lineWidth = px;
+        ctx.strokeStyle = "#9586bf";
+        ctx.stroke();
+    };
     node.prototype.drawLoop = function (epix, epiy, epir, px) {
         this.ctx.beginPath();
         this.ctx.arc(epix, epiy, epir, 0 * Math.PI, 2 * Math.PI);
@@ -83,6 +90,38 @@ var node = /** @class */ (function () {
         this.next = new node(this.rotation, String.fromCharCode(this.chr.charCodeAt(0) + 1), this.ctx, tox, toy, this.r, this.px, this.lineWidth);
         this.next.prev = this.next.prevlst = this;
         return this.next;
+    };
+    node.drawCycle = function (ctx, r, px, lineWidth, rotation, x, y, nodeNum, cycler) {
+        if (!rotation)
+            node.drawLoop(ctx, x + cycler, y, cycler, 3);
+        else
+            node.drawLoop(ctx, x, y + cycler, cycler, 3);
+        var nodes = new Array();
+        var chr = 'A';
+        var n = new cnode(rotation, chr, ctx, x, y, r, px, lineWidth);
+        nodes.push(n);
+        var entry = n;
+        var next = entry;
+        entry.prev = entry.prevlst = null;
+        var delta = Math.PI * 2 / nodeNum;
+        var rad = Math.PI - delta;
+        if (rotation)
+            rad -= (Math.PI / 2);
+        for (var i = 0; i < nodeNum - 1; i++) {
+            var dx = Math.cos(rad) * cycler;
+            var dy = Math.sin(rad) * cycler;
+            if (!rotation)
+                nodes.push(n.next = new cnode(rotation, String.fromCharCode(n.chr.charCodeAt(0) + 1), ctx, x + cycler + dx, y - dy, r, px, lineWidth));
+            else
+                nodes.push(n.next = new cnode(rotation, String.fromCharCode(n.chr.charCodeAt(0) + 1), ctx, x + dx, y + cycler - dy, r, px, lineWidth));
+            n.next.prev = n;
+            n.next.prevlst = n;
+            n = n.next;
+            rad -= delta;
+        }
+        n.next = entry;
+        entry.prev = n;
+        return nodes;
     };
     node.prototype.drawCycle = function (dx, dy, nodeNum, cycler) {
         var radius = cycler;
@@ -244,6 +283,23 @@ var arcmovedat = /** @class */ (function (_super) {
         _this.radius = radius;
         return _this;
     }
+    arcmovedat.prototype.getnextposbeta = function (step, outOfSteps) {
+        var origx = this.epipos.getx() - this.origpos.getx();
+        var origy = this.epipos.gety() - this.origpos.gety();
+        var destx = this.epipos.getx() - this.topos.getx();
+        var desty = this.epipos.gety() - this.topos.gety();
+        var origdeg = Math.atan2(origy, origx);
+        if (origdeg < 0)
+            origdeg += 2 * Math.PI;
+        var destdeg = Math.atan2(desty, destx);
+        if (destdeg < 0)
+            destdeg += 2 * Math.PI;
+        var deltadeg = destdeg - origdeg;
+        var curdeg = origdeg + deltadeg * step / outOfSteps;
+        var curx = Math.sin(curdeg) * this.radius;
+        var cury = Math.cos(curdeg) * this.radius;
+        return new pos(this.epipos.getx() - curx, this.epipos.gety() - cury);
+    };
     arcmovedat.prototype.getnextpos = function (step, outOfSteps) {
         var origAngle;
         var toAngle;
@@ -302,23 +358,35 @@ var Animator = /** @class */ (function () {
     };
     Animator.prototype.drawList = function () {
         var nodes = Array();
-        var n = new node(this.rotation, 'A', this.ctx, this.initx, this.inity, this.noder, this.nodepx, this.nodeborder);
-        nodes.push(n);
-        for (var i = 0; i < this.tail - 2; i++) {
+        if (this.tail == 1) {
             if (!this.rotation)
-                nodes.push(n = n.drawNext(this.nodedist, 0));
+                this.cyclepos = new pos(this.initx + this.cycler, this.inity);
             else
-                nodes.push(n = n.drawNext(0, this.nodedist));
+                this.cyclepos = new pos(this.initx, this.inity + this.cycler);
+            return node.drawCycle(this.ctx, this.noder, this.nodepx, this.nodeborder, this.rotation, this.initx, this.inity, this.cycle, this.cycler);
         }
-        if (!this.rotation)
-            this.cyclepos = new pos(nodes[nodes.length - 1].getx() + this.nodedist + this.cycler, nodes[nodes.length - 1].gety());
-        else
-            this.cyclepos = new pos(nodes[nodes.length - 1].getx(), nodes[nodes.length - 1].gety() + this.nodedist + this.cycler);
-        if (!this.rotation)
-            nodes = nodes.concat(nodes[nodes.length - 1].drawCycle(this.nodedist, 0, this.cycle, this.cycler));
-        else
-            nodes = nodes.concat(nodes[nodes.length - 1].drawCycle(0, this.nodedist, this.cycle, this.cycler));
-        return nodes;
+        else {
+            var n;
+            for (var i = 0; i < this.tail - 1; i++) {
+                if (!n) {
+                    n = new node(this.rotation, 'A', this.ctx, this.initx, this.inity, this.noder, this.nodepx, this.nodeborder);
+                    nodes.push(n);
+                }
+                else if (!this.rotation)
+                    nodes.push(n = n.drawNext(this.nodedist, 0));
+                else
+                    nodes.push(n = n.drawNext(0, this.nodedist));
+            }
+            if (!this.rotation)
+                this.cyclepos = new pos(nodes[nodes.length - 1].getx() + this.nodedist + this.cycler, nodes[nodes.length - 1].gety());
+            else
+                this.cyclepos = new pos(nodes[nodes.length - 1].getx(), nodes[nodes.length - 1].gety() + this.nodedist + this.cycler);
+            if (!this.rotation)
+                nodes = nodes.concat(nodes[nodes.length - 1].drawCycle(this.nodedist, 0, this.cycle, this.cycler));
+            else
+                nodes = nodes.concat(nodes[nodes.length - 1].drawCycle(0, this.nodedist, this.cycle, this.cycler));
+            return nodes;
+        }
     };
     Animator.prototype.makeMeet1 = function (list) {
         var _this = this;
@@ -368,15 +436,26 @@ var Animator = /** @class */ (function () {
         };
         var tmover;
         var hmover;
-        if (prevt instanceof cnode && t instanceof cnode)
-            tmover = new arcmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety(), this.cyclepos.getx(), this.cyclepos.gety(), this.cycler);
-        else
-            tmover = new linearmovedat(prevt.getx(), t.getprev().gety(), t.getx(), t.gety());
-        if (prevh instanceof cnode && h instanceof cnode)
-            hmover = new arcmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety(), this.cyclepos.getx(), this.cyclepos.gety(), this.cycler);
-        else
-            hmover = new linearmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety());
-        crs.move(tmover, hmover, this.time, this.refresh, callback);
+        if (!(prevh instanceof cnode) && h instanceof cnode && prevh.getnext() instanceof cnode) {
+            tmover = new linearmovedat(prevt.getx(), prevt.gety(), prevt.getx() + ((t.getx() - prevt.getx()) / 2), prevt.gety() + ((t.gety() - prevt.gety()) / 2));
+            hmover = new linearmovedat(prevh.getx(), prevh.gety(), prevh.getnext().getx(), prevh.getnext().gety());
+            crs.move(tmover, hmover, this.time / 2, this.refresh, function () {
+                tmover = new linearmovedat(prevt.getx() + ((t.getx() - prevt.getx()) / 2), prevt.gety() + ((t.gety() - prevt.gety()) / 2), t.getx(), t.gety());
+                hmover = new arcmovedat(prevh.getnext().getx(), prevh.getnext().gety(), h.getx(), h.gety(), _this.cyclepos.getx(), _this.cyclepos.gety(), _this.cycler);
+                crs.move(tmover, hmover, _this.time / 2, _this.refresh, callback);
+            });
+        }
+        else {
+            if (prevt instanceof cnode && t instanceof cnode)
+                tmover = new arcmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety(), this.cyclepos.getx(), this.cyclepos.gety(), this.cycler);
+            else
+                tmover = new linearmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety());
+            if (prevh instanceof cnode && h instanceof cnode)
+                hmover = new arcmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety(), this.cyclepos.getx(), this.cyclepos.gety(), this.cycler);
+            else
+                hmover = new linearmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety());
+            crs.move(tmover, hmover, this.time, this.refresh, callback);
+        }
     };
     Animator.prototype.makeMeet2 = function (list, t) {
         var _this = this;
@@ -386,48 +465,56 @@ var Animator = /** @class */ (function () {
         var h = list[1];
         var t = t.getnext();
         var crs = new creatures(t.getprev().getx(), t.getprev().gety(), h.getprev().getx(), h.getprev().gety(), this.width, this.height, this.ctx, this.creaturesr);
-        var callback = function () {
-            if (!_this.terminateFlag) {
-                if (t != h) {
-                    prevt = t;
-                    prevh = h;
-                    t = t.getnext();
-                    h = h.getnext();
-                    setTimeout(function () {
-                        var tmover;
-                        var hmover;
-                        if (prevt instanceof cnode && t instanceof cnode)
-                            tmover = new arcmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety(), _this.cyclepos.getx(), _this.cyclepos.gety(), _this.cycler);
-                        else
-                            tmover = new linearmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety());
-                        if (prevh instanceof cnode && h instanceof cnode)
-                            hmover = new arcmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety(), _this.cyclepos.getx(), _this.cyclepos.gety(), _this.cycler);
-                        else
-                            hmover = new linearmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety());
-                        crs.move(tmover, hmover, _this.time, _this.refresh, callback);
-                    }, 120);
+        if (this.tail == 1) {
+            setTimeout(function () {
+                _this.ctx.putImageData(_this.snapshot, 0, 0);
+                _this.makeMeet1(list);
+            }, 100);
+        }
+        else {
+            var callback_1 = function () {
+                if (!_this.terminateFlag) {
+                    if (t != h) {
+                        prevt = t;
+                        prevh = h;
+                        t = t.getnext();
+                        h = h.getnext();
+                        setTimeout(function () {
+                            var tmover;
+                            var hmover;
+                            if (prevt instanceof cnode && t instanceof cnode)
+                                tmover = new arcmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety(), _this.cyclepos.getx(), _this.cyclepos.gety(), _this.cycler);
+                            else
+                                tmover = new linearmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety());
+                            if (prevh instanceof cnode && h instanceof cnode)
+                                hmover = new arcmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety(), _this.cyclepos.getx(), _this.cyclepos.gety(), _this.cycler);
+                            else
+                                hmover = new linearmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety());
+                            crs.move(tmover, hmover, _this.time, _this.refresh, callback_1);
+                        }, 120);
+                    }
+                    else {
+                        setTimeout(function () {
+                            _this.ctx.putImageData(_this.snapshot, 0, 0);
+                            _this.makeMeet1(list);
+                        }, 100);
+                    }
                 }
-                else {
-                    setTimeout(function () {
-                        _this.ctx.putImageData(_this.snapshot, 0, 0);
-                        _this.makeMeet1(list);
-                    }, 100);
-                }
-            }
+                else
+                    _this.terminateCallback();
+            };
+            var tmover = void 0;
+            var hmover = void 0;
+            if (prevt instanceof cnode && t instanceof cnode)
+                tmover = new arcmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety(), this.cyclepos.getx(), this.cyclepos.gety(), this.cycler);
             else
-                _this.terminateCallback();
-        };
-        var tmover;
-        var hmover;
-        if (prevt instanceof cnode && t instanceof cnode)
-            tmover = new arcmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety(), this.cyclepos.getx(), this.cyclepos.gety(), this.cycler);
-        else
-            tmover = new linearmovedat(prevt.getx(), t.getprev().gety(), t.getx(), t.gety());
-        if (prevh instanceof cnode && h instanceof cnode)
-            hmover = new arcmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety(), this.cyclepos.getx(), this.cyclepos.gety(), this.cycler);
-        else
-            hmover = new linearmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety());
-        crs.move(tmover, hmover, this.time, this.refresh, callback);
+                tmover = new linearmovedat(prevt.getx(), prevt.gety(), t.getx(), t.gety());
+            if (prevh instanceof cnode && h instanceof cnode)
+                hmover = new arcmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety(), this.cyclepos.getx(), this.cyclepos.gety(), this.cycler);
+            else
+                hmover = new linearmovedat(prevh.getx(), prevh.gety(), h.getx(), h.gety());
+            crs.move(tmover, hmover, this.time, this.refresh, callback_1);
+        }
     };
     return Animator;
 }());
