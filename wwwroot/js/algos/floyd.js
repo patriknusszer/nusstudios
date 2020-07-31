@@ -465,7 +465,7 @@ var Animator = /** @class */ (function () {
         var h = list[1];
         var t = t.getnext();
         var crs = new creatures(t.getprev().getx(), t.getprev().gety(), h.getprev().getx(), h.getprev().gety(), this.width, this.height, this.ctx, this.creaturesr);
-        if (this.tail == 1) {
+        if (this.tail == 0) {
             setTimeout(function () {
                 _this.ctx.putImageData(_this.snapshot, 0, 0);
                 _this.makeMeet1(list);
