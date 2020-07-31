@@ -358,7 +358,7 @@ var Animator = /** @class */ (function () {
     };
     Animator.prototype.drawList = function () {
         var nodes = Array();
-        if (this.tail == 1) {
+        if (this.tail == 0) {
             if (!this.rotation)
                 this.cyclepos = new pos(this.initx + this.cycler, this.inity);
             else
@@ -367,7 +367,7 @@ var Animator = /** @class */ (function () {
         }
         else {
             var n;
-            for (var i = 0; i < this.tail - 1; i++) {
+            for (var i = 0; i < this.tail; i++) {
                 if (!n) {
                     n = new node(this.rotation, 'A', this.ctx, this.initx, this.inity, this.noder, this.nodepx, this.nodeborder);
                     nodes.push(n);
