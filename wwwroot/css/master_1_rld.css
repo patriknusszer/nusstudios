@@ -23,6 +23,18 @@
 	}
 }
 
+.flag {
+	height: 12px;
+	width: 36px;
+	display: inline-block;
+}
+
+#flags {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
+
 body {
 	margin: 0;
 }

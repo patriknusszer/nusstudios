@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Nusstudios.Models;
+using Nusstudios.Common;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,194 +12,161 @@ namespace Nusstudios.Controllers
 {
     public class SoftwaresController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult product_CPPO()
+        [Route("{gb?}")]
+        public IActionResult CPPO(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/CPPO", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_nuss()
+        public IActionResult nuss(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/nuss", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_nussdesktop()
+        public IActionResult nussdesktop(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/nussdesktop", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-		public IActionResult product_nussdesktop_javafx()
+		public IActionResult nussdesktop_javafx(bool? gb)
 		{
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
-		}
-
-		public IActionResult product_swifflib()
-        {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = true;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/nussdesktop_javafx", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_equslvr()
+		public IActionResult swifflib(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/swifflib", true, true, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_cupmixer()
+        public IActionResult equslvr(bool? gb)
         {
-            ViewBag.HasRelease = false;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/equslvr", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_gia()
+        public IActionResult cupmixer(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/cupmixer", false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_nussattribute()
+        public IActionResult gia(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/gia", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_stringmath()
+        public IActionResult nussattribute(bool? gb)
+        {
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/nussattribute", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+        }
+
+        public IActionResult stringmath(bool? gb)
 		{
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/stringmath", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-		public IActionResult product_stringmath_python()
+		public IActionResult stringmath_python(bool? gb)
 		{
-            ViewBag.HasRelease = false;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/stringmath_python", false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-		public IActionResult product_jcore()
+		public IActionResult jcore(bool? gb)
 		{
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
-		}
-
-        public IActionResult product_nusstudioscorecsharp()
-        {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/jcore", false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_imgtopdfui()
+        public IActionResult nusstudioscorecsharp(bool? gb)
+        {
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/nusstudioscorecsharp", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+        }
+
+        public IActionResult imgtopdfui(bool? gb)
 		{
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
-		}
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/imgtopdfui", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+        }
 
-		public IActionResult product_imgtopdf()
+		public IActionResult imgtopdf(bool? gb)
 		{
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
-		}
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/imgtopdf", false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+        }
 
-		public IActionResult product_spltoemf()
+		public IActionResult spltoemf(bool? gb)
 		{
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
-		}
-
-        public IActionResult product_nusstumblr()
-        {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/spltoemf", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-		public IActionResult product_instarchiver()
+        public IActionResult nusstumblr(bool? gb)
+        {
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/nusstumblr", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+        }
+
+		public IActionResult instarchiver(bool? gb)
 		{
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
-		}
-
-        public IActionResult product_pixie()
-        {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/instarchiver", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_pixie_macos()
+        public IActionResult pixie(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/pixie", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_tfutilpp()
+        public IActionResult pixie_macos(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/pixie_macos", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_keylogger()
+        public IActionResult tfutilpp(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/tfutilpp", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_xorcrypt()
+        public IActionResult keylogger(bool? gb)
         {
-            ViewBag.HasRelease = false;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/keylogger", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_lilcrypto()
+        public IActionResult xorcrypt(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/xorcrypt", false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_lilcryptoc()
+        public IActionResult lilcryptoc(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/lilcryptoc", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_lilcryptocpp()
+        public IActionResult lilcryptocpp(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/lilcryptocpp", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult product_torrentchk()
+        public IActionResult torrentchk(bool? gb)
         {
-            ViewBag.HasRelease = true;
-            ViewBag.HasExtraInfo = false;
-            return View();
+            string val;
+            return View(new SoftwaresViewModel("https://nusstudios.com/Softwares/torrentchk", true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
     }
 }

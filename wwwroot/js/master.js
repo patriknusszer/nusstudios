@@ -74,6 +74,58 @@ function reflow(elt) {
     elt.offsetHeight
 }
 
+function packmenus(menu_text_block, gb) {
+	var a = document.createElement('a')
+	a.href = '/Home/Softwares/' + (gb ? 'true' : 'false')
+	var p = document.createElement('p')
+	p.innerHTML = (gb ? 'Softwares' : 'Projektek')
+	p.className = 'p_white'
+	a.appendChild(p)
+	menu_text_block.appendChild(a)
+
+	var a = document.createElement('a')
+	a.href = '/Home/Blog/' + (gb ? 'true' : 'false')
+	var p = document.createElement('p')
+	p.innerHTML = 'Blog'
+	p.className = 'p_white'
+	a.appendChild(p)
+	menu_text_block.appendChild(a)
+
+	var a = document.createElement('a')
+	a.href = '/Home/NussAPI/' + (gb ? 'true' : 'false')
+	var p = document.createElement('p')
+	p.innerHTML = 'NussAPI'
+	p.className = 'p_white'
+	a.appendChild(p)
+	menu_text_block.appendChild(a)
+
+	var a = document.createElement('a')
+	a.href = '/Home/Edu/' + (gb ? 'true' : 'false')
+	var p = document.createElement('p')
+	p.innerHTML = (gb ? 'Tutoring' : 'Magántanítás')
+	p.className = 'p_white'
+	a.appendChild(p)
+	menu_text_block.appendChild(a)
+
+
+	var a = document.createElement('a')
+	a.href = '/Home/Reference/' + (gb ? 'true' : 'false')
+	var p = document.createElement('p')
+	p.innerHTML = (gb ? 'Reference' : 'Referenciáim')
+	p.className = 'p_white'
+	a.appendChild(p)
+	menu_text_block.appendChild(a)
+
+
+	var a = document.createElement('a')
+	a.href = '/Home/Contact/' + (gb ? 'true' : 'false')
+	var p = document.createElement('p')
+	p.innerHTML = (gb ? 'Contact' : 'Kapcsolat')
+	p.className = 'p_white'
+	a.appendChild(p)
+	menu_text_block.appendChild(a)
+}
+
 function addMenuMobile(navbar) {
 	var mobile_menu_btn = document.createElement('div')
 	mobile_menu_btn.innerHTML = '='
@@ -85,49 +137,7 @@ function addMenuMobile(navbar) {
 			var mobile_menu = document.createElement('div')
 			var menu_text_block = document.createElement('div')
 			menu_text_block.id = 'menu_text_block'
-			var a = document.createElement('a')
-			a.href = '/Home/Softwares'
-			var p = document.createElement('p')
-			p.innerHTML = 'Softwares'
-			p.className = 'p_white'
-			a.appendChild(p)
-			menu_text_block.appendChild(a)
-			a = document.createElement('a')
-			a.href = '/Home/Blog'
-			p = document.createElement('p')
-			p.innerHTML = 'Blog'
-			p.className = 'p_white'
-			a.appendChild(p)
-            menu_text_block.appendChild(a)
-            a = document.createElement('a')
-            a.href = '/Home/NussAPI'
-            p = document.createElement('p')
-            p.innerHTML = 'NussAPI'
-            p.className = 'p_white'
-            a.appendChild(p)
-            menu_text_block.appendChild(a)
-			a = document.createElement('a')
-			a.href = '/Home/Edu'
-			p = document.createElement('p')
-			p.innerHTML = 'Magántanítás'
-			p.className = 'p_white'
-			a.appendChild(p)
-			menu_text_block.appendChild(a)
-			a = document.createElement('a')
-			a.href = '/Home/Reference'
-			p = document.createElement('p')
-			p.innerHTML = 'Referenciáim'
-			p.className = 'p_white'
-			a.appendChild(p)
-			menu_text_block.appendChild(a)
-			a = document.createElement('a')
-			a.href = '/Home/Contact'
-			p = document.createElement('p')
-			p.innerHTML = 'Contact'
-			p.className = 'p_white'
-			a.appendChild(p)
-			menu_text_block.appendChild(a)
-			menu_text_block.id= 'menu_text_block'
+			packmenus(menu_text_block, window.location.href.includes('true'))
 			var menu_block = document.createElement('div')
 			menu_block.appendChild(menu_text_block)
 			menu_block.id = 'menu_block'

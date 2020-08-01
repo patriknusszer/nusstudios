@@ -23,6 +23,18 @@
 	}
 }
 
+.flag {
+	height: 12px;
+	width: 36px;
+	display: inline-block;
+}
+
+#flags {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
+
 .menuitem:hover {
 	color: #9E5EA2;
 	/* border-bottom-color: #9E5EA2; */

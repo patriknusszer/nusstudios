@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-    @if (!ViewBag.HasRelease)
+    @if (!Model.HasRelease)
     {
         try
         {
@@ -9,7 +9,7 @@
         catch (Exception) { }
     }
 
-    @if (!ViewBag.HasExtraInfo)
+    @if (!Model.HasExtraInfo)
     {
         try
         {
@@ -42,7 +42,7 @@
     <body>
         <div id="background"></div>
         <div id="navbar" align="center">
-            <a asp-controller="Home" asp-action="Index">
+            <a asp-controller="Home" asp-action="Index" asp-route-gb="@(Model.GB ? "true" : "false")">
                 <div id="navbar_logo">
                     <svg width="100%" height="100%" viewBox="0 0 118 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
                     <g transform="matrix(1,0,0,1,-627.592,-249.486)">
@@ -58,34 +58,34 @@
                     </svg>
                 </div>
             </a>
-            <a asp-controller="Home" asp-action="Softwares">
-                <div title="Softwares" class="selected menuitem">
-                    Softwares
+            <a asp-controller="Home" asp-action="Softwares" asp-route-gb="@(Model.GB ? "true" : "false")">
+                <div title="@(Model.GB ? "Softwares" : "Projektek")" class="menuitem selected">
+                    @(Model.GB ? "Softwares" : "Projektek")
                 </div>
             </a>
-            <a asp-controller="Home" asp-action="Blog">
+            <a asp-controller="Home" asp-action="Blog" asp-route-gb="@(Model.GB ? "true" : "false")">
                 <div title="Blog" class="menuitem">
                     Blog
                 </div>
             </a>
-            <a asp-controller="Home" asp-action="NussAPI">
+            <a asp-controller="Home" asp-action="NussAPI" asp-route-gb="@(Model.GB ? "true" : "false")">
                 <div title="NussAPI" class="menuitem">
                     NussAPI
                 </div>
             </a>
-            <a asp-controller="Home" asp-action="Edu">
-                <div title="Magántanítás" class="menuitem">
-                    Magántanítás
+            <a asp-controller="Home" asp-action="Edu" asp-route-gb="@(Model.GB ? "true" : "false")">
+                <div title="@(Model.GB ? "Tutoring" : "Magántanítás")" class="menuitem">
+                    @(Model.GB ? "Tutoring" : "Magántanítás")
                 </div>
             </a>
-            <a asp-controller="Home" asp-action="Reference">
-                <div title="Referenciáim" class="menuitem">
-                    Referenciáim
+            <a asp-controller="Home" asp-action="Reference" asp-route-gb="@(Model.GB ? "true" : "false")">
+                <div title="@(Model.GB ? "Reference" : "Referenciáim")" class="menuitem">
+                    @(Model.GB ? "Reference" : "Referenciáim")
                 </div>
             </a>
-            <a asp-controller="Home" asp-action="Contact">
-                <div title="Contact" class="menuitem">
-                    Contact
+            <a asp-controller="Home" asp-action="Contact" asp-route-gb="@(Model.GB ? "true" : "false")">
+                <div title="@(Model.GB ? "Contact" : "Kapcsolat")" class="menuitem">
+                    @(Model.GB ? "Contact" : "Kapcsolat")
                 </div>
             </a>
         </div>
@@ -105,7 +105,7 @@
                     Source
                 </div>
             </a>
-            @if (ViewBag.HasRelease)
+            @if (Model.HasRelease)
             {
                 <a @RenderSection("release")>
                     <div class="downloadbtn">
@@ -118,7 +118,7 @@
             <div id="about">
                 <h1 class="heading">Language, target platform & version</h1>
                 <p>@RenderSection("projectspecs")</p>
-                @if (ViewBag.HasExtraInfo)
+                @if (Model.HasExtraInfo)
                 {
                     @RenderSection("aboutextra", false)
                 }
