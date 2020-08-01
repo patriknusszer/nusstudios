@@ -1,12 +1,5 @@
 ﻿<Properties StartupConfiguration="{B7E8FA7C-7F3D-4C93-9835-767D21F7B463}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/css/master_3.css">
-    <Files>
-      <File FileName="wwwroot/css/master_1.css" Line="172" Column="1" />
-      <File FileName="wwwroot/css/master_1_item.css" Line="1" Column="1" />
-      <File FileName="wwwroot/css/master_1_rld.css" Line="192" Column="2" />
-      <File FileName="wwwroot/css/master_2.css" Line="158" Column="2" />
-      <File FileName="wwwroot/css/master_3.css" Line="159" Column="2" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
