@@ -169,6 +169,12 @@ a {
 	margin-left: 150px; */
 }
 
+@media only screen and (max-width: 900px) {
+	.menuitem {
+		margin-left: 20px;
+	}
+}
+
 @media only screen and (max-width: 770px) {
 	#menu_text_block > a {
 		display: block;
