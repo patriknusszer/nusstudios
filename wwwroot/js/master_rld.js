@@ -187,6 +187,7 @@ function addMenuMobile(navbar) {
             body.insertBefore(mobile_menu, getPanel())
             document.getElementsByTagName("html")[0].id = "htmlmenu"
 			mobile_menu_btn.innerHTML = '×'
+			mobile_menu.id = "mobile_menu"
 		}
 		else {
 			menuOpenClick = true
