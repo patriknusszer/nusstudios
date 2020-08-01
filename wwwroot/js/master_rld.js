@@ -176,8 +176,9 @@ function addMenuMobile(navbar) {
 			menuOpenClick = false
 			navbar.id = "navbarmenu"
 			var mobile_menu = document.createElement('div')
-			packmenus(menu_text_block, window.location.href.includes('true'))
+			var menu_text_block = document.createElement('div')
 			menu_text_block.id = 'menu_text_block'
+			packmenus(menu_text_block, window.location.href.includes('true'))
 			var menu_block = document.createElement('div')
 			menu_block.appendChild(menu_text_block)
 			menu_block.id = 'menu_block'
