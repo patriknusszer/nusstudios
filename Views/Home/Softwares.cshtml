@@ -24,7 +24,7 @@
 
 <div class="integrator">
     <div class="column">
-        <p class="heading">Apps</p>
+        <p class="heading">@(Model.GB ? "Apps" : "Appok")</p>
         <a asp-controller="Softwares" asp-action="product_nuss"><p onMouseOver="showInfo('An advanced Youtube video downloader for chrome', this)" onmouseout="hideInfo(this)">Nuss Youtube downloader</p></a>		<a asp-controller="Softwares" asp-action="product_nussdesktop_javafx"><p onMouseOver="showInfo('An advanced Youtube video downloader for desktops', this)" onmouseout="hideInfo(this)">Nuss Youtube downloader JavaFx</p></a>
         <a asp-controller="Softwares" asp-action="product_nusstumblr"><p onMouseOver="showInfo('A Tumblr blog downloader', this)" onmouseout="hideInfo(this)">Tumblr Downloader</p></a>
 		<a asp-controller="Softwares" asp-action="product_instarchiver"><p onMouseOver="showInfo('Instagram account archiver', this)" onmouseout="hideInfo(this)">Instagram archiver</p></a>
@@ -35,13 +35,13 @@
 
 <div class="integrator">
     <div class="column">
-        <p class="heading">Games</p>
+        <p class="heading">@(Model.GB ? "Games" : "Játékok")</p>
         <a asp-controller="Softwares" asp-action="product_cupmixer"><p onMouseOver="showInfo('Classic ball hunter', this)" onmouseout="hideInfo(this)">Cup Mixer</p></a></div>
 </div>
 
 <div class="integrator">
     <div class="column">
-        <p class="heading">Developer & Educational</p>
+        <p class="heading">@(Model.GB ? "Developer & Educational" : "Fejlesztői és oktatási célu")</p>
         <a asp-controller="Softwares" asp-action="product_torrentchk"><p onMouseOver="showInfo('Torrent integrity checker', this)" onmouseout="hideInfo(this)">Torrentchk</p></a>
         <a asp-controller="Softwares" asp-action="product_CPPO"><p onMouseOver="showInfo('Lightweigth object hierarchy management in C++', this)" onmouseout="hideInfo(this)">C++ Object library</p></a>
         <a asp-controller="Softwares" asp-action="product_pixie"><p onMouseOver="showInfo('A coordinate and color grabber utility', this)" onmouseout="hideInfo(this)">Pixie</p></a>
