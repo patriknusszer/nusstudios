@@ -1,6 +1,6 @@
 A kupacrendezést John William Joseph Williams találta fel.
 
-A kupacrendezés determinisztikus O(nlogn) futásidejű, ezzel a 3 leggyorsabb tömbrendező algoritmus közül az egyik leggyorsabb, és közülük a leglassabb, mivel viszonylag nagyokat ugrik a tömbön belül előre, ezzel viszont nem tudja kihasználni a gyorsítótárat.
+A kupacrendezés determinisztikus O(nlogn) futásidejű, ezzel oot van a 3 leggyorsabb tömbrendező algoritmus között, és közülük mégis a leglassabb, mivel viszonylag nagyokat ugrik a tömbön belül előre, ezzel viszont nem tudja kihasználni a gyorsítótárat.
 A másik két O(nlogn) rendezővel szemben a kupacrendezés nem alkalmazza az "oszd meg és uralkodj" elvet.
 A tömböt helyben rendezi (és instabil is), vagyis csak a bemeneti tömböt használja, ezzel O(1) extra memóriát használva, de ezt a tömböt képes úgy kezelni mintha telített bináris fa lenne, egy maximum vagy minimum kupac.
 Ez az amivel annyival gyorsabb mint mondjuk a kiválasztásos rendezés.
