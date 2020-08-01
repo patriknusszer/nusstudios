@@ -1,22 +1,24 @@
 ﻿<Properties StartupConfiguration="{B7E8FA7C-7F3D-4C93-9835-767D21F7B463}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_ProductLayout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/SoftwaresController.cs">
     <Files>
       <File FileName="Views/Shared/_Layout.cshtml" Line="61" Column="13" />
-      <File FileName="Models/HomeViewModel.cs" Line="38" Column="24" />
-      <File FileName="Views/Home/Softwares.cshtml" Line="21" Column="43" />
+      <File FileName="Models/HomeViewModel.cs" />
+      <File FileName="Views/Home/Softwares.cshtml" />
       <File FileName="Views/Shared/_ProductLayout.cshtml" Line="62" Column="95" />
-      <File FileName="Views/Shared/_ItemLayout.cshtml" Line="92" Column="13" />
+      <File FileName="Views/Shared/_ItemLayout.cshtml" />
+      <File FileName="Controllers/SoftwaresController.cs" Line="15" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nusstudios" expanded="True">
             <Node name="Nusstudios" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="SoftwaresController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Shared" expanded="True">
-                  <Node name="_ProductLayout.cshtml" selected="True" />
-                </Node>
+                <Node name="Shared" expanded="True" />
               </Node>
             </Node>
           </Node>
