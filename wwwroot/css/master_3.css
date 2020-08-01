@@ -27,6 +27,7 @@
 	height: 12px;
 	width: 36px;
 	display: inline-block;
+	opacity: 0.6;
 }
 
 #flags {
