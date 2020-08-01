@@ -1,0 +1,82 @@
+Mi történik a magas szintű nyelvekben?
+
+Gondolkoztál rajta miért nevezzük az osztálypéldányokat "managed", avagy referencia típusoknak?
+
+Ha magas szintű nyelvek után C++-ra váltasz akkor rájössz miért.
+
+Egy referenciatípus viselkedése ugyanaz mint egy pointeré.
+Ez egy olyan változó, aminek az értéke egy memóracím, és az igazi cucc az abban a változóban van amelyik azon a memóriacímen van.
+Ha módosítod a referenciatípusú változó egyik tulajdonságát, akkor úgymond az azon a memóriacímen levő objektum tulajdonsága kerül módosításra.
+
+Emiatt történik, hogy ha egy referenciatípusú változót adsz paraméterként egy függvénynek, akkor szabatosan fogalmazva "látszik a változás a függvényen kívül".
+Ilyenkor a függvény adott paraméterébe csak a memóriacím másolódik át, és a függvény is az adott memóriacímen levő objektumot módosítgatja.
+
+Fontos megjegyezni hogy amikor új értéket adsz egy ilyen változónak olyankor a memóracímet írod felül, nem pedig az objektumot amire a memóriacíme mutat.
+
+Miért így történik?
+A futásidejű polimorfizmus miatt.
+
+Azért mert amikor egy új változót bevezetsz a programodba, akkor annak emóriában elfoglalt méretét tudnia kell fordítóprogramnak avgy le se fordul.
+
+Ezt pedig jó tudni, hiszen ha egy típustól ötven másik örököl és mindegyiknek más a mérete, de azt akarjuk, hogy akármelyik altípus hozzárendelhető legyen, akkor elvileg bajban vagyunk.
+
+De mégsem, mert a fordító ilyenkor csak egy memóriacímnyi mérete foglal le a memóriában, és ezt a pointert te használhatod arra hogy mutasson akármelyik altípuspéldányra, hiszen mindegyik rendelkezik a feltípus összes tulajdonságával.
+Ezt hívjuk Liskov behelyettesítési elvnek.
+
+A különbség csak annyi, hogy C++-ban képes vagy arra, hogy az osztályokról nem-referencia típuzst hozol létre, hanem olyat aminek a memóriafoglalata egyenló az adott altípus specifikus méretével, és akkor természetesen ezt már nem használhatod arra hogy belerakj egy másik altípust mert annak már bármilyen más mérete lehet.
+
+Szóval C++-ban ezt megteheted:
+
+Shape * s = new Triangle();
+s = new Quadrilateral();
+s = new Square();
+
+Shape shape = Shape(); // ez is menni fog
+shape = Triangle(); // ez itt compiler error lesz
+
+Biztosan hallottad már, hogy C és C++ nyelvekben nincsen automatikus memóriakezelés.
+
+Ez csak féligazság.
+MInden olyan változó amely adott blokkban van deklarálva automatikusan van memóriakezelve C és C++ nyelvekben is, hiszen ők a "stack"-en belül lettek létrehozva.
+
+Viszont ez a két nyelv engedi nekünk hogy "stack"-en kívül is foglalhassunk egybefüggő memóriaterületet amit bárhol lefoglalhatunk a programunk futésa során, és bárhol máshol fel is szabadíthatjuk.
+Ezt hívjuk kézi memóriakezelésnek C és C++ nyelvekben.
+
+A kérdés most viszont az, hogy a magas szintű nyelvek hogyan kezelik a "stack"en kívül létrehozott memóriaterületet automatikusan?
+A cél az, hogy az adott memóriaterületet akkor szabadítsuk fel, ha már egyelten pointer sincs amely arra mutat.
+
+C# vagy Java nyelven "stack"en kívülre kerül minden referenciatípusú változó amikor deklarálod:
+
+Shape s = new Shape;
+
+Ugyanez C++-ban:
+
+Shape * s = new Shape();
+
+A new keyword C++-ban anniyval több a memcpy függvénynél, hogy automatikusan hívja a konstruktorokat.
+
+Hogyha 's' volt az egyeltne változó amely a memóriacímét tartalmazza, és belőle is eltűnteted így:
+
+s = null;
+
+Akkor ebben az esetben automatikusan felszabadításra kerül a memóriaterület hiszen már egyetlen változó sem mutat az adott memóriacímre.
+
+Ha ugyanezt tennéd C és C++ nyelvben:
+
+s = nullptr;
+
+Akkor sikeresen létrehoztál egy memóriaszivárgást, és ez a memóriaterület feleslegesen foglalva marad az alkalmazásod futásának végéig.
+
+C++ ban a "delete" keyword felszabadítja a memóriaterületet úgy hogy a destruktorokat automatikusan hívja:
+
+delete s;
+
+Tehát ez csak egy destruktorhívással több mint a C nyelv free() függvénye.
+
+A kérdés az, hogy tudunk valahogy automatikus memóriakezelész bevezetni a C++ programunkba ha szeretnénk?
+C++ nyelvben vannak ilyen "smart pointer"-eink.
+Ebből több fajta is van ráadásul.
+Az std::shared_ptr például folyamatosan számolja hogy éppen az adott címre hányan mutatnak, és ha eléri a nullát akkor felszabadít automatikusan.
+
+Illetve van az std::unique_ptr amely felszabadítja a memóriaterületet amikor véget ér az adott blokk futása.
+Ennek leginkább akkor van értelme, ha mindössze csak a dinamikus memóriafoglalás lehetősége miatt foglalunk "stack"-en kívül, hiszen stack-en csak konstans méretű tömböket tudunk létrehozni.

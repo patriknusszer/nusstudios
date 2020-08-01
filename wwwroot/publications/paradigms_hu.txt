@@ -1,0 +1,68 @@
+Az ember minden terén igyekszik folyamatosan jobban csinálni a dolgokat minden téren, és ez látszik a történelmen is.
+
+A programozási paradigmákkal is így történt. A következő paradigma az előzőnek a kibővítése nem pedig komplett átírása.
+
+Emiatt tudjuk példuál azt mondani hogy a procedurális programozás az imperatív alhalmaza. Mert igazából tudsz benne imperatívan is programozni, viszont hoz magával extra újításokat amelyek átláthatóbbá teszik a kódodat.
+
+Egy tisztán imperatív program (ami semmivel sem több) mindössze egy nagydarab utasítássorozat amelyet sorban hajt végre a számítógép.
+Egy ilyen program nélkülöz mindenféle rendszerezettséget, összetettséget, hierarchiát.
+
+Képzeld el hogy írsz egy kódblokkot ami az imperatív programban mindössze egy kis nehezen észrevehető kóddarabka, de valójában mégis függeltenebb valamennyire, hiszen speciális célja van, és emiatt ugyanez a kódblokk több helyen is jelen van a programodban mert több helyen is használod. Hogyha ehhez a speciális funkcionalitáshoz kéne frissítést kiadnod akkor minden helyen ahol ott van eszközölnöd kéne ugyanaz ta változtatást.
+
+Emellett természetesen az is rengeteg időt fog elvenni tőled hogy elhatárold ezeket az egyes funkcionalitásokat egymástól hiszen mondom az egész programod egyetlen nagy kódszekvencia.
+
+A procedurális programozás volt az első paradigma amely absztrakciót és újrafelhasználhatóságot vezetett be a programozás világába.
+
+Mindkét említett problémára megoldást jelentett.
+
+Azért procedurális paradigma a neve mert készíthetó benne procedúra.
+A procedúra egy, a neve által újrafelhasználható kódblokk.
+A neve által úgymond meg tudod hívni ezt a procedúrát minden olyan helyen ahol szükséged van rá. Lényegesen könnyebbé teszi a programodat az, hogy a kódblokk helyett csak nevét használod ahol szükséged van rá.
+A másik pedig, hogy a procedúrád kódblokkjában végzett változtatásokat csak egyszer végzed el, mert a procedúra hívások mind ugyanezt a kódblokkot fogják végrehajtani.
+De ez még csak az újrafelhasználhatóság része.
+
+A procedúra absztrakciónak is számít.
+Az absztrakció itt programozásban egy abszolút kézzelfogható fogalom.
+A lényeget megőrzöd, a kontextus szempontjából kevésbé fontosat elhanyagolod.
+Itt amit megőrzöl egy procedúrahívással az a lényegi funkció amit ténylegesen csinál.
+Mert az hogy te meghívod őt, vagy magát a kódblokkot rakod oda ebből a szempontból ugyanaz.
+Ugyanakkor viszont a különbség, hogy ezt a funkciót hogyan látja el pontosan, vagyis hogy mi maga az implementációs részlete, az elhanyagolódik, hiszen neked úgyis ott van a fejedben hogy mi a lényege annak a procedúrának anélkül hogy tudnád hogyan teszi a dolgát.
+Így már önmagában is megállja a helyét absztrakcióként, de mégis akkor az igazi ha a procedúrádnak a lényegi cselekedetéhez hű összefoglaló nevet adsz, mint például "keres" nevet adnál egy olyan marhanagy akár többszázsoros összetett kódblokknak amely lényegében egy keresőalgoritmus. Ezzel már össze is foglaltad mit tesz lényegében, és az hogy hogyan is teszi a keresést az ebben a kontextusban részletkérdés amit elhanyagolunk.
+
+A procedurális paradigma után a strukturált paradigma következett.
+Tehát mindene van neki ami a procedurális paradigmának van, bár itt már akad egy apró kivétel.
+A strukturált programozási paradigma szabályokat szabott a programkódbeli ugrásokra.
+Ugrásokra ugye azért van szükségünk, mert egy adott ponton esetleg kondícionálisan más és más kódblokkot szeretnénk futtatni, vagy esetleg ugyanazt a kódblokkot többször egymás után.
+A probléma az volt, hogy tényleg össze vissza bárhova lehetett ugrálni a programon belül, és ez az úgymond "spagetti kódhoz" vezetett amelynek a folyását baromi nehéz volt követni.
+
+Ezért kitaláltak az ugrásokra egy rendszert amellyel kifejezetten egyszerű lett a kód folyásának a követhetősége.
+Ezzel együtt megszületett a blokk-strukturált programozás, amely a paradigmával kéz a kézben jár. Ez azt jelenti, hogy a kódodat blokkok hierarchiájaként szervezed meg.
+
+Egy ugrás valahonnan valahová történik.
+Az ugrás mindig ugyanazon kódlobkkból történik, és pontosan ugyanazon kódblokkba.
+Azért hangsúlyozom a pontosant, mert egy kódblokkon belül több másik is van, de ezek már lejjebbi hierachikus szinten vannak, és az ugrás aodtt szintről mindig ugyanarra szintre történik. A két pont közötti kódrészlet blokkot alkot egyben, azaz ide sem lehet kívülről beugrálni.
+
+Az előreugrást az "if" összetett utasítás és társai valósítják meg.
+A ciklusok mind tartalmaznak visszafele ugrást, de ezek közül csak a "do-while" ciklus tisztán visszafele ugrás miután a "for" és "while" ciklusok előtt található előreugrás is. (Azaz ha a kondíciónk nem igaz az elején sem már, akkor egyszer sem fut le a kódblokkunk.)
+
+Az hogy matematikai szigor szerint melyik strukturált paradigmát implementáló nyelv valóban teljesen egészében procedurális nyelv is azt az dönti el, hogy a strukturált rendezhetőség mellett engedi-e a moderálatlan ugrásokat amennyiben igény van rá, és bizonyos esetekben szükség is van rá, csak kérdés, hogy az adott nyelv inkább valami alternatív megoldást nyújt az ilyen helyzetre, vagy valóban 100% ban procedurális nyelv is egyben.
+
+A blokkok úgymond a változól láthatóságához is hozzáadnak.
+Előtte az egetlen szabály ami a változókra vonatkozott, hog deklarációjuk előtt nem lehet őket használni.
+Ezt annyival bővíti ki, hogy adott blokkban deklarált változót csak ugyanazon blokk és annak szubblokkjai érhetnek el, vagyis a szülőblokkok számára láthatatlan.
+
+Érdemes megjegyezni, hogy a strukturált paradigmában még rengeteg más speciális blokk típussal is találkozik az ember, amennyiben magas szintű az adott nyelv.
+A C nyelv a legnagyobb példája egy tisztán strukturált prgramozási paradigmát követő nyelvnek.
+
+A C nyelvnél még meg kell említeni az összetett típusok bevezetését.
+A struct egy aggregált típust vezet be a programunkba, amely több állapotot és viselkedésmutatót foglalhat magába.
+Ezzel lehetett már modellezni objektumszerű dolgokat, le lehetett vele írni egy valaminek az összes ahhoz tartozó tulajdonságát.
+
+A strukturált programozási paradigma után az objektum orientált következett, amely leginkább a strukturált paradigmában bevezetett aggregált típusokban hozott lényeges változásokat.
+
+Az aggregált típusokkal kompozíciós hierarchiákat tudtunk létrehozni ahol egy adott dolognak lehetett több tulajdonsága, és azon belül is akármelyik tulajdonságát is részeire lehetett osztani.
+
+Az objektum orientációval taxonómikus hierarchiákat építhetünk, azaz generalizálhatunk és specializálhatunk.
+Adott objektumtól öröklő összes másik objektum megörökli az ő tulajdonságait, és saját specializáló tulajdonságaik lehetnek.
+Ez nem csak a kódújrafelhasználást viszi újabb szintre, hanem lehetővé teszi azt hogy ugyanazon típuson keresztül használhassuk bármelyik altípust, hiszen tudjuk hogy mindegyiknek rendelkeznie kell azon általános felhalmaz tulajdonságaival.
+Ezen belül lényeges gyakorlati különbség, hogy ezen objektumok tartalmazhatnak olyan procedúrkat amelyek hozzá tudnak férni ugyanazon objektumpéldány állapotaihoz/tulajdonságaihoz, hiszen ezt a C függvénypointereivel nem lehet megtenni, kivéve ha egyik paramétere mindig az objektumpéldány.

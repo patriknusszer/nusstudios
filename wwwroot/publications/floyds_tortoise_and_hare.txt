@@ -1,0 +1,130 @@
+Floyd's tortoise and hare is a cycle detection algorithm.
+It is in fact unclear who came up with it first, the name is based on assumptions.
+This algorithm is very efficient, having a linear running time and using minimal consant extra space.
+
+You have a list of nodes.
+The 'last' node is linked to one of the earlier nodes in the list.
+This breaks it into a tail and a cycle, where the tail, a line of nodes runs into a circle of nodes.
+
+We need to find the node where the tail intersects the circle, which we will call cycle entry point/node.
+
+The algorithm does not keep account of any numbers, the only thing we know is when the 2 iterators traversing the node list meets at the same node.
+We have a rabbit (hare) and a turtle (tortoise), the former covers twice the distance of the turtle's, which travels node by node.
+Entering the node means you are revolving around the cycle for the time being.
+Since we have such a cycle, which may be completely traversed a multiple of times, we need to talk in terms of modulo arithmetics.
+
+Let T be the tail length, and C be the cycle length.
+It is utterly important to note that when I say tail length I mean those nodes which are not part of the cycle.
+So the node at which teh cycle and teh tail intersects is not considered to be part of tail length.
+
+r = T mod C
+
+Which means:
+T = k*C + r
+Where 'k' is a natural number, and 'r' is the remainder for which it is true that (r < C)
+
+Let's assume that 'r' equals zero.
+It means that the 2 pointers can not meet until turtle covers (T - 1) distance.
+But it also means that they must meet at the cycle entry point when turtle has covered 'T' distance.
+That is because by the time turtle has covered T distance, the rabbit has covered (2*T).
+The first T from that journey is the tail, meaning rabbit covers the other 'T' distance after entering the cycle.
+If we consider the entry node to have a value of zero and the forcoming nodes are incrementally numbered, and if the last node of the whole node list leads you back to the cycle entry point, then the formula to get the index of the node on which rabbit lands after covering 'T' from entry point is (T % C), which is 'r', which zero in this case, which is the cycle entry point.
+In this special case they meet but it is not for sure as 'r' may not be zero.
+What we must do because of this uncertainty, is we set one of the pointers back to the first (head) node of the list.
+We set the speed of both to node by node (1x) and of course it is no surprise they will meet again at the cycle entry node.
+
+The reason why we in fact need this second step is because 'r' may not be zero with ( (C-1)/C ) probability ratio.
+So let's consider this case.
+
+This means that the 2 pointers can not meet until turtle covers (T - 1) distance, just like in the former case.
+But here it also means the 2 pointers can not meet if turtle has only covered T distance, because 'r' is not zero, meaning rabbit will be somewhere else than cycle entry point when turtle enters the cycle.
+
+We need some proof that tells us these 2 pointers will indeed meet at some significant node for the first time.
+There is a less proofish but still formal and very clear method to tell where they meet the first time.
+
+So when turtle has covered 'T' distance, it is exactly at node zero of the cycle, where node zero is the cycle entry node.
+At the same time rabbit is at some node 'r' of the cycle.
+That means rabbit is 'r' ahead of the turtle, but it also means turtle is (C - r) ahead of rabbit.
+Now since rabbit has 2x speed, it will take another (C - r) distance to be covered by the turtle for the 2 to meet the first time.
+
+d + (C - r) = 2 d
+=> d = C - r
+
+So it means the 2 pointers will meet at node (C - r) of the cycle because turtle covered (C - r) nodes from node zero
+(0 + (C - r))
+
+...and rabbit has covered (2 * (C - r)) from position ( -1 * (C - r) )
+(-(C - r) + 2 * (C - r)) = C - r
+
+It is significant because it also means that the cycle entry node is 'r' ahead of both creatures now.
+We can set up a less intuitive but maybe rather proofish equation for this:
+
+d = 2d + r (mod C)
+Let d = l*C + a
+Where (a = d mod C), so that (a < C) and 'l' is natural number
+
+l*C+a = 2(l*C+a) + r (mod C)
+We are translating modulo to subtraction in next step.
+
+l*C+a - l*C = 2a+2lC + r - ((2l+e)*C)
+We can tell modulo would subtract at least (2*l) time C from left hand side but not how much more of C.
+This unknown extra subtraction is denoted by 'e' which is a natural number
+
+a = 2a + r - e*C
+
+Eventually we get:
+e*C = a + r
+
+We know that (a < C) and (r < C)
+=> a + r < 2*C
+
+Which means
+=> e*C < 2*C
+e < 2
+
+From that it follows
+=> 'e' is either zero or one
+
+Therefore we need to find solution for:
+1) 0*C = 0 = a + r
+2) 1*C = C = a + r
+
+We have already considered the case when 'r' is zero, but if it is not zero, equation 1) should not be considered.
+
+In case of equation 2):
+C - r = a
+
+This means that if 'r' is not zero, the 2 iterators can only ever meet on node (C - r), on the first, and on any further occasions.
+And when are those occasions exactly, and can we check the result of the proof?
+
+Here is the original equation:
+d = 2d + r (mod C)
+
+Which is:
+l*C+a = 2(l*C+a) + r (mod C)
+
+So it is:
+l*C + (C - r) = 2 (l*C + (C - r)) + r (mod C)
+
+Which equates to:
+-r = -r (mod C)
+
+Therefore the proof gave correct solution. But how do we know how many revolutions the 2 creatures will do before meeting, how do we know they will meet in a reasonable interval? Look again the equation:
+
+l*C + (C - r) = 2 (l*C + (C - r)) + r (mod C)
+
+This equation is going to hold true for any value of 'l', and it increments constantly by 1 as the creatures keep covering larger distances, but of course when they meet the first time the total/absolute covered distance is the smallest for both creatures and at that point 'l' is ought to be zero, which means that after the turtle has entered the cycle, they must meet before turtle would make a whole revolution, more exactly when it has made (l = 0) * (C - r) distance.
+This is important to know, because it proves that the algorithm work in linear time.
+
+Now we put one of the pointers back to the first node of the list, and set the speed of rabbit to 1x, this is the second part of the algorithm.
+After both has travelled 'r' nodes, the one left in the cycle on node (C - r) will be at the cycle entry node because it was 'r' ahead of it.
+Now the iterator which was put back to the head of the tail travels another k*C distance until it arrives at the cycle entry node since (T = k*C + r), and 'r' has already been covered.
+
+This also means the other iterator left in the cycle also travels another k*C distance.
+Since it started out from the cycle entry node, it must end its journey there as well because 'k' is a positive integer (or zero).
+Intuitively speaking, it will circumvent the cycle completely 'k' times and always arrive back to the cycle entry.
+
+It is more proofish to say that after 'T' covered distance, the put-back pointer must be at cycle entry node.
+At the same time, the other node is at ( ((C - r) + r + k*C ) mod C ), which is ( ((k + 1)*C) mod C ), which is of course zero, which is cycle entry node as well.
+
+QED

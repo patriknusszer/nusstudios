@@ -1,0 +1,129 @@
+A kupacrendezést John William Joseph Williams találta fel.
+
+A kupacrendezés determinisztikus O(nlogn) futásidejű, ezzel a 3 leggyorsabb tömbrendező algoritmus közül az egyik leggyorsabb, és közülük a leglassabb, mivel viszonylag nagyokat ugrik a tömbön belül előre, ezzel viszont nem tudja kihasználni a gyorsítótárat.
+A másik két O(nlogn) rendezővel szemben a kupacrendezés nem alkalmazza az "oszd meg és uralkodj" elvet.
+A tömböt helyben rendezi (és instabil is), vagyis csak a bemeneti tömböt használja, ezzel O(1) extra memóriát használva, de ezt a tömböt képes úgy kezelni mintha telített bináris fa lenne, egy maximum vagy minimum kupac.
+Ez az amivel annyival gyorsabb mint mondjuk a kiválasztásos rendezés.
+
+A telített bináris fában minden szint telített, és csak az utolsó szint lehet kivétel ez alól, aminek a balszélső része is mindig telített.
+A kupac pontjai ebben a fában is ugyanolyan sorrendben vannak mint a könyvben a karakterek ahogy balról jobbra következnek egymás után.
+Csak itt nem sorokról beszélünk hanem szintekről.
+Mondjuk, hogy a gyökérpont a fa tetején a 0 = (2^0 - 1) pozícióban van, akkor a balszélső gyereke az 1 = (2^1 - 1) pozíciót kapja, jobbszélső gyereke a 2-es pozícióban van.
+A szabályt követve, a balszélső gyereke ennek a balszélső gyereknek a 3 = (2^2 - 1) pozíciót kapja, és ennek a balszélső gyereke pedig a 7 (= 2^3 - 1) pozíciót kapná.
+Ez azért van így, mert ahhoz hogy megkapd egy adott szint balszélső elemének pozícióját, ki kell számítani az előző szinteken levő pontok számát, ami mindig 2-nek egy hatványa:
+
+2^0 + 2^1 + 2^2 + 2^3 + ... + 2^(n-1) = balszélső pont indexe az 'n' szinten
+
+Figyelj oda rá, hogy a pontok és szintek indexei nulla alapúak itt is!
+
+Tehát ha n = 1 (2-es szint), akkor index = 2^0 = 1, mert az első szint pontjainak számát kellett tudnunk ehhez.
+Vagy ha n = 3 (4-es szint), akkor index = 2^0 + 2^1 + 2^2 = 7, azért mert összeadjuk az 1-es, 2-es és 3-as szint elemeinek számát ahhoz hogy megkapjuk a 4-es szinten levő első elem pozícióját.
+
+Szóval ha csak a fának minden szinten mindig a balszélső (legelső) elemét nézzük, akkor azt látjuk hogy a pozíciója 2-nek egy hatványa mínusz egy.
+Tudjuk-e bizonyítani, hogyha kettőnek egymás után következő hatványait adjuk össze a nulladiktól kezdve, akkor 2-nek egy hatványát kapjuk mínusz 1?
+
+A bizonyítás ugyanaz mint amivel az AVL (Adelson-Velsky-Landis) fa magasságát bizonyítjuk:
+
+2^0 + 2^1 + 2^2 + 2^3 + 2^4 + ... + 2^(n-1) = x
+2^1 + 2^1 + 2^2 + 2^3 + 2^4 + ... + 2^(n-1) = x + 1
+2 * (2^1 + 2^1 + 2^2 + 2^3 + ... + 2^(n-2)) = x + 1
+2 * (2 * (2^1 + 2^1 + 2^2 + ... + 2^(n - 3))) = x + 1
+2^n = x + 1
+2^n - 1 = x
+
+Azért mert lépésenként minden összeadást át tudunk alakítani egy szórzássá, vagyis a végső szorzatunknak ugyanannyi szorzója lesz mint amennyi összeadandója az előző kifejezésnek, vagyis összesen n darab.
+
+Vagyis 2^n-1 = x = a balszélső elem indexe az 'n' szinten.
+
+Ők miért is kellenek?
+Azért mert kupacrendezéskor mindig az adott pont két közvetlen gyerekéhez akarunk csak hozzáférni, és ezt meg tudjuk tenni egyetlen képlettel amit konstans időben ki tudunk számítani.
+
+Két fontos dolgot tudunk:
+- A két közvetlen gyerek az eggyel lejjebbi közvetlen szinten vannak
+- A bal közvetlen gyereket pontosan kétszer annyi pont előzi meg az ő szintjén tőle balra, mint amennyi pont előzi meg az apját az apjának a szintjén tőle balra, hiszen mindegyiknek pontosan 2 gyereke kell legyen a telítettség miatt.
+
+Mondjuk hogy van egy pontunk egy p pozícióban.
+A pozícióját az alábbi módon bontjuk fel:
+(2^n - 1) + x = p, and p < 2^(n + 1) - 1
+Ahol 'n' annak a szintnek az indexe amelyen a pont van.
+Ahol 'x' a az adott pont szintjének a bal szélétől számított index, vagyis hogy a saját szintjén belül mennyire van bent.
+
+Ahhoz hogy megkapd a bal gyerek indexét egy szülőpont indexéből amely az 'n' szinten található:
+- Ki kell számítanod az (n + 1) szint balszélső gyerekének az indexét, ami ugyebár ugyanaz mint az összes pont száma az (n + 1) szint felett. Ezt úgy kapod, hogy az 'n' szint balszélső pontjának az indexét (ami ugyanaz mint az elemek száma az 'n' szint felett) 2-vel szorzod, mert tudjuk, hogy a balszélső gyerekek indexei között a különbség nagyjából kettőnek egyetlen hatványa.
+Precízebben, a szorzás után még 1-et kell adnod hozzá, mivel (2^n - 1) * 2 = 2^(n+1) - 2, ami pontosan 1-gyel kevesebb mint az (n + 1) szinten levő balszélső gyerek indexe.
+- A felső összeghez még hozzá kell adnod az 'x' dupláját is, mivel a bal gyereket pontosan kétszer annyi pont előzi meg az ő szintjén (ami az (n + 1) szint) mint amennyi pont az apját előzi meg az övén (ami az 'n' szint).
+
+Szóval a bal gyerek indexe tulajdonképpen a 'p' pozíció kétszerese plusz 1:
+2 * p = 2 * (2^n - 1) + 2 * x = 2 * ((2^n - 1) + x)
+2 * p = 2^(n+1) - 2 + 2x
+2 * p + 1 = 2(n+1) - 1 + 2x
+
+QED.
+Mivel 2^n - 1 az apa pont 'n' szintjén a balszélső pont indexe, és így 2^(n+1) - 1 az eggyel lejjebbi (n + 1) szint balszélső pontjának indexe. És ehhez már csak kétszer annyi elemet kell adni mint amennyi pont megelőzi az apát mert ez egy telített bináris fa.
+
+És mivel (2 * index + 1) az adott indexben levő pont bal gyereke, +1-gyel kapjuk a jobb gyerek indexét.
+
+És akkor hol használjuk majd a képletet?
+
+Van egy rekurzív max_heapify() vagy min_heapify() függvénye.
+A max_heapify()-on alapuló kupacrendezés maximum kupacot hoz létre, ahol adott pont mindkét gyereke kisebb vagy egyenlő, míg a min_heapify() alapú minimumkupacot hoz étre, ahol mindkét gyerek nagyobb vagy egyenlő (mint a szülő).
+
+Szóval max/min kupac esetén, akárhova nézel, a gyökérpont az adott szubfában a legnagyobb/legkisebb elem.
+A heapify függvények érvényes kupaccá tudnak alakítani egy olyan (szub)fát amelyben van egy rossz pont, rossz alatt pedig 
+
+A heapify függvények érvényes kupaccá tudnak alakítani egy olyan fát amiben egy rossz pont van, rossz alatt pedig azt értem, hogy minden más pont korrekt pozícióban van egymáshoz képest, és ha valamelyik mégis rossz pozícióban van akkor csakis ezen a "rossz" ponthoz képest, és ezek a pontok vagy csak a rossz pont alatt vagy fölött lehetnek.
+
+Az egyszerűség és tradíció miatt csak arról fogok beszélni amikor csak a rossz pont alatti pontok vannak rossz viszonyban ezzel a rossz ponttal.
+
+Ezen eset legfontosabb tulajdonsága hogy a fentebb említettek folytán mindkét gyereke egy ilyen rossz pontban levő fának érvényes bináris kupac.
+Erre fel tudunk építeni egy módszeres algorimtust.
+
+1) Van egy kezdeti állapotunk: az egyelemű fák amelyek csúcsai a legalacsonyabb szinten levő elemek definíció szerint már érvényes bináris kupacok. Az állapotunk mindig olyan érvényes bináris kupacokat tartalmaz amelnyek a csúcsai egy adott szint pontjai.
+
+2) A változás azon szint pontjaiban levő fákat heapifikálja amely éppen azin szint felett van amely pontjaiban levő érvényes bináris kupacokat tárolja az állapotunk éppen.
+
+Szóval nagy szavakban tudjuk heapifikálni adott 'n' szint pontjaiban levő fákat amennyiben az 'n - 1' szint pontjaiban levő fák érvényes bináris kupacok, márha vannak gyerekei az előző szinten.
+
+A (1)
+BC (2)
+DEFG (4)
+HIJKLMNO (8)
+PQRSTUVWXYZ01234 (16)
+
+Először a HIJKLMNO szubfákat heapifikálnád, aztán ha ezzel megvagy tudod heapifikálni a DEFG szubfákat, aztán tudod a BC szubfákat heapifikálni, és végül pedig az A fát...
+
+Most már csak azt kell elmagyarázzam hogy a heapifikáció hogyan működik.
+Feltételezzük hogy van egy fánk egy 'a' pontban, akkor ennek a gyerekei érvényes bináris kupacok, vagyis az 'a' pont a "rossz" pont amleyiket a helyére kell tenni.
+Ez azt jelenti hogy 'a' nem maxmimum/minimum pontja a belőle gyökerező fának. Ő a problémánk.
+Most kiválasztjuk a legnagyobb/legkisebb elemet 'a' és gyerekei közül, és őt megcseréljük a csúccsal (=gyökérrel).
+That will produce as a nice little triangle which is a correct binary heap on its own.
+Ez a csere egy biztonságos operáció mert:
+
+1) A maximum/minimum pont felhozatala a korábbi közvetlen alárendeltjeit - és azok alárendeltjeit - ugyanúgy kisebbként/nagyobbként tartja számon, és az új közvetlen gyerekei - és azok gyerekei - pedig szintén kisebbek/nagyobbak nála, ahogy a szabály megköveteli.
+2) A "rossz" pont csúcs alá hozatala heylrehozza az inkorrekt sorrendet a kettő között.
+3) az utolsó kérdés: az új helyén is rossz még a rossz pontunk?
+Ha nem, befejeztük a heapifikációt.
+Ha igen, megint meghívjuk a heapifikációt a rossz ponton, és megjegyezzük hogy:
+4) A rossz pont lehozatala megőrzi a korábban direkt felmenőjével - és azok felmenőivel is - a korrekt pozícionális kapcsolatát, ahogy a szabály megköveteli.
+5) A maximum/minimum pont felhozatala az összes korábbi indirekt felmenőivel tartja a korrekt kapcsolatát, ahogy a szabály megköveteli.
+Ez az utóbbi két pont akkor fontos, hogyha már másodszor hívjuk meg a heapifikációt ugyanazon a rossz ponton, hiszen innentől kezdve afölött is már látható a bináris kupac.
+6) Szóval legrosszabb esetben addig kell újrahívni a heapifikációt amíg van még alatta gyereke amelyhez képest inkorrekt pozícióban lehet.
+
+Ahogy folyamatosan mozgatod a rossz pontodat lefele, mindig egy újabb latta levő, egymáshoz képest rossz pozícióban levő ponttal hozza helyre a kapcsolatát, míg minden más létező korrekt kapcsolatot megtartasz, ez a lényeg.
+Tehát látható hogy gyakorlatilag csak vertikálisan lefele haladva cserélget pontokat az algoritmus, ezzel legrosszabb esetben O(log(n)) lehet a futásideje, ahol 'n' alatt az az adott szubfát értem.
+
+És mivel szinte az összes ponthoz ugyanezt a procedurát el kell játszanod ezért legrosszabb esetben O(n * log(n)) az algoritmus első, bináris kupaccá alakító részének futásideje.
+
+És van még folytatása...
+
+Jelenleg a kupac csúcsában a legnagyobb számot tartjuk nyílván.
+Az mindig a nulladik tömbindexünkben van.
+Nem hozunk létre külön tömböt az eredményünknek, helyben meg tudjuk tenni a rendezést.
+Kicseréljük a csúcsot az utolsó indexben levő elemmel, amely egy lényegesen kicsi elem kell legyen.
+Most akkor megint heapifikáljuk a fánkat, hiszen van egy rossz pontunk a csúcsban, csak most eggyel kisebb tömbhosszat határozunk meg, hogy a legutolsó tömbindexbe helyezett legnagyobb elemünket már ott senki se bántsa a továbbiakban.
+A heapifikáció után az előző tömb mínusz a legnagyobb elem legnagyobb elemét találjuk a csúcsban, ami tulajdonképpen az eredeti tömb második legnagyobb eleme.
+Ezzel pedig ezt az elemet kicseréljük a tömb utolsó előtti indexében levővel, és megint heapifikálunk, megint eggyel kisebb tömbmérettel...
+És akkor ezt ismételjük szépen amíg a tömbünk mérete még legalább 3 elemből áll, mire megkapjuk a rendezett tömbünket...
+Ahogy látod, ha maximum kupacot hozol létre, akkor növekvő sorrendű rendezett tömböt kapsz.
+Ha minimum kupaccal dolgozol, akkor csökkenő sorrendű rendezett tömböt kapsz.
+Itt a második részben is majdnem minden ponthoz lefuttatjuk a heapifikációt, azaz a második rész is O(nlog(n)) futásidejú, és ha ezt összeadjuk az első résszel akkor is O(nlog(n)) futásidőt kapunk, mert a kettes szorzó egy konstans amit elhanyagolunk Big-O nál.

@@ -1,0 +1,29 @@
+Ebben a cikkben egy a tinédzser időszakom első felében általam gyakran játszott videójátékról fogok beszélni amelyet nagyon szerettem moddolgatni.
+
+Azt kell róla tudni, hogy az első moddoló alkalmazást nem én írtam hanem egy "bacter" néven futó Xentax forum felhasználó aki disassemblerrel szétszedte a játékot, megkereste a pontot ahol a titkosított konfigurációs állományát dekódolja és leképezte programban.
+
+A fájlnak a formátumát és a tiktosítás kulcsát több helyről szedtem össze.
+
+A játékot Unreal Engine-ben készítették, és minden ilyen játék mapparendszerében fellelhető egy központi konfigurációs beállítás "Coalesced.ini" néven.
+Windows-on CookedPC néven fut a mappa, PS3 platformon CookedPS3 néven, XBOX platformokon CookedXenon néven...
+
+A lényeg hogy ennél a játéknál a konfigurációs beállításnak speciális alacsony szintű felépítése van.
+Az első 4 bájt egy előjeletlen egész szám kettes komplensben tárolva, az endianitás pedig Windows paltformon Little, konzolos paltformokon Big.
+Ezen 4 bájt után már maguk a blokkok következnek szorosan egymás után.
+Minden blokk egy 4 bájtos előjeles egész számmal kezdődik, kettes komplemensben és az endianitás a fentebb említettek szerinti.
+Ezután a 4 bájt után a blokk második és egyben utolsó része következik, a tényleges tartalom, egy titkosított szövegdarab.
+Az ez előtt beolvasott előjeles egész szám ezen szöveg méretét adja meg, a karaktereinek számát abszolútértéke szerint.
+Amennyiben pozitív szám volt, akkor a szövegdarabunk Windows-1252-es kódolású, amely egybájtos kódolás, vagyis a megadott karakterméret a szövegrész tényleges bájtméretét adja meg.
+Amennyiben negatív volt, akkor a szövegdarabunk UTF-16-os kódolású, amely minimum 2, maximum 4 bájton kódol le egyetlen karaktert.
+Mivel nem biztos hogy egységesen minden karakter 2 bájtos, ezért elvileg az lenne a legjobb ha rendes UTF-16 olvasóval beolvasnánk annyi karaktert amennyit a karakterszám abszolútértéke meghatároz.
+Ugyanakkor tapasztalatból tudom, hogy még egyetlen karakter sem fordult elő amely 2 bájtnál nagyobb helyet foglalt volna, ami el is várható, hiszen 2 bájton túl már nagyon extrás karakterek vannak amelyek fordításokban sem fordulnak már elő.
+Emiatt a kódoló programom egyszerűen csak veszi a karakterméret abszolútértékének kétszeresét és annyi bájtot olvas be.
+Tudni kell, hogy a szövegrész utolsó karaktere (amely kódolástól függően 1 vagy 2 bájt) mindig a null terminus, ez nem a szöveg része, és dekódolásra sem fér.
+Szóval végül is minden blokkban egy újabb szövegrészletet olvasunk be, ugyanakkor már dekódolásnál egybefüggő dokumentumként kezeljük ezeket a szövegdarabokat aszerint ahogy egymás után jönnek.
+A kulcs meg van adva, 61 karakteres és a titkosítási eljárási egyszerű rekurzív XOR kódolás.
+Ez azt jelenti, hogy ha egybefüggően nézünk a szövegdarabkáinkra, akkor a teljes szövegünk első karakterét össze XOR-olnánk a kulcs első karakterével, aztán a másodikat a másodikkal, szóval az egymásnak megfelelő indexű karaktereket.
+Csakhogy a teljes szöveg sokkal nagyobb mint a kulcs, ezért rekurzívan applikáljuk hozzá, vagyis ha a kulcs 61 karakter hosszú, és a 61. karaktert felhasználtúk a szöveg 61. karakterének dekódolására, akkor a kulcs pozícióját visszaállítjuk az elejére, és a szöveg 62. karakterét a kulcs 1. karakterével dekódolnánk., a 63. karakterét a 2. karakterével, a 123. karakterét pedig majd megint a legelső kulcskarakterrel...
+Ha belegondolunk akkor tulajdonképpen ha a kulcsunkat folyonos körnek képzeljük el, akkor ezen körön lépegetünk ugyanazon irányba folyamatosan, mert az utolsó karakter visszavezet mindig az elsőre.
+Erre a maradékososztás operátort szoktuk használni (%) hiszen kpos == 61 akkor kpos = 1 * 61 + 0, illetve ha kpos == 62 akkor kpos = 1 * 61 + 1, ha kpos = 122 akkor kpos = 2 * 61 + 0, csak vegyed figyelembe hogy itt már nullaalapú indexeléssel nézzük...
+És még fontos megjegyezni azt hogy az UTF-16 kódolású szövegeknél mindig csak az első karakter van titkosítva, a második karakter titkosítatlanul van a konfigurációban.
+Az hogy miért van ez több dolog miatt lehet, lehet hogy elbasztak valamit a fejlesztők, de az is lehet, hogy tudták hogy UTF-16 nál minden karakter második bájtja nagy eséllyel nulla, és XOR titkosításnál sok nullát lekódolni veszélyes repetíció eseten (ha nem One Time Pad módszerrel titkosítják) hiszen a XOR karaktertábla alapján egy B bitre mindig igaz hogy: B XOR 0 = B. Vagyis ha B bit egy kulcsbit akkor csak átpakolódik a kimenetbe, és ha ilyen repetitíven applikáljuk a bemenethez akkor visszakövethető lehet a kulcs.

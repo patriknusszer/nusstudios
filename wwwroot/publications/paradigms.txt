@@ -1,0 +1,215 @@
+Paradigms history - brief overview
+
+After our kind first started programming, we could not help
+but realise how could we do it even better, just like we do in case
+of literally anything else.
+
+That is why a programming paradigm that was invented after another
+in time is not necessarily a completely different way to code but a
+better one, an almost clear improvement over the previous.
+
+That is why you might come across people saying: procedural programming
+is a subset of imperative. Because it has everything in fact that imperative
+has, it just adds a new feature that makes your code more readable,
+scalable, manageable.
+
+In imperative programming your application is a piece of commands
+sequentially executed in order, lacking any sort of complex hierarchy.
+
+Now imagine that you write some lines of code that has a specific purpose.
+This aggregate of lines is just one of the many in your imperative program.
+But it is present at multiple points of your application
+because you need to perform that task again but with always different parameters.
+When you need to make a change to that particular task, you would need to look up
+each of its occurrences and apply the update.
+
+That is not say it will take you some time to make out where to draw the line
+between these different subtasks over and over again because they are 
+really just part of a single sequence of code in a purely imperative program.
+
+It is actually procedural programming that first came up with the idea of
+abstraction and modularity, the latter also known as code reuse.
+
+Procedural programming was a solution for both of the abovementioned issues.
+It lets you declare procedures. A procedure is a given amount of lines
+that has a specific task which was given a name.
+You can call this procedure by its name just like you would call
+a person by its name :).
+And then calling it will execute its code/implementation.
+These procedures are modular, reusable, you can call it wherever you need it,
+and you can pass it parameters that are special to/distinctive of the given call.
+Code reuse will make your code lighter because a procedure name is most probably shorter
+than the implementation.
+You only need to change that given block of code to change its behaviour everywhere.
+
+It is not just modular, it is also an abstraction.
+Abstraction looks at a more important subset of traits of a certain something,
+and neglects others.
+You would say there is a subset of traits which are preserved/abstracted,
+and a subset of traits which are neglected/abstracted away.
+
+If you do not execute a given block of code but instead you call it by a name,
+you essentially abstract/preserve functionality of the code block,
+while you abstract away/neglect its implementation detail.
+
+This means that a procedure is an abstraction regardless of the exact name you give it.
+
+But it is even more of an abstraction if you give it a name which also
+abstracts/summarises what it essentially does, in a short character sequence.
+And actually every developer does so because we are humans :)
+
+After procedural paradigm, structured paradigm follows.
+Imagine that sometimes you will need to repeat a given block of code until a certain
+condition holds true. This time the program will make a backwards jump to the first
+command of that given block.
+Or sometimes you need to skip a block of code given some condition. That is forwards jump.
+Purely procedural and imperative paradigms enable the developer to jump anywhere
+inside the application without restrictions.
+The problem is not with jumping, it is its unrestricted nature.
+Over time the developer would lose track of how the execution is flowing from a command
+to another leading to what you might have already heard: spaghetti code.
+
+That unrestricted jumping was addressed by the structured programming paradigm.
+It meant the introduction of block structured programming languages where
+you could arrange blocks of commands into a hierarchy.
+
+The forwards jump became the so called "if" control compound statement (block).
+The "do-while" control compound statement became the simple backwards jump.
+The "for" and "while" control compound statements, the former being a
+specialisation of the latter, are combinations thereof.
+They are a backwards jump preceded by a forwards jump.
+
+This sort of block structuring thoretically speaking disables jumping from inside
+of a block outside, and jumping from outside inside the block.
+
+That is not completely true of course because of a single trivial exception.
+If we have a forwards jump, it might "skip over" its block and will indeed
+always jump into that outside block which has the next command inside the application
+to be executed. This exception of course only means that you can actually jump to a
+command of an outside block but it is controlled by the commonsense of block structuring
+and so you can not do it in an arbitrary manner.
+
+So can we really say that structured programming paradigm is a subset of both procedural paradigm?
+Well, it depends.
+
+Some languages support arbitrary jumping inside applications but since this is one of the
+most common antipatterns in the programming world it is either discouraged if allowed,
+or it is completely absent from the language.
+
+If a language implements structured paradigm, then we can state in strict mathematical
+sense that it is a subset of procedural paradigm if it supports arbitrary jumping,
+and if not we can still say it roughly is, but not in a strict sense.
+
+Block structuring also introduced special types of blocks which are not necessarily
+control compound statements.
+Exception handling for example involves "try" and "catch" blocks.
+You can have a "synchronised" block which is thread-safe.
+A "struct" is also a block which is an elemnt of purely structured languages such as C.
+It is a modular reusable bundle of variables. It is already adequate for buildig
+compositional hierarchies which are more sophisticated in Object-Oriented languages.
+You can have an anonymous block too which has nothing special purpose except scope management.
+
+By the way scopes.
+In an imperative language, the only restriction of a the availability of variables
+is that you can not use a variable before it is created.
+
+But since a block in structured programming is also a block-scope, it adds an extra
+restriction to that. A variable declared inside a blocks is only available in its own
+local scope (block) and its inner (subordinate/child) scopes (blocks).
+Therefore it is not accessible in outer scopes (blocks) even if it was declared at an
+earlier point of execution flow.
+
+The next and currently superior programming paradigm is Object Orientation.
+It is a subset of structured paradigm.
+
+It introduces even stronger modularising conventions, code reuse and software modeling.
+
+A structured "struct" in C is just a bundle of public variables.
+It might have pointers to procedures but the procedure itself is not deeply integrated with the bundle.
+
+An OO "class" and "struct" naturally enable adding procedures to them which are
+able to operate on other members of the bundle.
+They have access modifiers meaning that the developer can choose which of the members are available
+to the user of the bundle and which are reserved for the bundle itself.
+This way you can hide implementation detail from the user and prevent unrestricted modification to members.
+
+This what you have just read is called Encapsulation, one of the key concepts of OO.
+It builds on top of the idea of C "struct" bundles, redefining them as a collection of states
+and behaviours that are meant to operate on them.
+Access modification is also key part of it, hiding members from the user that are only important in
+the inner operation of the bundle.
+
+Inheritance is another key concept.
+If a class inherits from another it will acquire all its members.
+At first it is important to mention that it makes sense as a form of code reuse in itself.
+
+We use inheritance during the processes of abstraction & generalisation, and specialisation.
+We are building taxonomic hierarchies of bundles.
+
+Substitutability is the concept of assigning subtypes of a class to a variable whose
+type is that class because we know that each of the subclasses possess the members of that class.
+
+Inheritance is indispensible for an OO language which is statically typed because it explicitly
+declares that this class is such a type which must have the superclass members.
+
+dinamically typed languages also have inheritance but since such a language does not care about types,
+it is not required for substitutability, and the fact that some bundle has all the members of
+another one is the sole responsibility of the developer.
+
+This of course also means that substitutability is possible in any language but in case of
+dinamically typed languages it does not come naturally and is very hard to enforce.
+
+For some time actually, I intuitively believed that OO is for statically typed languages only,
+until I found out JavaScript is considered to be Object Oriented which left me quite surprised.
+
+This alone is enough to demonstrate why dinamically typed languages are not created for very compound
+projects, and shows that statically typed languages are easier to maintain and therefore superior.
+
+Polymorphism is another OO concept.
+There is the category of static polymorphism which is very fast.
+It is using the same procedure or operator with different number of and types of parameters.
+The types of parameters are always known at compile time in case of statically typed languages,
+therefore it is relatively fast.
+Runtime polymorphism is never fast because the call to a given procedure is resolved during runtime.
+Actually in case of statically typed languages, it is knwon at compile time that the procedure
+exists on the object, but the specific implementation depends on the actual subtype it holds
+and it is not trivial at compile time and can change during runtime.
+
+So runtime polymorphism is the ability of the subtype to override the parent implementation of
+a procedure.
+
+The most common example teachers come up with is class Shape and its subtypes Quadrilateral, Triangle and Square.
+Class Shape has a function named "getArea" which is marked abstract and has no implementation because
+if we the only thing we know about something is that it is a Shape, then we can clearly say that
+we can calculate its area but we can not tell how because it heavily depends on the subtype.
+That is why the function is declared inside the class, but lacks any implementation.
+
+So calling an abstract procedure means that the appropriate implementation or I could say
+"version" is gonna be looked up based on which of the subtypes is assigned to variable from
+whose type they all inherit.
+
+That is not to say our Shape class is also marked abstract and we can not make a copy of it because
+it is nonfunctional on its own due to having procedures without implementation.
+Its sole purpose is code reuse, substitution, runtime polymorphism.
+These 3 things together give what we call "Liskov substitution principle".
+
+So that is the story of how the original Imperative programming paradigm evolved over time.
+
+Another mainstream paradigm called "Functional".
+
+Its concepts are:
+Avoidance of shared mutable state and side effects: pure functions.
+First class and higher order functions.
+
+The goal of a pure function is that its result is always the same for the same parameters.
+Shared mutable states and random functions might stand in the way of pure functions.
+
+A shared mutable state might depend on the parameters of a function call, and if that function
+also depends on the shared mutable state then it can alter the outcome of a consequent call
+to that function in a way that it not just depends on current parameters but previous ones.
+
+A shared mutable state might also be used by more than 1 functions which just increases dependsence
+upon each other.
+
+A first class function is one that can be assigned to a variable, and a higher order function
+accepts first class function parameters and or returns them.

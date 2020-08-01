@@ -1,73 +1,46 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Nusstudios.Models;
+using Nusstudios.Common;
 
 namespace Nusstudios.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        [Route("{gb?}")]
+        [Route("")]
+        public IActionResult Index(bool? gb)
         {
-            ViewBag.HomeSelected = true;
-            ViewBag.BlogSelected = false;
-            ViewBag.SoftwaresSelected = false;
-            ViewBag.ReferenceSelected = false;
-            ViewBag.NussAPISelected = false;
-            ViewBag.EduSelected = false;
-            ViewBag.ContactSelected = false;
-            return View();
+            string val;
+            return View(new HomeViewModel(true, false, false, false, false, false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult Blog() {
-            ViewData["Message"] = "All posts";
-            ViewBag.HomeSelected = false;
-            ViewBag.BlogSelected = true;
-            ViewBag.SoftwaresSelected = false;
-            ViewBag.ReferenceSelected = false;
-            ViewBag.NussAPISelected = false;
-            ViewBag.EduSelected = false;
-            ViewBag.ContactSelected = false;
-            return View();
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult Blog(bool? gb)
+        {
+            string val;
+            return View(new HomeViewModel(false, true, false, false, false, false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult Softwares()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult Softwares(bool? gb)
         {
-            ViewBag.HomeSelected = false;
-            ViewBag.BlogSelected = false;
-            ViewBag.SoftwaresSelected = true;
-            ViewBag.ReferenceSelected = false;
-            ViewBag.NussAPISelected = false;
-            ViewBag.EduSelected = false;
-            ViewBag.ContactSelected = false;
-            ViewBag.Selection = "Softwares";
-            ViewData["Message"] = "All projects";
-            return View();
+            string val;
+            return View(new HomeViewModel(false, false, true, false, false, false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult Reference()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult Reference(bool? gb)
         {
-            ViewBag.HomeSelected = false;
-            ViewBag.BlogSelected = false;
-            ViewBag.SoftwaresSelected = false;
-            ViewBag.ReferenceSelected = true;
-            ViewBag.NussAPISelected = false;
-            ViewBag.EduSelected = false;
-            ViewBag.ContactSelected = false;
-            ViewBag.Selection = "Referenciáim";
-            ViewData["Message"] = "Referenciáim";
-            return View();
+            string val;
+            return View(new HomeViewModel(false, false, false, true, false, false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult NussAPI()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult NussAPI(bool? gb)
         {
-            ViewBag.HomeSelected = false;
-            ViewBag.BlogSelected = false;
-            ViewBag.SoftwaresSelected = false;
-            ViewBag.ReferenceSelected = false;
-            ViewBag.NussAPISelected = true;
-            ViewBag.EduSelected = false;
-            ViewBag.ContactSelected = false;
-            ViewBag.Selection = "NussAPI";
-            // ViewData["Message"] = "All Reference.";
-            return View();
+            string val;
+            return View(new HomeViewModel(false, false, false, false, true, false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
         /* public IActionResult PT4ZSB()
@@ -76,38 +49,18 @@ namespace Nusstudios.Controllers
             return View();
         } */
 
-        /* public IActionResult Log()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult Edu(bool? gb)
         {
-            ViewData["Message"] = "Nusstudios website log.";
-            return View();
-        } */
-
-        public IActionResult Edu()
-        {
-            ViewBag.HomeSelected = false;
-            ViewBag.BlogSelected = false;
-            ViewBag.SoftwaresSelected = false;
-            ViewBag.ReferenceSelected = false;
-            ViewBag.NussAPISelected = false;
-            ViewBag.EduSelected = true;
-            ViewBag.ContactSelected = false;
-            ViewBag.Selection = "Edu";
-            ViewData["Message"] = "C#, Java magántanítás";
-            return View();
+            string val;
+            return View(new HomeViewModel(false, false, false, false, false, true, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult Contact()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult Contact(bool? gb)
         {
-            ViewBag.HomeSelected = false;
-            ViewBag.BlogSelected = false;
-            ViewBag.SoftwaresSelected = false;
-            ViewBag.ReferenceSelected = false;
-            ViewBag.NussAPISelected = false;
-            ViewBag.EduSelected = false;
-            ViewBag.ContactSelected = true;
-            ViewBag.Selection = "Contact";
-            ViewData["Message"] = "Contact me.";
-            return View();
+            string val;
+            return View(new HomeViewModel(false, false, false, false, false, false, true, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
     }
 }

@@ -368,7 +368,6 @@ Y:/nusstudios/obj/Debug/netcoreapp3.0/Nusstudios.genruntimeconfig.cache
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Articles/floydstortoiseandhare.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Articles/graph_api_and_x_instagram_gis.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Articles/heapsort.cshtml.g.cs
-/Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Articles/heapsort_hu.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Articles/high_level_languages_behind_the_scenes.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Articles/knuthmorrispratt.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Articles/mergesort.cshtml.g.cs

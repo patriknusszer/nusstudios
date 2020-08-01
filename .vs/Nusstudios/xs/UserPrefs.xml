@@ -1,20 +1,13 @@
 ﻿<Properties StartupConfiguration="{B7E8FA7C-7F3D-4C93-9835-767D21F7B463}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/js/algos/floyd.js">
-    <Files>
-      <File FileName="wwwroot/js/algos/floyd.js" Line="266" Column="7" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nusstudios" expanded="True">
             <Node name="Nusstudios" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Views" expanded="True" />
-              <Node name="wwwroot" expanded="True">
-                <Node name="js" expanded="True">
-                  <Node name="algos" expanded="True">
-                    <Node name="floyd.js" selected="True" />
-                  </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>

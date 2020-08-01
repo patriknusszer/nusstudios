@@ -1,0 +1,129 @@
+Floyd's tortise and hare egy ciklusdetekciós algoritmus.
+Valójában nem egyértelmű ki találta ki először, de legvalószínűbb hogy Robert W. Floyd találta ki.
+Kifejezetten effektív, lineáris futásidejű, és minimális konstans extra memóriát igényel.
+
+Adott egy pontok listája, amelynek a vége visszavezet egy korábbi ponthoz, ezzel egy hurkot/ciklust létrehozva.
+Azon pontok listája amelyek a hurokba vezetnek bele faroknak nevezendő. 
+
+A feladatunk megkeresni, hogy melyik az a pont a listában, ahol a hurok és a farok találkozik.
+
+Az algoritmus nem használ fel egyetlen egy számértéket sem.
+Az egyetlen dolog amit tudunk, az 2 lista mutató, azaz mutató egy-egy lista elemre, amelyek arra vannak, hogy előrefele lehessen haladni a listában következő pontokra. Az egyik mutató egyesével halad előre, ő a teknős. A másik mutató kettesével halad előre, ő a nyúl. Ezenkívül az egyetlen dolog amivel az algoritmus dolgozik, az az, hogy a két mutató éppen ugyanarra a pontra mutat-e vagy sem, ugyanis egy kis matematikával be lehet bizonyítani, hogy ez a néhány adat is csodákra képes.
+Amint egy mutató belép a ciklusba, onnantól kezdve csak körbe körbe halad, emiatt majd egy kis modulo aritmetikát kell használnunk.
+
+Legyen T a farok hossza, C pedig a ciklus hossza (azaz a pontok száma amiből áll).
+Nagyon fontos hogy megjegyezzük, a farok hosszát azok a pontok adják amelyek nem részük a huroknak.
+Ez zat jelenti, hogy a pontot amelyben a hurok és farok találkozik nem számolandó a farok hosszába.
+
+r = T mod C
+
+Vagyis:
+T = k*C + r
+Ahol 'k' egy természetes szám, 'r' pedig egy maradék amire igaz az, hogy (r < C)
+
+Feltételezzük, hogy 'r' nulla.
+Vagyis a két mutató nem találkozhat amíg a teknős (T - 1) utat tett csak meg.
+Ugyanakkor ha teknős 'T' utat megtett akkor találkozniuk kell.
+Azért mert amíg a teknős 'T' utat tesz meg, a nyúl (2 * T) utat.
+Az első T ebből az útból a farok, ami azt jelenti, hogy a második T utat azután teszi meg hogy belépett a hurokba.
+Ha úgy tekintjük, hogy a belépési pont értéke 0, és a következő pontok inkrementálisan vannak számozva, és a legutolsó lista pont visszavezet a hurok belépési pontjába, akkor a formula ahhoz hogy megkapjuk azon pont számát amelyre a nyúl érkezik miután 'T' utat megtesz a belépési ponttól (T % C), ami 'r', ami jelen esetben nulla, vagyis a belépési pont.
+Természetesen nem lehetünk biztosak abban, hogy 'r' nulla.
+Emiatt, visszarakjuk az egyik élőlényt a farok elejére.
+A nyúl sebességét a teknős egyszeres sebességére csökkentjük, és megint elindítjuk őket.
+Ebben az esetben persze nem csoda, hogy megint a belépési ponton fognak találkozni.
+
+Amiért erre a második lépésre szükségünk van az, hogy 'r' nem nulla (C-1)/C valószínűséggel.
+Szóval nézzük ezt a másik összetetteb esetet.
+
+Ebben az esetben sem találkoznak amíg a teknős csak (T - 1) utat tesz meg, pont mint az előző esetben.
+De ugyanakkor itt azt is jelenti, hogy biztosan nem találkoznak amikor a teknős T utat megtesz, hiszen 'r' nem nulla, vagyis a nyúl valahol teljesen máshol lesz amikor a teknős belép a hurokba.
+
+Be kell bizonyítanunk, hogy amikor először találkoznak, akkor valami nagyon érdekes ponton találkoznak.
+Van egy lazább, intuitívabb bizonyítás erre amitől könnyebben látható az egész:
+
+Szóval teknős éppen csak belépett a hurokba.
+Ekkor a nyúl valamelyik 'r' ponton van.
+Vagyis a nyúl 'r' úttal a teknős előtt van, vagy fordítva (C - r) úttal a teknős van a nyúl előtt.
+Mivel a nyúl sebessége két pont, pontosan (C - r) utat kell a teknősnek megtennie, hogy találkozhassanak
+
+d + (C - r) = 2 d
+=> d = C - r
+
+Szóval a (C - r) számú ponton találkoznak, mivel a teknős (C - r) utat tesz meg a nulladik ponttól:
+(0 + (C - r))
+
+...és a nyúl pedig (2 * (C - r)) utat tesz meg a ( -1 * (C - r) ) számú ponttól:
+(-(C - r) + 2 * (C - r)) = C - r
+
+Ez azért fontos, mert most a hurok belépési pontja 'r' úttal van mindkét élőlény előtt.
+Itt van egy modulós bizonyítás is:
+
+d = 2d + r (mod C)
+Legyen d = l*C + a
+Ahol (a = d mod C), vagyis (a < C) és 'l' természetes szám
+
+l*C+a = 2(l*C+a) + r (mod C)
+A következő lépésben a modulus operációt kivonásként írjuk át.
+
+l*C+a - l*C = 2a+2lC + r - ((2l+e)*C)
+Vagyis a modulus legalább (2*l) darab C-t vonna ki a bal oldalból, de nem tudjuk mennyivel több C-t.
+Ez az ismeretlen extrát az 'e' természetes egész jelöli.
+
+a = 2a + r - e*C
+
+Végül azt kapjuk hogy:
+e*C = a + r
+
+Tudjuk hogy (a < C) és (r < C)
+=> a + r < 2*C
+
+Így tehát
+=> e*C < 2*C
+e < 2
+
+Ebből következik hogy
+=> 'e' vagy 0, vagy 1
+
+Vagyis megoldást kell találnunk az alábbiakra:
+1) 0*C = 0 = a + r
+2) 1*C = C = a + r
+
+Már néztük az esetet amikor 'r' nulla, de ha nem, akkor az 1) egyenlettel nem kell foglalkoznunk.
+
+A 2) egyenlet esetében pedig:
+C - r = a
+
+Vagyis ha 'r' nem nulla, akkor csak a (C - r) számú ponton találkozhatnak, az első, és bármely későbbi alkalommal.
+De ezek az alkalmak mikor vannak, és tudjuk-e ellenőrizni a bizonyítás eredményét?
+
+Az eredeti képlet:
+d = 2d + r (mod C)
+
+Ami:
+l*C+a = 2(l*C+a) + r (mod C)
+
+Vagyis:
+l*C + (C - r) = 2 (l*C + (C - r)) + r (mod C)
+
+Amiből végül azt kapjuk hogy:
+-r = -r (mod C)
+
+Vagyis a bizonyítás eredménye korrekt. De honnan tudjuk, hogy hány komplett körbefordulást tesznek meg az élőlények találkozásuk előtt, honnan tudjuk, hogy elfogadható időn belül találkoznak majd? Nézzük megint az egyenletet:
+
+l*C + (C - r) = 2 (l*C + (C - r)) + r (mod C)
+
+Ez az egyenlet 'l' bármely értékére igaz, és mindig 1-gyel növekedne ahogy nagyobb és nagyobb utakat tesznek meg, emiatt a legrövidebb abszolút összút mindkettő számára amikor 'l' nulla, vagyis miután a teknős belép a hurokba, találkozniuk kell még mielőtt a teknős egyetlen teljes körbefordulást tenne, pontosabban amikor (l = 0) * (C - r) utat tett meg, ami (C - r).
+Fontos tudni ahhoz, hogy bizonyítsuk azt is, hogy az algoritmus lineáris időben működik.
+
+Valamelyik állatot most visszatesszük a lista elejére, a nyúl sebességét a teknős egyszeres sebességére állítjuk, ez az algoritmus második része.
+Miután mindeketten 'r' utat megtettek, az amelyik a hurokban maradt a (C - r) számú ponton most a belépési ponton kell legyen, hiszen 'r' úttal előtte volt.
+Ezután a másik visszatett mutató ugye még k*C utat tesz meg a belépési pontig hiszen (T = k*C + r), és 'r' utat már mgtett ebből.
+
+Ezalatt a másik mutató is k*C utat tesz meg.
+Mivel a belépési pontról indult, oda is kell érkezzen hiszen 'k' pozitív egész szám.
+Vagyis a belépési pontra érkezés után 'k' alkalommal teljesen megkerülte a hurkot és mindegyik után visszaérkezett a belépési pontra.
+
+Úgy is mondhatjuk, hogy 'T' út után, a visszatett mutató mindenképp a belépési ponton van.
+A másik pedig a ( ((C - r) + r + k*C) mod C ) számú ponton van, ami ugye ( ((k + 1)*C ) mod C ), ami pedig nulla, ami pedig szintén a belépési pont.
+
+QED

@@ -1,0 +1,19 @@
+This article will describe how modifying the Cybertronian games' configurations was possible. First off, all the knowledge I needed to write my application TF_Games_Util can be put down to sources on the internet which may seem hard to find. Xentax forums, an existent QuickBMS script. The most notable is the work of The Bacter, a Xentax forum user who disassembled the game and found the key used to XOR the blocks and who wrote the first working utility.
+
+So for a somewhat experienced programmer it is easy to understand the structure of these configurations.
+The block count is a 32-bit unsigned integer, the block character counts are 32-bit signed integers.
+The format is 2's complement, and the PC version has little endian, the consoles: XBOX 360, PS3 have big endian byte order.
+The file starts with the block count.
+For every block, you read the character count telling the number of encrypted characters.
+If it's negative, it means it is a 16-bit Unicode block. In this case 1 character is stored on 2 bytes.
+That means, you need to take the double of its absolute value to get the block size in bytes.
+For security considerations, only the first byte of a single character is encrypted. The reason is the second byte tends to be 0, and if you look at the XOR truth table, you can see if the plain text bits are 0, then the key bits are reflected in the cipher text. For example, given buffer A and buffer B (of equal length), where B consists of nothing but 0 bits, if XOR is applied to them, then the resulting buffer C will be equal to buffer A. Yes, if your plain text is nothing but zero bits, then your cipher text will be the reflected key.
+So the conclusion is that you must apply xor only to the first byte, the second is simply unencrypted.
+The last character / last 2 bytes of the block are always 0x0000. If the character count is not negative, then the text was encoded with Windows-1252. It stores every character on 1 byte.
+This means the character count itself is the block size in bytes.
+In this case the last character / byte is 0x00.
+
+And basically that's all. The key must be applied in a recursive manner. That means, you increment the key byte index and block byte index synchronously, and you reset the key index to 0 when you arrived to its last index. Also, you do not reset the key index when arriving to the end of the block! Think about it as if you XORed it like a whole document.
+
+And finally, the key is:
+as;dwepo2345098]qw]{}p2039458pseasdfzcvvp;aseiurwefsdcfszdcvn

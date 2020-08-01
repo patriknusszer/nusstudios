@@ -1,0 +1,115 @@
+What's happening in high level languages behind the scenes?
+
+Have you ever wondered why instances of classes in high level languages
+are referred to as managed types?
+
+I have and did not find the solution until I started looking into C++.
+
+Being a reference or managed type means it its behaviour is that of a pointer's.
+
+Its value is an address. It's not the object itself.
+Whenever you modify a property of the managed type the pointer gets dereferenced
+and the access takes place.
+
+That is why you can pass a managed variable to a function as parameter
+and see that any modification done by the function remains, because only the address was copied and not the object itself.
+
+Note that when you assign a different value to that variable you are overwriting its memory address and not the object it references.
+
+But why is it happening? The answer is not hard.
+
+The decision was made with runtime polymorphism in mind.
+
+It allows a variable to hold any of its subtypes.
+That is a very abstract and high level statement actually :)
+
+When space is allocated for an object in the RAM, we must know its size
+in advance right?
+
+Now lets say some sort of class has 5 different subclasses each having different
+allocation sizes.
+
+But when we declare an uninitialised variable which has subtypes, we
+can not tell what should its allocation size be because it can
+change during runtime.
+
+So the solution is to allocate the size of a memory address because
+it is known at compile time, and let it point to any of the objects
+which are subtypes of the newly declared variable.
+
+That is why in C++ if you want Liskov substitution principle,
+you need to declare the variable intended to be substitutable
+as a pointer to an object of its type, but it can point to any object
+whose type is its subtype.
+
+Shape *s = new Traingle();
+s = new Quadrilateral();
+s = new Square();
+
+Shape shape = Shape(); // This is okay
+shape = Triangle(); // This will definitely not compile
+
+You might have also heard already that C and C++ does not have
+automatic memory management.
+
+That is only partially true.
+Variables which are declared in a given scope will automatically
+get wiped out of memory when they get out of scope, even in case
+of C and C++, which means that
+the given block-scope is finished execution.
+
+These variables are allocated on the stack.
+Variables allocated on the stack are inserted sequentially,
+just after the previously allocated variable.
+These variables are also partially automatically managed by the CPU,
+so when the the declared variable get out of scope they are
+wiped out of memory automatically.
+
+But we can also allocate continuous RAM memory pieces outside the stack.
+If we do so, this piece of memory will get deallocated either by
+the developer itself when decides to, or when the app finished execution completely.
+
+This latter one is what we call memory management in C and C++.
+
+The question arises, how memory allocated outside the stack is managed by
+high level languages automatically?
+
+Well, the goal is to free up the given memory segment when it is no
+longer pointed to by any pointer.
+
+So when in C# for example you do:
+Shape s = new Triangle();
+
+The code could could be translated to:
+Shape *s = new Triangle();
+
+Here "new Triangle()" issues the allocation of a new copy of our Triangle
+blueprint class outside the stack.
+
+The problem here is if you do this in C#:
+s = null;
+
+This will free the memory allocated for Triangle automatically
+given no other pointers point to it.
+
+However if you do the same in C++ or C:
+s = nullptr;
+
+The memory segment will not be deallocated. You have to do instead:
+delete *s;
+
+This basically translates to calling the destructor of our Triangle
+object and the simple C method "free" will get called:
+free(s);
+
+Now if we wanted to make an exact translation of our C# code to C++,
+we would want to use that thing which is called "C++ smart pointer".
+
+std::shared_ptr is a C++ abstraction over pointers based on reference counting.
+That means the number of references to a memory segment allocated outside of the stack
+is held account of and managed by instanced if it.
+
+std::unique_ptr is also a C++ abstraction over pointers and it will deallocate
+the given memory segment automatically when gets out of scope.
+This usually only makes sense when oyu are only allocating space outisde the stack to make adventage of the dynamic space allocation, that is you can express the size of space to be allocated with variables.
+(On the stack you are only allowed to declare contant-sized variables and arrays).

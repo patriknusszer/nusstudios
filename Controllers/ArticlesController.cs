@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Nusstudios.Common;
+using Nusstudios.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,75 +16,75 @@ namespace Nusstudios.Controllers
             ViewBag.BlogSelected = true;
         }
 
-        public IActionResult dijkstra()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult dijkstra(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = false;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult heapsort()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult heapsort(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = false;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult mergesort()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult mergesort(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = false;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult knuthmorrispratt()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult knuthmorrispratt(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = false;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult floydstortoiseandhare()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult floydstortoiseandhare(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = false;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
         // GET: /<controller>/
-        public IActionResult transformers_game_configurations_low_level()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult transformers_game_configurations_low_level(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = false;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult youtube_ciphered_signatures()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult youtube_ciphered_signatures(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = true;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult graph_api_and_x_instagram_gis()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult graph_api_and_x_instagram_gis(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = true;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult paradigms_brief_history()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult paradigms_brief_history(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = false;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
-        public IActionResult high_level_languages_behind_the_scenes()
+        [Route("{controller}/{action}/{gb?}")]
+        public IActionResult high_level_languages_behind_the_scenes(bool? gb)
         {
-            ViewBag.HasAbout = false;
-            ViewBag.HasDownload = false;
-            return View();
+            string val;
+            return View(new ArticlesViewModel(false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
     }
 }
