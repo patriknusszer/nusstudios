@@ -20,7 +20,7 @@
 
 <div class="integrator">
     <div class="column">
-        <p class="heading">Algorithms</p>
+        <p class="heading">@(Model.GB ? "Algorithms" : "Algoritmusok")</p>
         <a asp-controller="Articles" asp-action="knuthmorrispratt" asp-route-gb="@(Model.GB ? "true" : "false")"><p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">Knuth Morris Pratt algorithm</p></a>
         <a asp-controller="Articles" asp-action="floydstortoiseandhare" asp-route-gb="@(Model.GB ? "true" : "false")">
             <p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">
@@ -39,7 +39,7 @@
 
 <div class="integrator">
     <div class="column">
-        <p class="heading">Abstract</p>
+        <p class="heading">@(Model.GB ? "Abstract" : "Absztrakt")</p>
         <a asp-controller="Articles" asp-action="paradigms_brief_history" asp-route-gb="@(Model.GB ? "true" : "false")">
             <p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">
                 @(Model.GB ? "History of programming paradigms" : "A programozási paradigmák története")
@@ -55,7 +55,7 @@
 
 <div class="integrator">
     <div class="column">
-        <p class="heading">Documentations</p>
+        <p class="heading">@(Model.GB ? "Documentation" : "Dokumentáció")</p>
         <a asp-controller="Articles" asp-action="transformers_game_configurations_low_level" asp-route-gb="@(Model.GB ? "true" : "false")">
             <p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">
                 @(Model.GB ? "Transformers games INI/INT configurations low-level" : "Transformer játékok konfigurációi alacsony szinten")

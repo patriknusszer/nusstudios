@@ -1,5 +1,8 @@
 ﻿<Properties StartupConfiguration="{B7E8FA7C-7F3D-4C93-9835-767D21F7B463}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Blog.cshtml">
+    <Files>
+      <File FileName="Views/Home/Blog.cshtml" Line="23" Column="43" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -7,7 +10,7 @@
             <Node name="Nusstudios" expanded="True">
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
+                  <Node name="Blog.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>
