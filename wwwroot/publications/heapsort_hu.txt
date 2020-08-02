@@ -96,7 +96,7 @@ Most már csak azt kell elmagyarázzam hogy a heapifikáció hogyan működik.
 Feltételezzük hogy van egy fánk egy 'a' pontban, akkor ennek a gyerekei érvényes bináris kupacok, vagyis az 'a' pont a "rossz" pont amleyiket a helyére kell tenni.
 Ez azt jelenti hogy 'a' nem maxmimum/minimum pontja a belőle gyökerező fának. Ő a problémánk.
 Most kiválasztjuk a legnagyobb/legkisebb elemet 'a' és gyerekei közül, és őt megcseréljük a csúccsal (=gyökérrel).
-That will produce as a nice little triangle which is a correct binary heap on its own.
+Ezzel létrehoztunk egy kis háromszöget amely önmagában egy érvényes bináris kupac.
 Ez a csere egy biztonságos operáció mert:
 
 1) A maximum/minimum pont felhozatala a korábbi közvetlen alárendeltjeit - és azok alárendeltjeit - ugyanúgy kisebbként/nagyobbként tartja számon, és az új közvetlen gyerekei - és azok gyerekei - pedig szintén kisebbek/nagyobbak nála, ahogy a szabály megköveteli.
