@@ -43,7 +43,7 @@ namespace Nusstudios.Controllers
         public IActionResult floydstortoiseandhare(bool? gb)
         {
             string val;
-            return View(new ArticlesViewModel("https://nusstudios.com/Articles/floydstortoiseandhare", false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+            return View(new ArticlesViewModel("https://nusstudios.com/Articles/floydstortoiseandhare", false, true, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
         // GET: /<controller>/
@@ -58,14 +58,14 @@ namespace Nusstudios.Controllers
         public IActionResult youtube_ciphered_signatures(bool? gb)
         {
             string val;
-            return View(new ArticlesViewModel("https://nusstudios.com/Articles/youtube_ciphered_signatures", false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+            return View(new ArticlesViewModel("https://nusstudios.com/Articles/youtube_ciphered_signatures", false, true, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
         [Route("{controller}/{action}/{gb?}")]
         public IActionResult graph_api_and_x_instagram_gis(bool? gb)
         {
             string val;
-            return View(new ArticlesViewModel("https://nusstudios.com/Articles/graph_api_and_x_instagram_gis", false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+            return View(new ArticlesViewModel("https://nusstudios.com/Articles/graph_api_and_x_instagram_gis", false, true, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
         }
 
         [Route("{controller}/{action}/{gb?}")]
