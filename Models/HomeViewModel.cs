@@ -5,6 +5,7 @@ namespace Nusstudios.Models
     public class HomeViewModel
     {
         public HomeViewModel(
+            string title,
             string baseurl,
             bool homeSelected,
             bool blogSelected,
@@ -16,6 +17,7 @@ namespace Nusstudios.Models
             bool gb
             )
         {
+            Title = title;
             BaseURL = baseurl;
             HomeSelected = homeSelected;
             BlogSelected = blogSelected;
@@ -27,6 +29,7 @@ namespace Nusstudios.Models
             GB = gb;
         }
 
+        public string Title;
         public string BaseURL;
         public bool HomeSelected;
         public bool BlogSelected;
