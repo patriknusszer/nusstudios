@@ -129,7 +129,7 @@ You swap this apex with the element at the last array index, wich is the rightmo
 Now you heapify the tree at its apex again, to bubble down that small number you have just put there, but you specify a 1 smaller array length, so that heapify is not going to bother the largest number you have placed at the largest index.
 After heapification, you will have the largest node of the 1 smaller tree at the top position, but since this new tree was basically the largest plus all the rest, the largest of the rest is going to be the second largest.
 And again, you swap the apex with the node at the end of the last array index minus one, which is anyway the end of the 1 smaller heap we are considering in this second step.
-And you continue doing it, until you have an array with a length of at least 3 nodes.
+And you continue doing it, until you have an array with a length of at least 2 nodes.
 
 
 So this second part of heapsort will take you another O(nlogn) operations, and since you have O(nlogn) for first part, and O(nlogn) for second, you also have eventually O(nlogn). 
