@@ -76,9 +76,9 @@ function reflow(elt) {
 
 function packmenus(menu_text_block, gb) {
 	var a = document.createElement('a')
-	a.href = '/Home/Softwares/' + (gb ? 'true' : 'false')
+	a.href = '/Home/Projects/' + (gb ? 'true' : 'false')
 	var p = document.createElement('p')
-	p.innerHTML = (gb ? 'Softwares' : 'Projektek')
+	p.innerHTML = (gb ? 'Projects' : 'Projektek')
 	p.className = 'p_white'
 	a.appendChild(p)
 	menu_text_block.appendChild(a)

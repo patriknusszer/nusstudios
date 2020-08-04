@@ -34,9 +34,9 @@
                     </svg>
                 </div>
             </a>
-            <a asp-controller="Home" asp-action="Softwares" asp-route-gb="@(Model.GB ? "true" : "false")">
-                <div title="@(Model.GB ? "Softwares" : "Projektek")" class="@(Model.SoftwaresSelected ? "selected" : "") menuitem">
-                    @(Model.GB ? "Softwares" : "Projektek")
+            <a asp-controller="Home" asp-action="Projects" asp-route-gb="@(Model.GB ? "true" : "false")">
+                <div title="@(Model.GB ? "Projects" : "Projektek")" class="@(Model.ProjectsSelected ? "selected" : "") menuitem">
+                    @(Model.GB ? "Projects" : "Projektek")
                 </div>
             </a>
             <a asp-controller="Home" asp-action="Blog" asp-route-gb="@(Model.GB ? "true" : "false")">

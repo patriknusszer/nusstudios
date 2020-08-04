@@ -23,11 +23,11 @@ namespace Nusstudios.Controllers
         }
 
         [Route("{controller}/{action}/{gb?}")]
-        public IActionResult Softwares(bool? gb)
+        public IActionResult Projects(bool? gb)
         {
             string val;
             bool isgb = gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val));
-            return View(new HomeViewModel(isgb ? "Projects" : "Projektek", "https://nusstudios.com/Home/Blog", false, false, true, false, false, false, false, isgb));
+            return View(new HomeViewModel(isgb ? "Projects" : "Projektek", "https://nusstudios.com/Home/Projects", false, false, true, false, false, false, false, isgb));
         }
 
         [Route("{controller}/{action}/{gb?}")]

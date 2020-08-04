@@ -9,7 +9,7 @@ namespace Nusstudios.Models
             string baseurl,
             bool homeSelected,
             bool blogSelected,
-            bool softwaresSelected,
+            bool projectsSelected,
             bool referenceSelected,
             bool nussapiSelected,
             bool eduSelected,
@@ -21,7 +21,7 @@ namespace Nusstudios.Models
             BaseURL = baseurl;
             HomeSelected = homeSelected;
             BlogSelected = blogSelected;
-            SoftwaresSelected = softwaresSelected;
+            ProjectsSelected = projectsSelected;
             ReferenceSelected = referenceSelected;
             NussAPISelected = nussapiSelected;
             EduSelected = eduSelected;
@@ -33,7 +33,7 @@ namespace Nusstudios.Models
         public string BaseURL;
         public bool HomeSelected;
         public bool BlogSelected;
-        public bool SoftwaresSelected;
+        public bool ProjectsSelected;
         public bool ReferenceSelected;
         public bool NussAPISelected;
         public bool EduSelected;
