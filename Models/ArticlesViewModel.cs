@@ -10,8 +10,9 @@ namespace Nusstudios.Models
             ReferenceSelected = true;
         }
 
-        public ArticlesViewModel(string baseurl, bool hasAbout, bool hasDownload, bool gb)
+        public ArticlesViewModel(string title, string baseurl, bool hasAbout, bool hasDownload, bool gb)
         {
+            Title = title;
             BaseURL = baseurl;
             BlogSelected = true;
             ReferenceSelected = false;
@@ -20,6 +21,7 @@ namespace Nusstudios.Models
             GB = gb;
         }
 
+        public string Title;
         public string BaseURL;
         public bool BlogSelected;
         public bool ReferenceSelected;
