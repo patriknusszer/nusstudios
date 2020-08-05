@@ -10,16 +10,12 @@
               </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="publications" expanded="True">
-                  <Node name="heapsort.txt" selected="True" />
                   <Node name="heapsort_hu.txt" selected="True" />
                 </Node>
               </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
