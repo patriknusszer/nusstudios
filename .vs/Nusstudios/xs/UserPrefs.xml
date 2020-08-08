@@ -6,12 +6,12 @@
           <Node name="Nusstudios" expanded="True">
             <Node name="Nusstudios" expanded="True">
               <Node name="Views" expanded="True">
-                <Node name="Articles" expanded="True" />
+                <Node name="Articles" expanded="True">
+                  <Node name="heapsort.cshtml" selected="True" />
+                </Node>
               </Node>
               <Node name="wwwroot" expanded="True">
-                <Node name="publications" expanded="True">
-                  <Node name="heapsort_hu.txt" selected="True" />
-                </Node>
+                <Node name="publications" expanded="True" />
               </Node>
             </Node>
           </Node>
