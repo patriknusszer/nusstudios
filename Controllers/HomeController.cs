@@ -27,22 +27,25 @@ namespace Nusstudios.Controllers
                         "Blog",
                         "https://nusstudios.com/Home/Blog",
                         false, true, false, false, false, false, false,
-                        gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val)),
+                        gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? (bool)(gb = false) : (bool)(gb = bool.Parse(val))),
                         new List<Article>
                         {
-                            new Article("knuthmorrisspratt", "Knuth-Morris-Pratt algorithm"),
-                            new Article("floydstortoiseandhare", "Floyd's tortoise and hare"),
-                            new Article("mergesort", "Mergesort of Neummann János"),
-                            new Article("heapsort", "Heapsort of J.W.J Williams"),
-                            new Article("dijkstra", "Dijkstra's shortest path"),
+                            new Article("knuthmorrisspratt", (bool)gb ? "Knuth-Morris-Pratt algorithm" : "Knuth-Morris-Pratt algoritmus"),
+                            new Article("floydstortoiseandhare", (bool)gb ? "Floyd's tortoise and hare" : "Floyd teknős & nyúl algoritmusa"),
+                            new Article("mergesort", (bool)gb ? "Mergesort of Neummann János" : "Mergesort"),
+                            new Article("heapsort", (bool)gb ? "Heapsort of J.W.J Williams" : "Kupacrendezés"),
+                            new Article("dijkstra", (bool)gb ? "Dijkstra's shortest path" : "Dijkstra legrövidebb út kereső")
                         },
                         new List<Article>
                         {
-
+                            new Article("paradigms_brief_history", (bool)gb ? "History of programming paradigms" : "A programozási paradigmák története"),
+                            new Article("high_level_languages_behind_the_scenes", (bool)gb ? "High level languages: behind the scenes" : "Magas szintű nyelvek a kulisszák mögött")
                         },
                         new List<Article>
                         {
-
+                            new Article("transformers_game_configurations_low_level", (bool)gb ? "Transformers games INI/INT configurations low level" : "Transformeres játékok konfigurációi alacsony szinten"),
+                            new Article("youtube_ciphered_signatures", "Youtube ciphered signatures today"),
+                            new Article("graph_api_and_x_instagram_gis", "Graph API and X-Instagram-GIS")
                         }
                     )
             );

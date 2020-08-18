@@ -18,50 +18,46 @@
     <script src="~/js/master.js"></script>
 }
 
+@using Nusstudios.Models;
+
 <div class="integrator">
     <div class="column">
         <p class="heading">@(Model.GB ? "Algorithms" : "Algoritmusok")</p>
-        <a asp-controller="Articles" asp-action="knuthmorrispratt" asp-route-gb="@(Model.GB ? "true" : "false")"><p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">Knuth Morris Pratt algorithm</p></a>
-        <a asp-controller="Articles" asp-action="floydstortoiseandhare" asp-route-gb="@(Model.GB ? "true" : "false")">
-            <p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">
-                @(Model.GB ? "Floyd's tortoise and hare [+interactive animation]" : "Floyd teknős és nyúl algoritmusa [+interaktív animáció]")
-            </p>
-        </a>
-        <a asp-controller="Articles" asp-action="mergesort" asp-route-gb="@(Model.GB ? "true" : "false")"><p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">Mergesort of Neumann János</p></a>
-        <a asp-controller="Articles" asp-action="heapsort" asp-route-gb="@(Model.GB ? "true" : "false")">
-            <p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">
-                @(Model.GB ? "Heapsort of J. W. J. Williams" : "J. W. J. Williams kupacrendező algoritmusa")
-            </p>
-        </a>
-        <a asp-controller="Articles" asp-action="dijkstra" asp-route-gb="@(Model.GB ? "true" : "false")"><p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">Dijkstra's shortest path</p></a>
+        @foreach (Article a in Model.Algorithms)
+        {
+            <a asp-controller="Articles" asp-action="@a.Action" asp-route-gb="@(Model.GB ? "true" : "false")">
+                <p>
+                    @a.Description
+                </p>
+            </a>
+        }
     </div>
 </div>
 
 <div class="integrator">
     <div class="column">
         <p class="heading">@(Model.GB ? "Abstract" : "Absztrakt")</p>
-        <a asp-controller="Articles" asp-action="paradigms_brief_history" asp-route-gb="@(Model.GB ? "true" : "false")">
-            <p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">
-                @(Model.GB ? "History of programming paradigms" : "A programozási paradigmák története")
-            </p>
-        </a>
-        <a asp-controller="Articles" asp-action="high_level_languages_behind_the_scenes" asp-route-gb="@(Model.GB ? "true" : "false")">
-            <p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">
-                @(Model.GB ? "High level language: behind the scenes" : "Magasszintű nyelvek a kulisszák mögött")
-            </p>
-        </a>
+        @foreach (Article a in Model.Abstract)
+        {
+            <a asp-controller="Articles" asp-action="@a.Action" asp-route-gb="@(Model.GB ? "true" : "false")">
+                <p>
+                    @a.Description
+                </p>
+            </a>
+        }
     </div>
 </div>
 
 <div class="integrator">
     <div class="column">
         <p class="heading">@(Model.GB ? "Documentation" : "Dokumentáció")</p>
-        <a asp-controller="Articles" asp-action="transformers_game_configurations_low_level" asp-route-gb="@(Model.GB ? "true" : "false")">
-            <p onMouseOver="showInfo('Describes the structure of TF configs', this)" onmouseout="hideInfo(this)">
-                @(Model.GB ? "Transformers games INI/INT configurations low-level" : "Transformer játékok konfigurációi alacsony szinten")
-            </p>
-        </a>
-        <a asp-controller="Articles" asp-action="youtube_ciphered_signatures" asp-route-gb="@(Model.GB ? "true" : "false")"><p onMouseOver="showInfo('Describes how Youtube downloaders work', this)" onmouseout="hideInfo(this)">Youtube ciphered signatures today</p></a>
-        <a asp-controller="Articles" asp-action="graph_api_and_x_instagram_gis" asp-route-gb="@(Model.GB ? "true" : "false")"><p onMouseOver="showInfo('Complete description of how Graph API works and how it is secured', this)" onmouseout="hideInfo(this)">Graph API and X-Instagram-GIS</p></a>
+        @foreach (Article a in Model.Documentation)
+        {
+            <a asp-controller="Articles" asp-action="@a.Action" asp-route-gb="@(Model.GB ? "true" : "false")">
+                <p>
+                    @a.Description
+                </p>
+            </a>
+        }
     </div>
 </div>
