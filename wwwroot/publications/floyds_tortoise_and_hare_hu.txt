@@ -66,7 +66,7 @@ l*C+a = 2(l*C+a) + r (mod C)
 A következő lépésben a modulus operációt kivonásként írjuk át.
 
 l*C+a - l*C = 2a+2lC + r - ((2l+e)*C)
-Vagyis a modulus legalább (2*l) darab C-t vonna ki a bal oldalból, de nem tudjuk mennyivel több C-t.
+Vagyis a modulus legalább (2*l) darab C-t vonna ki a jobb oldalból, de nem tudjuk mennyivel több C-t.
 Ez az ismeretlen extrát az 'e' természetes egész jelöli.
 
 a = 2a + r - e*C

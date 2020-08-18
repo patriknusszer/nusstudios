@@ -1,32 +1,53 @@
-﻿using System;
+﻿using System.Collections.Generic;
+
 namespace Nusstudios.Models
 {
-    public class ArticlesViewModel
+    public class Article
     {
-        public ArticlesViewModel(string baseurl)
+        public Article(string action, string desc)
         {
-            BaseURL = baseurl;
-            BlogSelected = false;
-            ReferenceSelected = true;
+            Action = action;
+            Description = desc;
         }
 
-        public ArticlesViewModel(string title, string baseurl, bool hasAbout, bool hasDownload, bool gb)
-        {
-            Title = title;
-            BaseURL = baseurl;
-            BlogSelected = true;
-            ReferenceSelected = false;
-            HasAbout = hasAbout;
-            HasDownload = hasDownload;
-            GB = gb;
-        }
+        public string Action;
+        public string Description;
+    }
 
-        public string Title;
-        public string BaseURL;
-        public bool BlogSelected;
-        public bool ReferenceSelected;
-        public bool HasAbout;
-        public bool HasDownload;
-        public bool GB;
+    public class ArticlesViewModel : HomeViewModel
+    {
+        public List<Article> Algorithms;
+        public List<Article> Abstract;
+        public List<Article> Documentation;
+
+        public ArticlesViewModel(
+            string title,
+            string baseurl,
+            bool homeSelected,
+            bool blogSelected,
+            bool projectsSelected,
+            bool referenceSelected,
+            bool nussapiSelected,
+            bool eduSelected,
+            bool contactSelected,
+            bool gb,
+            List<Article> algorithms,
+            List<Article> abs,
+            List<Article> documentation
+            ) : base(title,
+            baseurl,
+            homeSelected,
+            blogSelected,
+            projectsSelected,
+            referenceSelected,
+            nussapiSelected,
+            eduSelected,
+            contactSelected,
+            gb)
+        {
+            Algorithms = algorithms;
+            Abstract = abs;
+            Documentation = documentation;
+        }
     }
 }

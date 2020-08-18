@@ -67,7 +67,7 @@ l*C+a = 2(l*C+a) + r (mod C)
 We are translating modulo to subtraction in next step.
 
 l*C+a - l*C = 2a+2lC + r - ((2l+e)*C)
-We can tell modulo would subtract at least (2*l) time C from left hand side but not how much more of C.
+We can tell modulo would subtract at least (2*l) time C from right hand side but not how much more of C.
 This unknown extra subtraction is denoted by 'e' which is a natural number
 
 a = 2a + r - e*C

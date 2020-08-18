@@ -21,45 +21,41 @@
     <script src="~/js/master.js"></script>
 }
 
+@using Nusstudios.Models;
 
 <div class="integrator">
     <div class="column">
         <p class="heading">@(Model.GB ? "Apps" : "Appok")</p>
-        <a asp-controller="Projects" asp-action="nuss"><p onMouseOver="showInfo('An advanced Youtube video downloader for chrome', this)" onmouseout="hideInfo(this)">Nuss Youtube downloader</p></a>		<a asp-controller="Projects" asp-action="nussdesktop_javafx"><p onMouseOver="showInfo('An advanced Youtube video downloader for desktops', this)" onmouseout="hideInfo(this)">Nuss Youtube downloader JavaFx</p></a>
-        <a asp-controller="Projects" asp-action="nusstumblr"><p onMouseOver="showInfo('A Tumblr blog downloader', this)" onmouseout="hideInfo(this)">Tumblr Downloader</p></a>
-		<a asp-controller="Projects" asp-action="instarchiver"><p onMouseOver="showInfo('Instagram account archiver', this)" onmouseout="hideInfo(this)">Instagram archiver</p></a>
-        <a asp-controller="Projects" asp-action="imagetopdfui"><p onMouseOver="showInfo('Converts your images into a PDF doc', this)" onmouseout="hideInfo(this)">Image to PDF UI</p></a>
-        <a asp-controller="Projects" asp-action="gia"><p onMouseOver="showInfo('Google reverse image search results backup chrome extension', this)" onmouseout="hideInfo(this)">Google Image Archiver</p></a>
+        @foreach (Project p in Model.Apps)
+        {
+            <a asp-controller="Projects" asp-action="@p.Action">
+                <p>@p.Name</p>
+            </a>
+        }
+        
     </div>
 </div>
 
 <div class="integrator">
     <div class="column">
         <p class="heading">@(Model.GB ? "Games" : "Játékok")</p>
-        <a asp-controller="Projects" asp-action="cupmixer"><p onMouseOver="showInfo('Classic ball hunter', this)" onmouseout="hideInfo(this)">Cup Mixer</p></a></div>
+        @foreach (Project p in Model.Games)
+        {
+            <a asp-controller="Projects" asp-action="@p.Action">
+                <p>@p.Name</p>
+            </a>
+        }
+    </div>
 </div>
 
 <div class="integrator">
     <div class="column">
         <p class="heading">@(Model.GB ? "Developer & Educational" : "Fejlesztői és oktatási célu")</p>
-        <a asp-controller="Projects" asp-action="torrentchk"><p onMouseOver="showInfo('Torrent integrity checker', this)" onmouseout="hideInfo(this)">Torrentchk</p></a>
-        <a asp-controller="Projects" asp-action="CPPO"><p onMouseOver="showInfo('Lightweigth object hierarchy management in C++', this)" onmouseout="hideInfo(this)">C++ Object library</p></a>
-        <a asp-controller="Projects" asp-action="pixie"><p onMouseOver="showInfo('A coordinate and color grabber utility', this)" onmouseout="hideInfo(this)">Pixie</p></a>
-        <a asp-controller="Projects" asp-action="pixie_macos"><p onMouseOver="showInfo('A coordinate and color grabber utility', this)" onmouseout="hideInfo(this)">Pixie for macOS</p></a>
-        <a asp-controller="Projects" asp-action="tfutilpp"><p onMouseOver="showInfo('A configuration cryptor for Transformers games', this)" onmouseout="hideInfo(this)">TF_Games_Util++</p></a>
-        <a asp-controller="Projects" asp-action="spltoemf"><p onMouseOver="showInfo('An .SPL to .EMF converter', this)" onmouseout="hideInfo(this)">SPL to EMF</p></a>
-        <a asp-controller="Projects" asp-action="imgtopdf"><p onMouseOver="showInfo('Converts your images into a PDF doc', this)" onmouseout="hideInfo(this)">Image to PDF Console</p></a>
-        <a asp-controller="Projects" asp-action="stringmath"><p onMouseOver="showInfo('A string based math library', this)" onmouseout="hideInfo(this)">StringMath Library</p></a>
-        <a asp-controller="Projects" asp-action="jcore"><p onMouseOver="showInfo('A library of my general Java utilities', this)" onmouseout="hideInfo(this)">JCore library</p></a>
-        <a asp-controller="Projects" asp-action="nusstudioscorecsharp"><p onMouseOver="showInfo('A library of my general C# utilities', this)" onmouseout="hideInfo(this)">Nusstudios.Core Library C#</p></a>
-        <a asp-controller="Projects" asp-action="keylogger"><p onMouseOver="showInfo('Usage of SetWindowsHookEx()', this)" onmouseout="hideInfo(this)">KeyLogger</p></a>
-        <a asp-controller="Projects" asp-action="xorcrypt"><p onMouseOver="showInfo('Xor cryptor and key generator script', this)" onmouseout="hideInfo(this)">Xor Crypt</p></a>
-        <a asp-controller="Projects" asp-action="lilcryptoc"><p onMouseOver="showInfo('XOR and XNOR crypter, key generator', this)" onmouseout="hideInfo(this)">lilcryptoc</p></a>
-        <a asp-controller="Projects" asp-action="lilcryptocpp"><p onMouseOver="showInfo('XOR and XNOR crypter, key generator', this)" onmouseout="hideInfo(this)">lilcryptocpp</p></a>
-        <a asp-controller="Projects" asp-action="stringmath_python"><p onMouseOver="showInfo('Stringmath Python port', this)" onmouseout="hideInfo(this)">Stringmath Python</p></a>
-        <a asp-controller="Projects" asp-action="nussattribute"><p onMouseOver="showInfo('Cross platform file attributes modifier', this)" onmouseout="hideInfo(this)">NussAttribute</p></a>
-        <a asp-controller="Projects" asp-action="swifflib"><p onMouseOver="showInfo('An incomplete Swiff-file (.swf) parser project', this)" onmouseout="hideInfo(this)">SwiffLib</p></a>
-        <a asp-controller="Projects" asp-action="equslvr"><p onMouseOver="showInfo('An basic and limited equation parser', this)" onmouseout="hideInfo(this)">equslvr</p></a>
-        <a asp-controller="Projects" asp-action="hashcompare"><p onMouseOver="showInfo('Hash tree generator and comparer', this)" onmouseout="hideInfo(this)">hashcompare</p></a>
+        @foreach (Project p in Model.Educational)
+        {
+            <a asp-controller="Projects" asp-action="@p.Action">
+                <p>@p.Name</p>
+            </a>
+        }
     </div>
 </div>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 using Nusstudios.Models;
 using Nusstudios.Common;
 
@@ -19,7 +20,32 @@ namespace Nusstudios.Controllers
         public IActionResult Blog(bool? gb)
         {
             string val;
-            return View(new HomeViewModel("Blog", "https://nusstudios.com/Home/Blog", false, true, false, false, false, false, false, gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val))));
+            return View
+                (
+                    new ArticlesViewModel
+                    (
+                        "Blog",
+                        "https://nusstudios.com/Home/Blog",
+                        false, true, false, false, false, false, false,
+                        gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val)),
+                        new List<Article>
+                        {
+                            new Article("knuthmorrisspratt", "Knuth-Morris-Pratt algorithm"),
+                            new Article("floydstortoiseandhare", "Floyd's tortoise and hare"),
+                            new Article("mergesort", "Mergesort of Neummann János"),
+                            new Article("heapsort", "Heapsort of J.W.J Williams"),
+                            new Article("dijkstra", "Dijkstra's shortest path"),
+                        },
+                        new List<Article>
+                        {
+
+                        },
+                        new List<Article>
+                        {
+
+                        }
+                    )
+            );
         }
 
         [Route("{controller}/{action}/{gb?}")]
@@ -27,7 +53,41 @@ namespace Nusstudios.Controllers
         {
             string val;
             bool isgb = gb != null ? (bool)gb : ((val = Tools.GetCookieValue(Request, "gb")) == null ? false : bool.Parse(val));
-            return View(new HomeViewModel(isgb ? "Projects" : "Projektek", "https://nusstudios.com/Home/Projects", false, false, true, false, false, false, false, isgb));
+            return View(
+                new ProjectsViewModel(
+                    isgb ? "Projects" : "Projektek",
+                    "https://nusstudios.com/Home/Projects",
+                    false, false, true, false, false, false, false, isgb,
+                    new List<Project> {
+                        new Project("nuss", "Nuss Youtube downloader"),
+                        new Project("nussdesktop_javafx", "Nuss Youtube downloader JavaFx"),
+                        new Project("nusstumblr", "Nusstmblr"),
+                        new Project("instarchiver", "Instagram archiver"),
+                        new Project("imagetopdfui", "Image to PDF UI"),
+                        new Project("gia", "Google Image Archiver")
+                    },
+                    new List<Project> {
+                        new Project("cupmixer", "Cup Mixer")
+                    },
+                    new List<Project> {
+                        new Project("torrentchk", "Torrentchk"),
+                        new Project("CPPO", "C++ object library"),
+                        new Project("pixie", "Pixie"),
+                        new Project("pixie_macos", "Pixie for macOS"),
+                        new Project("tfutilpp", "TF_games_Util++"),
+                        new Project("imgtopdf", "Image to PDF console"),
+                        new Project("stringmath", "StringMath library"),
+                        new Project("jcore", "JCore Library"),
+                        new Project("nusstudioscorecsharp", "Nusstudios.Core Library C#"),
+                        new Project("keylogger", "Key Logger"),
+                        new Project("lilcryptoc", "lilcryptoc"),
+                        new Project("lilcryptocpp", "lilcryptocpp"),
+                        new Project("swifflib", "SwiffLib"),
+                        new Project("hashcompare", "hashcompare"),
+                        new Project("equslvr", "equslvr")
+                    }
+                )
+            );
         }
 
         [Route("{controller}/{action}/{gb?}")]

@@ -391,7 +391,6 @@ Y:/nusstudios/obj/Debug/netcoreapp3.0/Nusstudios.genruntimeconfig.cache
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Mods/mod_twfcultimate.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_ItemLayout.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_Layout.cshtml.g.cs
-/Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_ProductLayout.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/_ViewImports.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/_ViewStart.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Nusstudios.RazorTargetAssemblyInfo.cache
@@ -432,3 +431,4 @@ Y:/nusstudios/obj/Debug/netcoreapp3.0/Nusstudios.genruntimeconfig.cache
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Projects/torrentchk.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Projects/xorcrypt.cshtml.g.cs
 /Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Home/Projects.cshtml.g.cs
+/Users/patrik.nusszer/nusstudios/obj/Debug/netcoreapp3.0/Razor/Views/Shared/_ProjectLayout.cshtml.g.cs
